@@ -26,16 +26,16 @@
                     <input type="text" class="form-control" name="CustomerName" id="CustomerNameId">
                 </div>
                 <div class="mb-3">
-                    <label for="CustomerMobileID" class="form-label">CustomerMobileNo</label>
-                    <input type="number" class="form-control" id="CustomerMobileID">
+                    <label for="CustomerMobileId" class="form-label">CustomerMobileNo</label>
+                    <input type="number" class="form-control" name="CustomerMobileNo" id="CustomerMobileId">
                 </div>
                 <div class="mb-3">
                     <label for="CustomerAreaId" class="form-label">CustomerArea</label>
-                    <input type="text" class="form-control" id="CustomerAreaId">
+                    <input type="text" class="form-control" name="CustomerArea" id="CustomerAreaId">
                 </div>
                 <div class="mb-3">
                     <label for="CustomerCityId" class="form-label">CustomerCity</label>
-                    <input type="password" class="form-control" id="CustomerCityId">
+                    <input type="text" class="form-control" name="CustomerCity" id="CustomerCityId">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -56,6 +56,18 @@
 
     <script>
 
+       let StartFunc = () => {
+            let localCustomerData = {};
+            localCustomerData.CustomerName = jFLocalCustomerNameFunc();
+            localCustomerData.CustomerMobileNo = jFLocalCustomerMobileFunc();
+            localCustomerData.CustomerArea = jFLocalCustomerAreaFunc();
+            localCustomerData.CustomerCity = jFLocalCustomerCityFunc();
+            console.log("localCustomerData", localCustomerData);
+
+        };
+
+        //StartFunc();
+
         let jFLocalCustomerNameFunc = () => {
             let jVarLocalReturnObject = {};
             let jVarLocalCustomerNameId = document.getElementById("CustomerNameId");
@@ -63,10 +75,48 @@
             let jVarLocalCustomerNameIdValue = jVarLocalCustomerNameId.value;
             let jVarLocalCustomerNameIdName = jVarLocalCustomerNameId.name;
 
+
             jVarLocalReturnObject[jVarLocalCustomerNameIdName] = jVarLocalCustomerNameIdValue;
 
             return jVarLocalReturnObject;
         };
+
+
+
+        let jFLocalCustomerMobileFunc = () => {
+            let jVarLocalReturnObject = {};
+            let jVarLocalCustomerMobileId = document.getElementById("CustomerMobileId");
+
+            let jVarLocalCustomerMobileIdValue = jVarLocalCustomerMobileId.value;
+            let jVarLocalCustomeMobileIdName = jVarLocalCustomerMobileId.name;
+
+            jVarLocalReturnObject[jVarLocalCustomeMobileIdName] = jVarLocalCustomerMobileIdValue;
+            return jVarLocalReturnObject;
+        };
+
+        let jFLocalCustomerAreaFunc = () => {
+            let jVarLocalReturnObject = {};
+            let jVarLocalCustomerAreaId = document.getElementById("CustomerAreaId");
+
+            let jVarLocalCustomerAreaIdValue = jVarLocalCustomerAreaId.value;
+            let jVarLocalCustomerAreaIdName = jVarLocalCustomerAreaId.name;
+
+            jVarLocalReturnObject[jVarLocalCustomerAreaIdName] = jVarLocalCustomerAreaIdValue;
+            return jVarLocalReturnObject;
+        };
+
+        let jFLocalCustomerCityFunc = () => {
+            let jVarLocalReturnObject = {};
+            let jVarLocalCustomerCityId = document.getElementById("CustomerCityId");
+
+            let jVarLocalCustomerCityIdValue = jVarLocalCustomerCityId.value;
+            let jVarLocalCustomerCityIdName = jVarLocalCustomerCityId.name;
+
+            jVarLocalReturnObject[jVarLocalCustomerCityIdName] = jVarLocalCustomerCityIdValue;
+
+            return jVarLocalReturnObject;
+        };
+
 
     </script>
 </body>
