@@ -19,125 +19,202 @@
     </header>
     <main>
         <div class="container">
+            <div class="d-flex align-items-start mt-3 row">
+                <div class="nav flex-column nav-pills me-3 col-2" id="v-pills-tab" role="tablist"
+                    aria-orientation="vertical">
+                    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                        aria-selected="true">Customer</button>
+                    <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+                        aria-selected="false">Add Items</button>
+                    <button class="nav-link" id="v-pills-disabled-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-disabled" type="button" role="tab" aria-controls="v-pills-disabled"
+                        aria-selected="false">Show Items</button>
+                    <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
+                        aria-selected="false">Images</button>
+                    <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
+                        aria-selected="false">Print</button>
+                </div>
+                <div class="tab-content col-9" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab" tabindex="0">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab" tabindex="0">
 
-            <div class="card border-primary">
-                <div class="card-body">
+                        <div class="card border-primary">
+                            <div class="card-body">
 
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
-                                aria-selected="true">Men</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                                data-bs-target="#profile-tab-pane" type="button" role="tab"
-                                aria-controls="profile-tab-pane" aria-selected="false">Women</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
-                                data-bs-target="#contact-tab-pane" type="button" role="tab"
-                                aria-controls="contact-tab-pane" aria-selected="false">Kids</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab"
-                                data-bs-target="#disabled-tab-pane" type="button" role="tab"
-                                aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
-                            aria-labelledby="home-tab" tabindex="0">
-                            <div class="row mt-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <select class="form-select" id="floatingSelect"
-                                            aria-label="Floating label select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">Shirt</option>
-                                            <option value="2">Pant</option>
-                                            <option value="3">Jeans</option>
-                                            <option value="4">Trouser</option>
-                                            <option value="5">Kurta</option>
-                                            <option value="6">Lungi</option>
-                                            <option value="7">Inners</option>
-                                            <option value="8">Shorts</option>
-                                            <option value="9">Longs</option>
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                            data-bs-target="#home-tab-pane" type="button" role="tab"
+                                            aria-controls="home-tab-pane" aria-selected="true">Men</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                            data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                            aria-controls="profile-tab-pane" aria-selected="false">Women</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                                            data-bs-target="#contact-tab-pane" type="button" role="tab"
+                                            aria-controls="contact-tab-pane" aria-selected="false">Kids</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="disabled-tab" data-bs-toggle="tab"
+                                            data-bs-target="#disabled-tab-pane" type="button" role="tab"
+                                            aria-controls="disabled-tab-pane" aria-selected="false"
+                                            disabled>Disabled</button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
+                                        aria-labelledby="home-tab" tabindex="0">
+                                        <div class="row mt-3">
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <select class="form-select" id="ItemSelectId"
+                                                        aria-label="Floating label select example">
+                                                        <option selected>Open this select menu</option>
+                                                        <option value="1">Shirt</option>
+                                                        <option value="2">Pant</option>
+                                                        <option value="3">Jeans</option>
+                                                        <option value="4">Trouser</option>
+                                                        <option value="5">Kurta</option>
+                                                        <option value="6">Lungi</option>
+                                                        <option value="7">Inners</option>
+                                                        <option value="8">Shorts</option>
+                                                        <option value="9">Longs</option>
 
-                                        </select>
-                                        <label for="floatingSelect">Select Item</label>
+                                                    </select>
+                                                    <label for="ItemSelectId">Select Item</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label for="inputPassword4" class="form-label">Pcs</label>
+                                                <input type="number" class="form-control" id="PcsId">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label for="inputPassword4" class="form-label">Rate</label>
+                                                <input type="number" class="form-control" id="RateId">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button type="button" class="btn btn-success" id="AddItemButtonId">Add
+                                                    Item</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <label for="inputPassword4" class="form-label">Pcs</label>
-                                    <input type="number" class="form-control" id="PcsId">
-                                </div>
-                                <div class="col-md-2">
-                                    <label for="inputPassword4" class="form-label">Rate</label>
-                                    <input type="number" class="form-control" id="RateId">
-                                </div>
-                                <div class="col-md-2">
-                                    <button type="button" class="btn btn-success"
-                                        id="AddOnInsertButtonId">Add Item</button>
+                                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel"
+                                        aria-labelledby="profile-tab" tabindex="0">
+                                        This is profile</div>
+                                    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel"
+                                        aria-labelledby="contact-tab" tabindex="0">
+                                        ...</div>
+                                    <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel"
+                                        aria-labelledby="disabled-tab" tabindex="0">...</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
-                            tabindex="0">
-                            This is profile</div>
-                        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
-                            tabindex="0">
-                            ...</div>
-                        <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
-                            tabindex="0">...</div>
+
+
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-select text-success" id="AddOnServiceId"
+                                        aria-label="Floating label select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">Stains</option>
+                                        <option value="2">Heavy Stains</option>
+                                        <option value="3">Starch</option>
+                                        <option value="4">Pack</option>
+                                    </select>
+                                    <label for="AddOnServiceId">Add-On Service</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="AddOnRateId" placeholder="Enter Rate">
+                                    <label for="floatingInput">Rate</label>
+                                </div>
+
+                            </div>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-success" id="AddOnInsertButtonId">Insert</button>
+                            </div>
+                        </div>
+
+                        <div class="card border-success">
+                            <div class="card-body">
+                                <table class="table" id="AddOnTableId">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Add-On Service</th>
+                                            <th scope="col">Rate</th>
+                                            <th scope="col">Options</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="AddOnTableBodyId">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
+                    <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel"
+                        aria-labelledby="v-pills-disabled-tab" tabindex="0">
+
+
+                        <div class="card border-primary">
+                            <div class="card-body">
+                                <table class="table" id="ItemsTableId">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Item Name</th>
+                                            <th scope="col">Rate</th>
+                                            <th scope="col">Add-On</th>
+                                            <th scope="col">Options</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="ItemsTableBodyId">
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                        aria-labelledby="v-pills-messages-tab" tabindex="0">
+
+
+
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                        aria-labelledby="v-pills-settings-tab" tabindex="0">...</div>
                 </div>
             </div>
-
-
-            <div class="row mt-3">
-                <div class="col-md-6">
-                    <div class="form-floating">
-                        <select class="form-select text-success" id="AddOnServiceId"
-                            aria-label="Floating label select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">Stains</option>
-                            <option value="2">Heavy Stains</option>
-                            <option value="3">Starch</option>
-                            <option value="4">Pack</option>
-                        </select>
-                        <label for="AddOnServiceId">Add-On Service</label>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-floating mb-3">
-                        <input type="number" class="form-control" id="AddOnRateId" placeholder="Enter Rate">
-                        <label for="floatingInput">Rate</label>
-                    </div>
-
-                </div>
-                <div class="col-md-2">
-                    <button type="button" class="btn btn-success" id="AddOnInsertButtonId">Insert</button>
-                </div>
-            </div>
-
-            <div class="card border-success">
-                <div class="card-body">
-                    <table class="table" id="AddOnTableId">
-                        <thead class="table-dark">
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Add-On Service</th>
-                                <th scope="col">Rate</th>
-                                <th scope="col">Options</th>
-                            </tr>
-                        </thead>
-                        <tbody id="AddOnTableBodyId">
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
         </div>
     </main>
     <footer>
@@ -155,8 +232,10 @@
     <script>
         let jFStartFunc = () => {
             let jVarLocalAddOnInsertButtonId = document.getElementById("AddOnInsertButtonId");
+            let jVarLocalAddItemButtonId = document.getElementById("AddItemButtonId");
 
             jVarLocalAddOnInsertButtonId.addEventListener("click", jFLocalButtonClick);
+            jVarLocalAddItemButtonId.addEventListener("click", jFLocalItemsAddButtonClick);
         };
 
         let jFLocalPrepareData = () => {
@@ -192,9 +271,46 @@
             cell3.innerHTML = inAddOnRate;
         };
 
+        let jFLocalItemsInsertRow = ({ inItemName, inItemRate }) => {
+            var table = document.getElementById("ItemsTableBodyId");
+            let jVarLocalTableRowLength = table.rows.length
+
+            // Create an empty <tr> element and add it to the 1st position of the table:
+            var row = table.insertRow(0);
+
+            // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+
+            // Add some text to the new cells:
+            cell1.innerHTML = jVarLocalTableRowLength + 1;
+            cell2.innerHTML = inItemName;
+            cell3.innerHTML = inItemRate;
+        };
+
         let jFLocalButtonClick = () => {
             jFLocalPrepareData();
             console.log("ssssssssssssss");
+        };
+
+        let jFLocalItemsAddButtonClick = () => {
+            jFLocalPrepareItemData();
+            console.log("ssssssssssssss");
+        };
+
+        let jFLocalPrepareItemData = () => {
+            let jVarLocalItemSelectId = document.getElementById("ItemSelectId");
+            let jVarLocalRateId = document.getElementById("RateId");
+
+            let jVarLocalRateIdValue = jVarLocalRateId.value;
+
+            var jVarLocalItemSelectIdText = jVarLocalItemSelectId.options[jVarLocalItemSelectId.selectedIndex].text;
+
+            jFLocalItemsInsertRow({
+                inItemName: jVarLocalItemSelectIdText,
+                inItemRate: jVarLocalRateIdValue
+            });
         };
 
         jFStartFunc();
