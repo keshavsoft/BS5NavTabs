@@ -42,21 +42,24 @@
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
                         aria-labelledby="v-pills-home-tab" tabindex="0">
                         <form>
+
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
-                                </div>
+                                <label for="CustomerNameId" class="form-label">CustomerName</label>
+                                <input type="text" class="form-control" id="CustomerNameId">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
+                                <label for="CustomerMobileID" class="form-label">CustomerMobileNo</label>
+                                <input type="number" class="form-control" id="CustomerMobileID">
                             </div>
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            <div class="mb-3">
+                                <label for="CustomerAreaId" class="form-label">CustomerArea</label>
+                                <input type="text" class="form-control" id="CustomerAreaId">
                             </div>
+                            <div class="mb-3">
+                                <label for="CustomerCityId" class="form-label">CustomerCity</label>
+                                <input type="password" class="form-control" id="CustomerCityId">
+                            </div>
+                           
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
@@ -93,7 +96,7 @@
                                     <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
                                         aria-labelledby="home-tab" tabindex="0">
                                         <div class="row mt-3">
-                                            <div class="col-md-6">
+                                            <div class="col-md-3">
                                                 <div class="form-floating">
                                                     <select class="form-select" id="ItemSelectId"
                                                         aria-label="Floating label select example">
@@ -112,6 +115,21 @@
                                                     <label for="ItemSelectId">Select Item</label>
                                                 </div>
                                             </div>
+
+                                            <!--WashselectId start-->
+                                            <div class="col-md-3">
+                                                <div class="form-floating">
+                                                    <select class="form-select" id="WashSelectId"
+                                                        aria-label="Floating label select example">
+                                                        <option selected>Open this select menu</option>
+                                                        <option value="1">DryWash</option>
+                                                        <option value="2">PetrolWash</option>
+
+                                                    </select>
+                                                    <label for="WashSelectId">Select Wash</label>
+                                                </div>
+                                            </div>
+                                            <!--WashselectId end-->
                                             <div class="col-md-2">
                                                 <label for="inputPassword4" class="form-label">Pcs</label>
                                                 <input type="number" class="form-control" id="PcsId">
