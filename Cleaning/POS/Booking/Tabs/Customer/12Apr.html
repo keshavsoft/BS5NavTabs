@@ -56,17 +56,18 @@
 
     <script>
 
-       let StartFunc = () => {
-            let localCustomerData = {};
-            localCustomerData.CustomerName = jFLocalCustomerNameFunc();
-            localCustomerData.CustomerMobileNo = jFLocalCustomerMobileFunc();
-            localCustomerData.CustomerArea = jFLocalCustomerAreaFunc();
-            localCustomerData.CustomerCity = jFLocalCustomerCityFunc();
-            console.log("localCustomerData", localCustomerData);
+        let StartFunc = () => {
 
-        };
-
-        //StartFunc();
+            let localCustomerName = jFLocalCustomerNameFunc();
+            let localCustomerMobileNo = jFLocalCustomerMobileFunc();
+            let localCustomerArea = jFLocalCustomerAreaFunc();
+            let localCustomerCity = jFLocalCustomerCityFunc();
+            let localCustomerData = {
+                ...localCustomerName,
+                ...localCustomerArea,
+                ...localCustomerMobileNo,
+                ...localCustomerCity
+            };
 
         let jFLocalCustomerNameFunc = () => {
             let jVarLocalReturnObject = {};
