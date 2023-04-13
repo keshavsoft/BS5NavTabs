@@ -46,7 +46,9 @@
                                 disabled>Disabled</button>
                         </li>
                     </ul>
+                    <!--All tab start-->
                     <div class="tab-content" id="myTabContent">
+                        <!--Home tab for man start-->
                         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
                             aria-labelledby="home-tab" tabindex="0">
                             <div class="row mt-3">
@@ -98,15 +100,117 @@
                                 </div>
                             </div>
                         </div>
+                         <!--Home tab for man end-->
+                         <!--Woman's tab start-->
                         <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel"
                             aria-labelledby="profile-tab" tabindex="0">
-                            This is profile</div>
+                            
+                            <div class="row mt-3">
+                                <div class="col-md-3">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="WomanItemSelectId" name="WomanItemSelectId"
+                                            aria-label="Floating label select example">
+                                            <option selected>Open this select menu</option>
+                                            <option value="Saree">Saree</option>
+                                            <option value="Half-Saree">Half-Saree</option>
+                                            <option value="Culoote dress">Culoote dress</option>
+                                            <option value="Wrap around dress">Wrap around dress</option>
+                                            <option value="Bubble dress">Bubble dress</option>
+                                            <option value="Tutu">Tutu</option>
+                                            <option value="Polo dress">Polo dress</option>
+                                            <option value="Shirtdress">Shirtdress</option>
+
+                                        </select>
+                                        <label for="WomanItemSelectId">Select Item</label>
+                                    </div>
+                                </div>
+
+                                <!--WashselectId start-->
+                                <div class="col-md-3">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="WomanWashSelectId" name="WomanWashSelectId"
+                                            aria-label="Floating label select example">
+                                            <option selected>Open this select menu</option>
+                                            <option value="DryWash">DryWash</option>
+                                            <option value="PetrolWash">PetrolWash</option>
+
+                                        </select>
+                                        <label for="WomanWashSelectId">Select Wash</label>
+                                    </div>
+                                </div>
+                                <!--WashselectId end-->
+                                <div class="col-md-2">
+                                    <label for="Pcs" class="form-label">Pcs</label>
+                                    <input type="number" class="form-control" id="WomanPcsId" name="WomanPcsId">
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="Rate" class="form-label">Rate</label>
+                                    <input type="number" class="form-control" id="WomanRateId" name="WomanRateId">
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-success" id="WomanAddItemButtonId" for="WomanAddItemButtonId" name="WomanAddItemButtonId">Add
+                                        Item</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Woman's tab end-->
+                        <!--kid's tab start-->
                         <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel"
                             aria-labelledby="contact-tab" tabindex="0">
-                            ...</div>
+                            
+                            <div class="row mt-3">
+                                <div class="col-md-3">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="KidItemSelectId" name="KidItemSelectId"
+                                            aria-label="Floating label select example">
+                                            <option selected>Open this select menu</option>
+                                            <option value="LongCoat">LongCoat</option>
+                                            <option value="Uniform">Uniform</option>
+                                            <option value="TankTop">TankTop</option>
+                                            <option value="T-shirts">T-shirts</option>
+                                            <option value="Dress">Dress</option>
+                                            <option value="DenimDress">DenimDress</option>
+                                            <option value="Maxi">Maxi</option>
+                                            <option value="Leggi">Leggi</option>
+
+                                        </select>
+                                        <label for="KidItemSelectId">Select Item</label>
+                                    </div>
+                                </div>
+
+                                <!--WashselectId start-->
+                                <div class="col-md-3">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="KidWashSelectId" name="KidWashSelectId"
+                                            aria-label="Floating label select example">
+                                            <option selected>Open this select menu</option>
+                                            <option value="DryWash">DryWash</option>
+                                            <option value="PetrolWash">PetrolWash</option>
+
+                                        </select>
+                                        <label for="KidWashSelectId">Select Wash</label>
+                                    </div>
+                                </div>
+                                <!--WashselectId end-->
+                                <div class="col-md-2">
+                                    <label for="Pcs" class="form-label">Pcs</label>
+                                    <input type="number" class="form-control" id="KidPcsId" name="KidPcsId">
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="Rate" class="form-label">Rate</label>
+                                    <input type="number" class="form-control" id="KidRateId" name="KidRateId">
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-success" id="KidAddItemButtonId" for="KidAddItemButtonId" name="KidAddItemButtonId">Add
+                                        Item</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--kid's tab end-->
                         <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel"
                             aria-labelledby="disabled-tab" tabindex="0">...</div>
                     </div>
+                    <!--All tab end-->
                 </div>
             </div>
             <!--Card Body end-->
@@ -126,23 +230,7 @@
 
     <script>
 
-       /** let StartFunc = () => {
-
-            let localCustomerName = jFLocalCustomerNameFunc();
-            let localCustomerMobileNo = jFLocalCustomerMobileFunc();
-            let localCustomerArea = jFLocalCustomerAreaFunc();
-            let localCustomerCity = jFLocalCustomerCityFunc();
-            let localCustomerData = {
-                ...localCustomerName,
-                ...localCustomerArea,
-                ...localCustomerMobileNo,
-                ...localCustomerCity
-            };
-            console.log("localCustomerData", localCustomerData);
-
-        };**/
-
-        //StartFunc();
+      //man tab funcs start
 
         let jFLocalItemSelectFunc = () => {
             let jVarLocalReturnObject = {};
@@ -210,6 +298,147 @@
             return jVarLocalReturnObject;
         };
 
+        //man tab funcs end
+
+         //Woman tab funcs start
+
+         let jFLocalWomanItemSelectFunc = () => {
+            let jVarLocalReturnObject = {};
+            let jVarLocalWomanItemSelectId = document.getElementById("WomanItemSelectId");
+
+            let jVarLocalWomanItemSelectIdValue = jVarLocalWomanItemSelectId.value;
+            let jVarLocalWomanItemSelectIdName = jVarLocalWomanItemSelectId.name;
+
+
+            jVarLocalReturnObject[jVarLocalWomanItemSelectIdName] = jVarLocalWomanItemSelectIdValue;
+
+            return jVarLocalReturnObject;
+        };
+
+
+
+        let jFLocalWomanWashSelectFunc = () => {
+            let jVarLocalReturnObject = {};
+            let jVarLocalWomanWashSelectId = document.getElementById("WomanWashSelectId");
+
+            let jVarLocalWomanWashSelectIdValue = jVarLocalWomanWashSelectId.value;
+            let jVarLocalWomanWashSelectIdName = jVarLocalWomanWashSelectId.name;
+
+            jVarLocalReturnObject[jVarLocalWomanWashSelectIdName] = jVarLocalWomanWashSelectIdValue;
+            return jVarLocalReturnObject;
+        };
+
+        let jFLocalWomanPcsFunc = () => {
+            let jVarLocalReturnObject = {};
+            let jVarLocalWomanPcsId = document.getElementById("WomanPcsId");
+
+            let jVarLocalWomanPcsIdValue = jVarLocalWomanPcsId.value;
+            let jVarLocalWomanPcsIdName = jVarLocalWomanPcsId.name;
+
+            jVarLocalReturnObject[jVarLocalWomanPcsIdName] = jVarLocalWomanPcsIdValue;
+            return jVarLocalReturnObject;
+        };
+
+        let jFLocalWomanRateFunc = () => {
+            let jVarLocalReturnObject = {};
+            let jVarLocalWomanRateId = document.getElementById("WomanRateId");
+
+            let jVarLocalWomanRateIdValue = jVarLocalWomanRateId.value;
+            let jVarLocalWomanRateIdName = jVarLocalWomanRateId.name;
+
+            jVarLocalReturnObject[jVarLocalWomanRateIdName] = jVarLocalWomanRateIdValue;
+
+            return jVarLocalReturnObject;
+        };
+
+        let jFLocalWomanAddItemButtonFunc = () => {
+            let jVarLocalWomanAddItemButtonId = document.getElementById("WomanAddItemButtonId");
+            let localWomanItemSelect=jFLocalWomanItemSelectFunc();
+            let localWomanWashSelect=jFLocalWomanWashSelectFunc();
+            let localWomanPcs=jFLocalWomanPcsFunc();
+            let localWomanRate=jFLocalWomanRateFunc();
+
+            let jVarLocalReturnObject = {
+                ...localWomanItemSelect,
+                ...localWomanWashSelect,
+                ...localWomanPcs,
+                ...localWomanRate
+            };
+            
+            return jVarLocalReturnObject;
+        };
+
+        //Woman tab funcs end
+
+        //Kid's tab funcs start
+
+        let jFLocalKidItemSelectFunc = () => {
+            let jVarLocalReturnObject = {};
+            let jVarLocalKidItemSelectId = document.getElementById("KidItemSelectId");
+
+            let jVarLocalKidItemSelectIdValue = jVarLocalKidItemSelectId.value;
+            let jVarLocalKidItemSelectIdName = jVarLocalKidItemSelectId.name;
+
+
+            jVarLocalReturnObject[jVarLocalKidItemSelectIdName] = jVarLocalKidItemSelectIdValue;
+
+            return jVarLocalReturnObject;
+        };
+
+
+
+        let jFLocalKidWashSelectFunc = () => {
+            let jVarLocalReturnObject = {};
+            let jVarLocalKidWashSelectId = document.getElementById("KidWashSelectId");
+
+            let jVarLocalKidWashSelectIdValue = jVarLocalKidWashSelectId.value;
+            let jVarLocalKidWashSelectIdName = jVarLocalKidWashSelectId.name;
+
+            jVarLocalReturnObject[jVarLocalKidWashSelectIdName] = jVarLocalKidWashSelectIdValue;
+            return jVarLocalReturnObject;
+        };
+
+        let jFLocalKidPcsFunc = () => {
+            let jVarLocalReturnObject = {};
+            let jVarLocalKidPcsId = document.getElementById("KidPcsId");
+
+            let jVarLocalKidPcsIdValue = jVarLocalKidPcsId.value;
+            let jVarLocalKidPcsIdName = jVarLocalKidPcsId.name;
+
+            jVarLocalReturnObject[jVarLocalKidPcsIdName] = jVarLocalKidPcsIdValue;
+            return jVarLocalReturnObject;
+        };
+
+        let jFLocalKidRateFunc = () => {
+            let jVarLocalReturnObject = {};
+            let jVarLocalKidRateId = document.getElementById("KidRateId");
+
+            let jVarLocalKidRateIdValue = jVarLocalKidRateId.value;
+            let jVarLocalKidRateIdName = jVarLocalKidRateId.name;
+
+            jVarLocalReturnObject[jVarLocalKidRateIdName] = jVarLocalKidRateIdValue;
+
+            return jVarLocalReturnObject;
+        };
+
+        let jFLocalKidAddItemButtonFunc = () => {
+            let jVarLocalKidAddItemButtonId = document.getElementById("KidAddItemButtonId");
+            let localKidItemSelect=jFLocalKidItemSelectFunc();
+            let localKidWashSelect=jFLocalKidWashSelectFunc();
+            let localKidPcs=jFLocalKidPcsFunc();
+            let localKidRate=jFLocalKidRateFunc();
+
+            let jVarLocalReturnObject = {
+                ...localKidItemSelect,
+                ...localKidWashSelect,
+                ...localKidPcs,
+                ...localKidRate
+            };
+            
+            return jVarLocalReturnObject;
+        };
+
+        //Kid's tab funcs end
     </script>
 </body>
 
