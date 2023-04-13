@@ -38,7 +38,7 @@
                     <input type="text" class="form-control" name="CustomerCity" id="CustomerCityId">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" id="CustomerSaveButtonId" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </main>
@@ -121,7 +121,8 @@
             return jVarLocalReturnObject;
         };
 
-
+        let jVarLocalCustomerSaveButtonId = document.getElementById("CustomerSaveButtonId");
+        console.log("jVarLocalCustomerSaveButtonId : ", jVarLocalCustomerSaveButtonId);
     </script>
 </body>
 
