@@ -42,8 +42,33 @@
 
     <script>
         let jF1 = () => {
-            element = React.createElement('h1', {}, 'Hello React!')
-            ReactDOM.render(element, document.getElementById('react-app'));
+            kth = React.createElement('th', {
+                id: "k1",
+                className: 'greeting'
+            }, '#');
+
+            ktheadRow = React.createElement('tr', {
+                id: "k1",
+                className: 'greeting'
+            }, kth);
+
+            kthead = React.createElement('thead', {
+                id: "k1",
+                className: 'greeting'
+            }, ktheadRow);
+
+            ktbody = React.createElement('tbody', {
+                id: "k1",
+                className: 'greeting'
+            }, 'body!');
+
+            ktable = React.createElement('table', {
+                id: "k1",
+                className: 'greeting'
+            }, kthead, ktbody);
+
+
+            ReactDOM.render(ktable, document.getElementById('react-app'));
         };
 
         jF1();
