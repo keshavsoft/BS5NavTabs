@@ -43,7 +43,7 @@
         <div class="col text-center">CASH BILL</div>
       </div>
 
-      
+
 
       <div class="row">
         <div class="row">
@@ -74,7 +74,7 @@
             </tr>
             <tr>
               <th scope="col"></th>
-              <th scope="col">Disc%</th>
+              <th scope="col">GST%</th>
               <th scope="col">Discount</th>
               <th scope="col">G-Rate</th>
               <th scope="col"></th>
@@ -84,33 +84,51 @@
           <tbody>
             <tr>
               <th scope="row" id="Snoid">1</th>
-              <td id="QrCode">M-1</td>
-              <td id="ItemsDataList">Cotton Saree</td>
+              <td id="QrCode" colspan="2">M-1/Cotton Saree</td>
               <td id="RateId1" class="text-end">1500</td>
-              
-
             </tr>
             <tr>
               <th scope="row"></th>
-              <td id="DisPersantage">10%</td>
-              <td id="DisRate"  class="text-end">150</td>
-              <td id="GrossAmout"  class="text-end">1350</td>             
+              <td id="GstId">3%</td>
+              <td id="DisPersantage" class="text-end">10%-150</td>
+              <td id="GrossAmout" class="text-end">1350</td>
 
             </tr>
 
             <tr>
               <th scope="row" id="Snoid">2</th>
-              <td id="QrCode">M-2</td>
-              <td id="ItemsDataList">Cotton Saree</td>
-              <td id="RateId1"  class="text-end">1500</td>             
-              <td id="RateId1" class="text-end">1500</td>             
+              <td id="QrCode" colspan="2">M-2/Uppada Saree</td>
+              <td id="RateId1" class="text-end">15000</td>
             </tr>
             <tr>
               <th scope="row"></th>
-              <td id="DisPersantage"> 20%</td>
-              <td id="DisRate"  class="text-end">300</td>
-              <td id="GrossAmout"  class="text-end">1200</td>
-              
+              <td id="GstId">25%</td>
+              <td id="DisPersantage" class="text-end">5%-750</td>
+              <td id="GrossAmout" class="text-end">14250</td>
+            </tr>
+
+            <tr>
+              <th scope="row" id="Snoid">3</th>
+              <td id="QrCode" colspan="2">M-16/Uppada Saree</td>
+              <td id="RateId1" class="text-end">15000</td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td id="GstId">25%</td>
+              <td id="DisPersantage" class="text-end"></td>
+              <td id="GrossAmout" class="text-end">15000</td>
+            </tr>
+
+            <tr>
+              <th scope="row" id="Snoid">4</th>
+              <td id="QrCode" colspan="2">M-25/Cotton Saree</td>
+              <td id="RateId1" class="text-end">1500</td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td id="GstId">3%</td>
+              <td id="DisPersantage" class="text-end"></td>
+              <td id="GrossAmout" class="text-end">1500</td>
 
             </tr>
           </tbody>
@@ -118,41 +136,48 @@
 
         <div class="row">
           <div class="col-9 text-end">Gross Amount:</div>
-          <div class="col-3 text-end" id="PrintRateId">3000</div>
+          <div class="col-3 text-end" id="PrintRateId">33000</div>
         </div>
 
         <div class="row">
           <div class="col-9 text-end">Total Discount:</div>
-          <div class="col-3 text-end" id="PrintDiscountId">450</div>
+          <div class="col-3 text-end" id="PrintDiscountId">900</div>
         </div>
 
         <div class="row font-weight-bold">
           <div class="col-9 text-end">Net Amt:</div>
-          <div class="col-3 text-end " id="PrintNetAmountId">2550</div>
+          <div class="col-3 text-end " id="PrintNetAmountId">32100</div>
         </div>
 
         <table class="table">
           <thead class="thead-dark">
             <tr>
-              <th scope="col">#</th>
               <th scope="col">GST</th>
-              <th scope="col"></th>
+              <th scope="col">GSTAmount</th>
               <th scope="col">TotalAmount</th>
-
             </tr>
 
           </thead>
           <tbody>
             <tr>
-              <th scope="row" id="">1</th>
-              <td id="">5%</td>
-              <td id=""></td>
-              <td id="GrossAmout" class="text-end">2550</td>
-
+              <td id="">3%</td>
+              <td id="GrossAmout" class="text-end">83</td>
+              <td id="GrossAmout" class="text-end">2850</td>
+            </tr>
+            <tr>
+              <td id="">25%</td>
+              <td id="GrossAmout" class="text-end">5850</td>
+              <td id="GrossAmout" class="text-end">29250</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>Totals</th>
+              <th class="text-end">5933</th>
+              <th class="text-end">32100</th>
 
             </tr>
-
-          </tbody>
+          </tfoot>
         </table>
 
 
