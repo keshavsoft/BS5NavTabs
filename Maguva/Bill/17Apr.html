@@ -1,4 +1,4 @@
-  <!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -44,38 +44,39 @@
       </div>
 
 
+
       <div class="row">
         <div class="row">
-          <div class="col-3">CustomerName:</div>
-          <div class="col-9" id="CustomerNameId">Ram Prasad</div>
+          <div class="col-5">CustomerName:</div>
+          <div class="col-7" id="CustomerNameId">Ram Prasad</div>
         </div>
         <div class="row">
-          <div class="col-3">PhoneNumber:</div>
-          <div class="col-9" id="ContactNumberId">1234567891</div>
+          <div class="col-5">PhoneNumber:</div>
+          <div class="col-7" id="ContactNumberId">1234567891</div>
         </div>
         <div class="row">
-          <div class="col-3">BillNumber:</div>
-          <div class="col-9" id="BillNumberId">1</div>
+          <div class="col-5">BillNumber:</div>
+          <div class="col-7" id="BillNumberId">1</div>
         </div>
         <div class="row">
-          <div class="col-3">Date:</div>
-          <div class="col-9" id="DateId">2023-04-17</div>
+          <div class="col-5">Date:</div>
+          <div class="col-7" id="DateId">2023-04-17</div>
         </div>
 
         <table class="table">
           <thead class="thead-dark">
             <tr>
-              <th scope="col">SNO</th>
-              <th scope="col">QR-Code</th>
+              <th scope="col">#</th>
+              <th scope="col">Code</th>
               <th scope="col">ItemName</th>
-              <th scope="col">Disc%</th>
-              <th scope="col">G Rate</th>
+              <th scope="col">Rate</th>
+              <th scope="col"></th>
             </tr>
             <tr>
               <th scope="col"></th>
-              <th scope="col"></th>
+              <th scope="col">GST%</th>
               <th scope="col">Discount</th>
-              <th scope="col">Rate</th>
+              <th scope="col">G-Rate</th>
               <th scope="col"></th>
 
             </tr>
@@ -83,79 +84,100 @@
           <tbody>
             <tr>
               <th scope="row" id="Snoid">1</th>
-              <td id="QrCode">M-1</td>
-              <td id="ItemsDataList">Cotton Saree</td>
-              <td id="DisPersantage">83%</td>
-              <td id="GrossAmout">250</td>
-
+              <td id="QrCode" colspan="2">M-1/Cotton Saree</td>
+              <td id="RateId1" class="text-end">1500</td>
             </tr>
             <tr>
               <th scope="row"></th>
-              <td></td>
-              <td id="DisRate">1250</td>
-              <td id="RateId1">1500</td>
+              <td id="GstId">3%</td>
+              <td id="DisPersantage" class="text-end">10%-150</td>
+              <td id="GrossAmout" class="text-end">1350</td>
 
             </tr>
 
             <tr>
               <th scope="row" id="Snoid">2</th>
-              <td id="QrCode">M-2</td>
-              <td id="ItemsDataList">Cotton Saree</td>
-              <td id="DisPersantage">15%</td>
-              <td id="GrossAmout">1275</td>
-
+              <td id="QrCode" colspan="2">M-2/Uppada Saree</td>
+              <td id="RateId1" class="text-end">15000</td>
             </tr>
             <tr>
               <th scope="row"></th>
-              <td></td>
-              <td id="DisRate">225</td>
-              <td id="RateId1">1500</td>
+              <td id="GstId">25%</td>
+              <td id="DisPersantage" class="text-end">5%-750</td>
+              <td id="GrossAmout" class="text-end">14250</td>
+            </tr>
+
+            <tr>
+              <th scope="row" id="Snoid">3</th>
+              <td id="QrCode" colspan="2">M-16/Uppada Saree</td>
+              <td id="RateId1" class="text-end">15000</td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td id="GstId">25%</td>
+              <td id="DisPersantage" class="text-end"></td>
+              <td id="GrossAmout" class="text-end">15000</td>
+            </tr>
+
+            <tr>
+              <th scope="row" id="Snoid">4</th>
+              <td id="QrCode" colspan="2">M-25/Cotton Saree</td>
+              <td id="RateId1" class="text-end">1500</td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td id="GstId">3%</td>
+              <td id="DisPersantage" class="text-end"></td>
+              <td id="GrossAmout" class="text-end">1500</td>
 
             </tr>
           </tbody>
         </table>
 
         <div class="row">
-          <div class="col"></div>
-          <div class="col"></div>
-          <div class="col">
-              <div class="row">
-                  <div class="col-6 text-end">Gross Amount:</div>
-                  <div class="col-6 text-end" id="PrintRateId">3000</div>
-              </div>
-              <div class="row">
-                  <div class="col-6 text-end">Total Discount:</div>
-                  <div class="col-6 text-end" id="PrintDiscountId">1475</div>
-              </div>
-              <div class="row font-weight-bold">
-                  <div class="col-6 text-end">Net Amt:</div>
-                  <div class="col-6 text-end " id="PrintNetAmountId">1525</div>
-              </div>
-          </div>
-      </div>
+          <div class="col-9 text-end">Gross Amount:</div>
+          <div class="col-3 text-end" id="PrintRateId">33000</div>
+        </div>
+
+        <div class="row">
+          <div class="col-9 text-end">Total Discount:</div>
+          <div class="col-3 text-end" id="PrintDiscountId">900</div>
+        </div>
+
+        <div class="row font-weight-bold">
+          <div class="col-9 text-end">Net Amt:</div>
+          <div class="col-3 text-end " id="PrintNetAmountId">32100</div>
+        </div>
 
         <table class="table">
           <thead class="thead-dark">
             <tr>
-              <th scope="col">SNO</th>
               <th scope="col">GST</th>
-              <th scope="col"></th>
+              <th scope="col">GSTAmount</th>
               <th scope="col">TotalAmount</th>
-
             </tr>
 
           </thead>
           <tbody>
             <tr>
-              <th scope="row" id="">1</th>
-              <td id="">5%</td>
-              <td id=""></td>
-              <td id="GrossAmout">1525</td>
-
+              <td id="">3%</td>
+              <td id="GrossAmout" class="text-end">83</td>
+              <td id="GrossAmout" class="text-end">2850</td>
+            </tr>
+            <tr>
+              <td id="">25%</td>
+              <td id="GrossAmout" class="text-end">5850</td>
+              <td id="GrossAmout" class="text-end">29250</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>Totals</th>
+              <th class="text-end">5933</th>
+              <th class="text-end">32100</th>
 
             </tr>
-
-          </tbody>
+          </tfoot>
         </table>
 
 
