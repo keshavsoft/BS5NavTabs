@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <header>
+        <!-- place navbar here -->
+    </header>
+    <main>
+
+        <input type="button" value="Print" onclick="printPageArea('kCont1')">
+
+        <div class="container" id="kCont1">
+            <div class="row ">
+                <div class="col">MAGUVA</div>
+            </div>
+
+            <div class="row">
+                <div class="col">50-50-30/12/2, vandana plaza</div>
+            </div>
+            <div class="row">
+                <div class="col">GURUDWARA,VISHAKAPATNAM</div>
+            </div>
+            <div class="row">
+                <div class="col">GSTIN:37ACJPL9300K2ZB,Ph:08912796666</div>
+            </div>
+            <div class="row">
+                <div class="col">State Code:37</div>
+            </div>
+            <div class="row">
+                <div class="col text-center">TAX INVOICE</div>
+            </div>
+            <div class="row">
+                <div class="col text-center">CASH BILL</div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-5">CustomerName:</div>
+                <div class="col-7" id="CustomerNameId">Ram Prasad</div>
+            </div>
+            <div class="row">
+                <div class="col-5">PhoneNumber:</div>
+                <div class="col-7" id="ContactNumberId">1234567891</div>
+            </div>
+            <div class="row">
+                <div class="col-5">BillNumber:</div>
+                <div class="col-7" id="BillNumberId">1</div>
+            </div>
+            <div class="row">
+                <div class="col-5">Date:</div>
+                <div class="col-7" id="DateId">2023-04-17</div>
+            </div>
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Code/ItemName</th>
+                        <th scope="col"></th>
+                        <th scope="col">Rate</th>
+                        <th scope="col"></th>
+                    </tr>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">GST%</th>
+                        <th scope="col">Discount</th>
+                        <th scope="col">G-Rate</th>
+                        <th scope="col"></th>
+
+                    </tr>
+                </thead>
+                <tbody id="ItemsTableBodyId">
+
+                </tbody>
+            </table>
+
+            <div class="row">
+                <div class="col-9 text-end">Gross Amount:</div>
+                <div class="col-3 text-end" id="TotalAmountId">33000</div>
+            </div>
+
+            <div class="row">
+                <div class="col-9 text-end">Total Discount:</div>
+                <div class="col-3 text-end" id="TotalDiscountId">900</div>
+            </div>
+
+            <div class="row font-weight-bold">
+                <div class="col-9 text-end">Net Amt:</div>
+                <div class="col-3 text-end " id="TotalNettAmountId">32100</div>
+            </div>
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">GST</th>
+                        <th scope="col">GSTAmount</th>
+                        <th scope="col">TotalAmount</th>
+                    </tr>
+
+                </thead>
+                <tbody id="GstTableBodyId">
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Totals</th>
+                        <th class="text-end" id="TotalTaxAmountId"></th>
+                        <th class="text-end" id="TotalGSTAmountId"></th>
+                    </tr>
+                </tfoot>
+            </table>
+            <div class="row">
+                <div class="col-lg-5 text-left">
+                    <h5>Terms And Conditions</h5>
+                    <p class="text-secondary text-sm">Exchange Time Between 1-4PM</p>
+                    <p class="text-secondary text-sm">Goods Will Be Exchaged WithIn
+                        7Days,Rchase
+                        Date,
+                        No Colour Gurantee
+                    </p>
+                    <h6 class="text-dark mb-0">
+                        *Thank You For Shopping With Us*
+                    </h6>
+                </div>
+                <div class="col-lg-7 text-md-end mt-md-0 mt-3">
+                    <button class="btn btn-primary mt-lg-7 mb-0 d-print-none" onClick="window.print()" type="button"
+                        name="button">Print</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+
+    <script>
+        const jFPrint = () => {
+            var winPrint = window.open('', '', 'left=0,top=0,width=800,height=600,toolbar=0,scrollbars=0,status=0');
+            winPrint.document.write('<title>Print  Report</title><br /><br /> Hellow World');
+            winPrint.document.close();
+            winPrint.focus();
+            winPrint.print();
+            //  winPrint.close();
+        };
+
+        function printPageArea(areaID) {
+            var printContent = document.getElementById(areaID).innerHTML;
+            var originalContent = document.body.innerHTML;
+            document.body.innerHTML = printContent;
+            window.print();
+            document.body.innerHTML = originalContent;
+        }
+
+    </script>
+</body>
+
+</html>
+
+<template id="BillTemplateId">
+    <!doctype html>
+    <html lang="en">
+
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    </head>
+
+    <body>
+        <header>
+            <!-- place navbar here -->
+        </header>
+        <main>
+            <div class="container">
+                <div class="row ">
+                    <div class="col">MAGUVA</div>
+                </div>
+
+                <div class="row">
+                    <div class="col">50-50-30/12/2, vandana plaza</div>
+                </div>
+                <div class="row">
+                    <div class="col">GURUDWARA,VISHAKAPATNAM</div>
+                </div>
+                <div class="row">
+                    <div class="col">GSTIN:37ACJPL9300K2ZB,Ph:08912796666</div>
+                </div>
+                <div class="row">
+                    <div class="col">State Code:37</div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">TAX INVOICE</div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">CASH BILL</div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-5">CustomerName:</div>
+                    <div class="col-7" id="CustomerNameId">Ram Prasad</div>
+                </div>
+                <div class="row">
+                    <div class="col-5">PhoneNumber:</div>
+                    <div class="col-7" id="ContactNumberId">1234567891</div>
+                </div>
+                <div class="row">
+                    <div class="col-5">BillNumber:</div>
+                    <div class="col-7" id="BillNumberId">1</div>
+                </div>
+                <div class="row">
+                    <div class="col-5">Date:</div>
+                    <div class="col-7" id="DateId">2023-04-17</div>
+                </div>
+
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Code/ItemName</th>
+                            <th scope="col"></th>
+                            <th scope="col">Rate</th>
+                            <th scope="col"></th>
+                        </tr>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">GST%</th>
+                            <th scope="col">Discount</th>
+                            <th scope="col">G-Rate</th>
+                            <th scope="col"></th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="ItemsTableBodyId">
+
+                    </tbody>
+                </table>
+
+                <div class="row">
+                    <div class="col-9 text-end">Gross Amount:</div>
+                    <div class="col-3 text-end" id="TotalAmountId">33000</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-9 text-end">Total Discount:</div>
+                    <div class="col-3 text-end" id="TotalDiscountId">900</div>
+                </div>
+
+                <div class="row font-weight-bold">
+                    <div class="col-9 text-end">Net Amt:</div>
+                    <div class="col-3 text-end " id="TotalNettAmountId">32100</div>
+                </div>
+
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">GST</th>
+                            <th scope="col">GSTAmount</th>
+                            <th scope="col">TotalAmount</th>
+                        </tr>
+
+                    </thead>
+                    <tbody id="GstTableBodyId">
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Totals</th>
+                            <th class="text-end" id="TotalTaxAmountId"></th>
+                            <th class="text-end" id="TotalGSTAmountId"></th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <div class="row">
+                    <div class="col-lg-5 text-left">
+                        <h5>Terms And Conditions</h5>
+                        <p class="text-secondary text-sm">Exchange Time Between 1-4PM</p>
+                        <p class="text-secondary text-sm">Goods Will Be Exchaged WithIn
+                            7Days,Rchase
+                            Date,
+                            No Colour Gurantee
+                        </p>
+                        <h6 class="text-dark mb-0">
+                            *Thank You For Shopping With Us*
+                        </h6>
+                    </div>
+                    <div class="col-lg-7 text-md-end mt-md-0 mt-3">
+                        <button class="btn btn-primary mt-lg-7 mb-0 d-print-none" onClick="window.print()" type="button"
+                            name="button">Print</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+            </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+            integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+            </script>
+    </body>
+
+    </html>
+</template>
