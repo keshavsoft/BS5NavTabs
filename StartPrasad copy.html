@@ -59,7 +59,7 @@
                                 <label for="CustomerCityId" class="form-label">CustomerCity</label>
                                 <input type="password" class="form-control" id="CustomerCityId">
                             </div>
-
+                           
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
@@ -116,16 +116,6 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col"><input class="btn btn-primary" type="button" value="Shirt">
-                                            </div>
-                                            <div class="col"><input class="btn btn-primary" type="button" value="pant">
-                                            </div>
-                                            <div class="col"><input class="btn btn-primary" type="button" value="Jeans">
-                                            </div>
-                                            <div class="col"><input class="btn btn-primary" type="button" value="Suit">
-                                            </div>
-                                        </div>
-                                        <div class="row">
                                             <!--WashselectId start-->
                                             <div class="col-md-3">
                                                 <div class="form-floating">
@@ -155,10 +145,10 @@
                                         </div>
 
                                         <div class="row">
-
-                                        </div>
-                                        <div class="row">
-
+                                            <div class="col"><input class="btn btn-primary" type="button" value="Shirt"></div>
+                                            <div class="col"><input class="btn btn-primary" type="button" value="pant"></div>
+                                            <div class="col"><input class="btn btn-primary" type="button" value="Jeans"></div>
+                                            <div class="col"><input class="btn btn-primary" type="button" value="Suit"></div>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel"
@@ -173,89 +163,52 @@
                             </div>
                         </div>
 
-                        <p>
-                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
-                                aria-expanded="false" aria-controls="collapseExample">
-                                Add-Ons
-                            </a>
-                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                Button with data-bs-target
-                            </button>
-                        </p>
-                        <div class="collapse" id="collapseExample">
 
-                            <div class="row mt-2">
-                                <div class="col-8">
-
-                                    <div class="card border-success">
-                                        <div class="card-header">
-
-                                            <div class="row mt-3">
-                                                <div class="col-md-6">
-                                                    <div class="form-floating">
-                                                        <select class="form-select text-success" id="AddOnServiceId"
-                                                            aria-label="Floating label select example">
-                                                            <option selected>Open this select menu</option>
-                                                            <option value="1">Stains</option>
-                                                            <option value="2">Heavy Stains</option>
-                                                            <option value="3">Starch</option>
-                                                            <option value="4">Pack</option>
-                                                            <option value="5">Rolling</option>
-                                                            <option value="6">Polishing</option>
-                                                            <option value="7">Pressing</option>
-                                                        </select>
-                                                        <label for="AddOnServiceId">Add-On Service</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <div class="form-floating mb-3">
-                                                        <input type="number" class="form-control" id="AddOnRateId"
-                                                            placeholder="Enter Rate">
-                                                        <label for="floatingInput">Rate</label>
-                                                    </div>
-
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <div class="form-floating mb-3">
-                                                        <input type="number" class="form-control" id="AddOnRateId"
-                                                            placeholder="Enter Rate">
-                                                        <label for="floatingInput">ImageRef</label>
-                                                    </div>
-
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <button type="button" class="btn btn-success"
-                                                        id="AddOnInsertButtonId">Insert</button>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="card-body">
-                                            <table class="table" id="AddOnTableId">
-                                                <thead class="table-dark">
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Add-On Service</th>
-                                                        <th scope="col">Rate</th>
-                                                        <th scope="col">Options</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="AddOnTableBodyId">
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="col-4">
-                                    <img src="./Img1.jpg" alt="" height="100px" width="100px">
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-select text-success" id="AddOnServiceId"
+                                        aria-label="Floating label select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">Stains</option>
+                                        <option value="2">Heavy Stains</option>
+                                        <option value="3">Starch</option>
+                                        <option value="4">Pack</option>
+                                        <option value="5">Rolling</option>
+                                        <option value="6">Polishing</option>
+                                        <option value="7">Pressing</option>
+                                    </select>
+                                    <label for="AddOnServiceId">Add-On Service</label>
                                 </div>
                             </div>
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="AddOnRateId" placeholder="Enter Rate">
+                                    <label for="floatingInput">Rate</label>
+                                </div>
 
+                            </div>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-success" id="AddOnInsertButtonId">Insert</button>
+                            </div>
                         </div>
 
+                        <div class="card border-success">
+                            <div class="card-body">
+                                <table class="table" id="AddOnTableId">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Add-On Service</th>
+                                            <th scope="col">Rate</th>
+                                            <th scope="col">Options</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="AddOnTableBodyId">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel"
                         aria-labelledby="v-pills-disabled-tab" tabindex="0">
