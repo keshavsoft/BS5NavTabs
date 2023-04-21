@@ -19,7 +19,7 @@
     </header>
     <main>
         <div class="container">
-            <div class="d-flex align-items-start mt-3 row">
+            <div class="d-flex align-items-start mt-1 row">
                 <div class="nav flex-column nav-pills me-3 col-2" id="v-pills-tab" role="tablist"
                     aria-orientation="vertical">
                     <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
@@ -118,7 +118,7 @@
 
                                             <div class="col"><input class="btn btn-primary" type="button" value="Shirt">
                                             </div>
-                                            <div class="col"><input class="btn btn-primary" type="button" value="pant">
+                                            <div class="col"><input class="btn btn-primary" type="button" value="Pant">
                                             </div>
                                             <div class="col"><input class="btn btn-primary" type="button" value="Jeans">
                                             </div>
@@ -131,22 +131,25 @@
                                                 <div class="form-floating">
                                                     <select class="form-select" id="WashSelectId"
                                                         aria-label="Floating label select example">
-                                                        <option selected>Open this select menu</option>
-                                                        <option value="1">DryWash</option>
+                                                        <option >Open this select menu</option>
+                                                        <option value="1" selected>DryWash</option>
                                                         <option value="2">PetrolWash</option>
-
                                                     </select>
                                                     <label for="WashSelectId">Select Wash</label>
                                                 </div>
                                             </div>
                                             <!--WashselectId end-->
                                             <div class="col-md-2">
-                                                <label for="inputPassword4" class="form-label">Pcs</label>
-                                                <input type="number" class="form-control" id="PcsId">
+                                                <div class="form-floating">
+                                                    <input type="number" class="form-control" id="PcsId" value="1">
+                                                    <label for="PcsId">Pcs</label>
+                                                </div>
                                             </div>
                                             <div class="col-md-2">
-                                                <label for="inputPassword4" class="form-label">Rate</label>
-                                                <input type="number" class="form-control" id="RateId">
+                                                <div class="form-floating">
+                                                    <input type="number" class="form-control" id="RateId">
+                                                    <label for="RateId">Pcs</label>
+                                                </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <button type="button" class="btn btn-success" id="AddItemButtonId">Add
@@ -173,22 +176,33 @@
                             </div>
                         </div>
 
-                        <p>
-                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
-                                aria-expanded="false" aria-controls="collapseExample">
-                                Add-Ons
-                            </a>
-                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                Button with data-bs-target
-                            </button>
-                        </p>
-                        <div class="collapse" id="collapseExample">
+                        <div class="row">
+                            <div class="col">
+                                <a class="btn btn-primary" data-bs-toggle="collapse" href="#AddOnCollapseId"
+                                    role="button" aria-expanded="false" aria-controls="AddOnCollapseId">
+                                    Show Add-Ons
+                                </a>
+                            </div>
+                            <div class="col">
 
-                            <div class="row mt-2">
-                                <div class="col-8">
+                                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#ImageCollapseId" aria-expanded="false"
+                                    aria-controls="ImageCollapseId">
+                                    Image
+                                </button>
+                            </div>
+                            <div class="col">
+                                <a class="btn btn-primary" data-bs-toggle="collapse" href="#AddOnCollapseId"
+                                    role="button" aria-expanded="false" aria-controls="AddOnCollapseId">
+                                    Show Items
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-8">
 
-                                    <div class="card border-success">
+                                <div class="collapse" id="AddOnCollapseId">
+                                    <div class="card border-success" id="AddOnCardId">
                                         <div class="card-header">
 
                                             <div class="row mt-3">
@@ -247,14 +261,18 @@
                                         </div>
                                     </div>
 
+
                                 </div>
 
-                                <div class="col-4">
-                                    <img src="./Img1.jpg" alt="" height="100px" width="100px">
-                                </div>
                             </div>
 
+                            <div class="col-4">
+                                <div class="collapse" id="ImageCollapseId">
+                                    <img id="ImageId" src="./Img1.jpg" alt="" height="100px" width="100px">
+                                </div>
+                            </div>
                         </div>
+
 
                     </div>
                     <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel"

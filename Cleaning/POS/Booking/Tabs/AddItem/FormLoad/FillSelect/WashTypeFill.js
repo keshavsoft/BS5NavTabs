@@ -1,13 +1,6 @@
 let StartFunc = () => {
     let jVarLocalFromLocalStorage = localStorage.getItem("WashTypes");
 
-    // let jVarLocalWomanWashSelectId = document.getElementById("WomanWashSelectId");
-
-    // jFLocalAddToSelect({
-    //     inData: JSON.parse(jVarLocalFromLocalStorage),
-    //     inHtmlSelect: jVarLocalWomanWashSelectId
-    // });
-
     jFLocalMenSelectFill({ inWashTypeData: JSON.parse(jVarLocalFromLocalStorage) });
     jFLocalWomenSelectFill({ inWashTypeData: JSON.parse(jVarLocalFromLocalStorage) });
 };
@@ -31,7 +24,7 @@ let jFLocalMenSelectFill = ({ inWashTypeData }) => {
 };
 
 let jFLocalAddToSelect = ({ inData, inHtmlSelect }) => {
-    inHtmlSelect.options.clear;
+    inHtmlSelect.innerHTML = "";
 
     inData.forEach((element, LoopIndex) => {
         var car = new Option(element, LoopIndex);

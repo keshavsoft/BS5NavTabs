@@ -19,7 +19,7 @@
     </header>
     <main>
         <div class="container">
-            <!--Card Body start-->
+
             <div class="card border-primary">
                 <div class="card-body">
 
@@ -45,175 +45,183 @@
                                 aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
                         </li>
                     </ul>
-                    <!--All tab start-->
                     <div class="tab-content" id="myTabContent">
-                        <!--Home tab for man start-->
                         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
                             aria-labelledby="home-tab" tabindex="0">
                             <div class="row mt-3">
                                 <div class="col-md-3">
                                     <div class="form-floating">
-                                        <select class="form-select" id="ItemSelectId" name="ItemSelected"
+                                        <select class="form-select" id="ItemSelectId"
                                             aria-label="Floating label select example">
                                             <option selected>Open this select menu</option>
-                                            <option value="Shirt">Shirt</option>
-                                            <option value="Pant">Pant</option>
-                                            <option value="Jeans">Jeans</option>
-                                            <option value="Trouser">Trouser</option>
-                                            <option value="Kurta">Kurta</option>
-                                            <option value="Lungi">Lungi</option>
-                                            <option value="Inners">Inners</option>
-                                            <option value="Shorts">Shorts</option>
-                                            <option value="Longs">Longs</option>
-
+                                            <option value="1">Shirt</option>
+                                            <option value="2">Pant</option>
+                                            <option value="3">Jeans</option>
+                                            <option value="4">Trouser</option>
+                                            <option value="5">Kurta</option>
+                                            <option value="6">Lungi</option>
+                                            <option value="7">Inners</option>
+                                            <option value="8">Shorts</option>
+                                            <option value="9">Longs</option>
                                         </select>
                                         <label for="ItemSelectId">Select Item</label>
                                     </div>
                                 </div>
 
-                                <!--WashselectId start-->
+                                <div class="col"><input class="btn btn-primary" type="button" value="Shirt">
+                                </div>
+                                <div class="col"><input class="btn btn-primary" type="button" value="Pant">
+                                </div>
+                                <div class="col"><input class="btn btn-primary" type="button" value="Jeans">
+                                </div>
+                                <div class="col"><input class="btn btn-primary" type="button" value="Suit">
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-floating">
-                                        <select class="form-select" id="WashSelectId" name="WashSelected"
+                                        <select class="form-select" id="WashSelectId"
                                             aria-label="Floating label select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="DryWash">DryWash</option>
-                                            <option value="PetrolWash">PetrolWash</option>
-
+                                            <option>Open this select menu</option>
+                                            <option value="1" selected>DryWash</option>
+                                            <option value="2">PetrolWash</option>
                                         </select>
                                         <label for="WashSelectId">Select Wash</label>
                                     </div>
                                 </div>
-                                <!--WashselectId end-->
                                 <div class="col-md-2">
-                                    <label for="Pcs" class="form-label">Pcs</label>
-                                    <input type="number" class="form-control" id="PcsId" name="Pcs">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="PcsId" value="1">
+                                        <label for="PcsId">Pcs</label>
+                                    </div>
                                 </div>
                                 <div class="col-md-2">
-                                    <label for="Rate" class="form-label">Rate</label>
-                                    <input type="number" class="form-control" id="RateId" name="Rate">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="RateId">
+                                        <label for="RateId">Pcs</label>
+                                    </div>
                                 </div>
                                 <div class="col-md-2">
-                                    <button type="button" class="btn btn-success" id="AddItemButtonId"
-                                        for="AddItemButtonId" name="AddItemButton">Add
+                                    <button type="button" class="btn btn-success" id="AddItemButtonId">Add
                                         Item</button>
                                 </div>
                             </div>
+
+                            <div class="row">
+
+                            </div>
+                            <div class="row">
+
+                            </div>
                         </div>
-                        <!--Home tab for man end-->
-                        <!--Woman's tab start-->
                         <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
                             tabindex="0">
-
-                            <div class="row mt-3">
-                                <div class="col-md-3">
-                                    <div class="form-floating">
-                                        <select class="form-select" id="WomanItemSelectId" name="WomanItemSelected"
-                                            aria-label="Floating label select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="Saree">Saree</option>
-                                            <option value="Half-Saree">Half-Saree</option>
-                                            <option value="Culoote dress">Culoote dress</option>
-                                            <option value="Wrap around dress">Wrap around dress</option>
-                                            <option value="Bubble dress">Bubble dress</option>
-                                            <option value="Tutu">Tutu</option>
-                                            <option value="Polo dress">Polo dress</option>
-                                            <option value="Shirtdress">Shirtdress</option>
-
-                                        </select>
-                                        <label for="WomanItemSelectId">Select Item</label>
-                                    </div>
-                                </div>
-
-                                <!--WomanWashSelectId start-->
-                                <div class="col-md-3">
-                                    <div class="form-floating">
-                                        <select class="form-select" id="WomanWashSelectId" name="WomanWashSelected"
-                                            aria-label="Floating label select example">
-                                            <option selected>Open this select menu</option>
-
-                                        </select>
-                                        <label for="WomanWashSelectId">Select Wash</label>
-                                    </div>
-                                </div>
-                                <!--WomanWashSelectId end-->
-                                <div class="col-md-2">
-                                    <label for="Pcs" class="form-label">Pcs</label>
-                                    <input type="number" class="form-control" id="WomanPcsId" name="WomanPcs">
-                                </div>
-                                <div class="col-md-2">
-                                    <label for="Rate" class="form-label">Rate</label>
-                                    <input type="number" class="form-control" id="WomanRateId" name="WomanRate">
-                                </div>
-                                <div class="col-md-2">
-                                    <button type="button" class="btn btn-success" id="WomanAddItemButtonId"
-                                        for="WomanAddItemButtonId" name="WomanAddItemButton">Add
-                                        Item</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Woman's tab end-->
-                        <!--kid's tab start-->
+                            This is profile</div>
                         <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
                             tabindex="0">
-
-                            <div class="row mt-3">
-                                <div class="col-md-3">
-                                    <div class="form-floating">
-                                        <select class="form-select" id="KidItemSelectId" name="KidItemSelected"
-                                            aria-label="Floating label select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="LongCoat">LongCoat</option>
-                                            <option value="Uniform">Uniform</option>
-                                            <option value="TankTop">TankTop</option>
-                                            <option value="T-shirts">T-shirts</option>
-                                            <option value="Dress">Dress</option>
-                                            <option value="DenimDress">DenimDress</option>
-                                            <option value="Maxi">Maxi</option>
-                                            <option value="Leggi">Leggi</option>
-
-                                        </select>
-                                        <label for="KidItemSelectId">Select Item</label>
-                                    </div>
-                                </div>
-
-                                <!--WashselectId start-->
-                                <div class="col-md-3">
-                                    <div class="form-floating">
-                                        <select class="form-select" id="KidWashSelectId" name="KidWashSelected"
-                                            aria-label="Floating label select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="DryWash">DryWash</option>
-                                            <option value="PetrolWash">PetrolWash</option>
-
-                                        </select>
-                                        <label for="KidWashSelectId">Select Wash</label>
-                                    </div>
-                                </div>
-                                <!--WashselectId end-->
-                                <div class="col-md-2">
-                                    <label for="Pcs" class="form-label">Pcs</label>
-                                    <input type="number" class="form-control" id="KidPcsId" name="KidPcs">
-                                </div>
-                                <div class="col-md-2">
-                                    <label for="Rate" class="form-label">Rate</label>
-                                    <input type="number" class="form-control" id="KidRateId" name="KidRate">
-                                </div>
-                                <div class="col-md-2">
-                                    <button type="button" class="btn btn-success" id="KidAddItemButtonId"
-                                        for="KidAddItemButtonId" name="KidAddItemButton">Add
-                                        Item</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!--kid's tab end-->
+                            ...</div>
                         <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
                             tabindex="0">...</div>
                     </div>
-                    <!--All tab end-->
                 </div>
             </div>
-            <!--Card Body end-->
+
+            <div class="row">
+                <div class="col">
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#AddOnCollapseId" role="button"
+                        aria-expanded="false" aria-controls="AddOnCollapseId">
+                        Show Add-Ons
+                    </a>
+                </div>
+                <div class="col">
+
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#ImageCollapseId" aria-expanded="false" aria-controls="ImageCollapseId">
+                        Image
+                    </button>
+                </div>
+                <div class="col">
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#AddOnCollapseId" role="button"
+                        aria-expanded="false" aria-controls="AddOnCollapseId">
+                        Show Items
+                    </a>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-8">
+
+                    <div class="collapse" id="AddOnCollapseId">
+                        <div class="card border-success" id="AddOnCardId">
+                            <div class="card-header">
+
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <select class="form-select text-success" id="AddOnServiceId"
+                                                aria-label="Floating label select example">
+                                                <option selected>Open this select menu</option>
+                                                <option value="1">Stains</option>
+                                                <option value="2">Heavy Stains</option>
+                                                <option value="3">Starch</option>
+                                                <option value="4">Pack</option>
+                                                <option value="5">Rolling</option>
+                                                <option value="6">Polishing</option>
+                                                <option value="7">Pressing</option>
+                                            </select>
+                                            <label for="AddOnServiceId">Add-On Service</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-floating mb-3">
+                                            <input type="number" class="form-control" id="AddOnRateId"
+                                                placeholder="Enter Rate">
+                                            <label for="floatingInput">Rate</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-floating mb-3">
+                                            <input type="number" class="form-control" id="AddOnRateId"
+                                                placeholder="Enter Rate">
+                                            <label for="floatingInput">ImageRef</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="button" class="btn btn-success"
+                                            id="AddOnInsertButtonId">Insert</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="card-body">
+                                <table class="table" id="AddOnTableId">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Add-On Service</th>
+                                            <th scope="col">Rate</th>
+                                            <th scope="col">Options</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="AddOnTableBodyId">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="col-4">
+                    <div class="collapse" id="ImageCollapseId">
+                        <img id="ImageId" src="./Img1.jpg" alt="" height="100px" width="100px">
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
     <footer>
@@ -246,17 +254,6 @@
         };
 
 
-
-        let jFLocalWashSelectFunc = () => {
-            let jVarLocalReturnObject = {};
-            let jVarLocalWashSelectId = document.getElementById("WashSelectId");
-
-            let jVarLocalWashSelectIdValue = jVarLocalWashSelectId.value;
-            let jVarLocalWashSelectIdName = jVarLocalWashSelectId.name;
-
-            jVarLocalReturnObject[jVarLocalWashSelectIdName] = jVarLocalWashSelectIdValue;
-            return jVarLocalReturnObject;
-        };
 
         let jFLocalPcsFunc = () => {
             let jVarLocalReturnObject = {};
@@ -316,18 +313,6 @@
         };
 
 
-
-        let jFLocalWomanWashSelectFunc = () => {
-            let jVarLocalReturnObject = {};
-            let jVarLocalWomanWashSelectId = document.getElementById("WomanWashSelectId");
-
-            let jVarLocalWomanWashSelectIdValue = jVarLocalWomanWashSelectId.value;
-            let jVarLocalWomanWashSelectIdName = jVarLocalWomanWashSelectId.name;
-
-            jVarLocalReturnObject[jVarLocalWomanWashSelectIdName] = jVarLocalWomanWashSelectIdValue;
-            return jVarLocalReturnObject;
-        };
-
         let jFLocalWomanPcsFunc = () => {
             let jVarLocalReturnObject = {};
             let jVarLocalWomanPcsId = document.getElementById("WomanPcsId");
@@ -385,41 +370,6 @@
             return jVarLocalReturnObject;
         };
 
-
-
-        let jFLocalKidWashSelectFunc = () => {
-            let jVarLocalReturnObject = {};
-            let jVarLocalKidWashSelectId = document.getElementById("KidWashSelectId");
-
-            let jVarLocalKidWashSelectIdValue = jVarLocalKidWashSelectId.value;
-            let jVarLocalKidWashSelectIdName = jVarLocalKidWashSelectId.name;
-
-            jVarLocalReturnObject[jVarLocalKidWashSelectIdName] = jVarLocalKidWashSelectIdValue;
-            return jVarLocalReturnObject;
-        };
-
-        let jFLocalKidPcsFunc = () => {
-            let jVarLocalReturnObject = {};
-            let jVarLocalKidPcsId = document.getElementById("KidPcsId");
-
-            let jVarLocalKidPcsIdValue = jVarLocalKidPcsId.value;
-            let jVarLocalKidPcsIdName = jVarLocalKidPcsId.name;
-
-            jVarLocalReturnObject[jVarLocalKidPcsIdName] = jVarLocalKidPcsIdValue;
-            return jVarLocalReturnObject;
-        };
-
-        let jFLocalKidRateFunc = () => {
-            let jVarLocalReturnObject = {};
-            let jVarLocalKidRateId = document.getElementById("KidRateId");
-
-            let jVarLocalKidRateIdValue = jVarLocalKidRateId.value;
-            let jVarLocalKidRateIdName = jVarLocalKidRateId.name;
-
-            jVarLocalReturnObject[jVarLocalKidRateIdName] = jVarLocalKidRateIdValue;
-
-            return jVarLocalReturnObject;
-        };
 
         let jFLocalKidAddItemButtonFunc = () => {
             let jVarLocalKidAddItemButtonId = document.getElementById("KidAddItemButtonId");
