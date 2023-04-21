@@ -1,0 +1,20 @@
+[
+    {
+        "pk": 1,
+        "ItemName": "Shirt",
+        "DryWashRate": 60,
+        "Pcs": 200
+    },
+    {
+        "pk": 16,
+        "ItemName": "Pant",
+        "DryWashRate": 70,
+        "Pcs": 300
+    },
+    {
+        "pk": 18,
+        "ItemName": "Jeans",
+        "DryWashRate": 100,
+        "Pcs": 250
+    }
+]

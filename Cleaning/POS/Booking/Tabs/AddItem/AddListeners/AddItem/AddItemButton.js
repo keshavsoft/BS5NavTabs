@@ -1,13 +1,12 @@
 let StartFuncs = () => {
     let jVarLocalAddItemButtonId = document.getElementById("AddItemButtonId");
-        jVarLocalAddItemButtonId.addEventListener("click", localAddItemButtonFunc);
+    jVarLocalAddItemButtonId.addEventListener("click", localAddItemButtonFunc);
 
     let jVarLocalWomanAddItemButtonId = document.getElementById("WomanAddItemButtonId");
-        jVarLocalWomanAddItemButtonId.addEventListener("click", localWomanAddItemButtonFunc);
-
     let jVarLocalKidAddItemButtonId = document.getElementById("KidAddItemButtonId");
-        jVarLocalKidAddItemButtonId.addEventListener("click", localKidAddItemButtonFunc);
 
+    if (jVarLocalWomanAddItemButtonId === null === false) jVarLocalWomanAddItemButtonId.addEventListener("click", localWomanAddItemButtonFunc);
+    if (jVarLocalKidAddItemButtonId === null === false) jVarLocalKidAddItemButtonId.addEventListener("click", localKidAddItemButtonFunc);
 };
 
 //man tab funcs start

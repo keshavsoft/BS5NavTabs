@@ -11,6 +11,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 </head>
 
 <body>
@@ -67,17 +70,18 @@
                                         <label for="ItemSelectId">Select Item</label>
                                     </div>
                                 </div>
-
-                                <div class="col"><input class="btn btn-primary" type="button" value="Shirt">
+                                <div class="col" id="MenFrequentItems">
+                                </div>
+                                <!-- <div class="col"><input class="btn btn-primary" type="button" value="Shirt">
                                 </div>
                                 <div class="col"><input class="btn btn-primary" type="button" value="Pant">
                                 </div>
                                 <div class="col"><input class="btn btn-primary" type="button" value="Jeans">
                                 </div>
                                 <div class="col"><input class="btn btn-primary" type="button" value="Suit">
-                                </div>
+                                </div> -->
                             </div>
-                            <div class="row">
+                            <div class="row mt-1">
                                 <div class="col-md-3">
                                     <div class="form-floating">
                                         <select class="form-select" id="WashSelectId"
@@ -97,8 +101,8 @@
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-floating">
-                                        <input type="number" class="form-control" id="RateId">
-                                        <label for="RateId">Pcs</label>
+                                        <input type="number" class="form-control RateClass" id="RateId">
+                                        <label for="RateId">Rate</label>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
@@ -391,6 +395,41 @@
         //Kid's tab funcs end
     </script>-->
     <script src="./AddItem.js" type="module"></script>
+
+    <script>
+
+        //  <div class="col"><input class="btn btn-primary" type="button" value="Shirt">
+        //                                 </div>
+        const jFLocalItemClick = (event) => {
+            console.log('clicked', event.currentTarget.value);
+        };
+
+        const jFLocalCreateButton = ({ inItemName }) => {
+            let jVarLocalItemName = inItemName;
+
+            const k1 = React.createElement("input", {
+                className: "btn btn-primary",
+                type: "button",
+                value: jVarLocalItemName,
+                onClick: jFLocalItemClick
+            }, null);
+
+            return React.createElement("div", {
+                className: "col"
+            }, k1);
+        };
+
+        const k1 = React.createElement("div", {
+            className: "row"
+        }, jFLocalCreateButton({ inItemName: "Shirt" }),
+            jFLocalCreateButton({ inItemName: "Pant" }));
+
+
+
+      //  root.render(jFLocalCreateButton({ inItemName: "Shirt" }), jFLocalCreateButton({ inItemName: "Pant" }));
+
+    </script>
+
 </body>
 
 </html>
