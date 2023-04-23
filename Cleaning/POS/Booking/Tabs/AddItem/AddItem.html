@@ -29,13 +29,13 @@
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+                                data-bs-target="#MenItemsTabId" type="button" role="tab" aria-controls="MenItemsTabId"
                                 aria-selected="true">Men</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                                data-bs-target="#profile-tab-pane" type="button" role="tab"
-                                aria-controls="profile-tab-pane" aria-selected="false">Women</button>
+                                data-bs-target="#WomenItemsTabId" type="button" role="tab"
+                                aria-controls="WomenItemsTabId" aria-selected="false">Women</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
@@ -49,12 +49,12 @@
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
+                        <div class="tab-pane fade show active" id="MenItemsTabId" role="tabpanel"
                             aria-labelledby="home-tab" tabindex="0">
                             <div class="row mt-3">
                                 <div class="col-md-3">
                                     <div class="form-floating">
-                                        <select class="form-select" id="ItemSelectId"
+                                        <select class="form-select ItemSelect" id="ItemSelectId"
                                             aria-label="Floating label select example">
                                             <option selected>Open this select menu</option>
                                             <option value="1">Shirt</option>
@@ -72,14 +72,6 @@
                                 </div>
                                 <div class="col" id="MenFrequentItems">
                                 </div>
-                                <!-- <div class="col"><input class="btn btn-primary" type="button" value="Shirt">
-                                </div>
-                                <div class="col"><input class="btn btn-primary" type="button" value="Pant">
-                                </div>
-                                <div class="col"><input class="btn btn-primary" type="button" value="Jeans">
-                                </div>
-                                <div class="col"><input class="btn btn-primary" type="button" value="Suit">
-                                </div> -->
                             </div>
                             <div class="row mt-1">
                                 <div class="col-md-3">
@@ -118,9 +110,69 @@
 
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
-                            tabindex="0">
-                            This is profile</div>
+
+                        <div class="tab-pane fade show" id="WomenItemsTabId" role="tabpanel"
+                        aria-labelledby="home-tab" tabindex="0">
+                        <div class="row mt-3">
+                            <div class="col-md-3">
+                                <div class="form-floating">
+                                    <select class="form-select ItemSelect" id="ItemSelectId"
+                                        aria-label="Floating label select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">Shirt</option>
+                                        <option value="2">Pant</option>
+                                        <option value="3">Jeans</option>
+                                        <option value="4">Trouser</option>
+                                        <option value="5">Kurta</option>
+                                        <option value="6">Lungi</option>
+                                        <option value="7">Inners</option>
+                                        <option value="8">Shorts</option>
+                                        <option value="9">Longs</option>
+                                    </select>
+                                    <label for="ItemSelectId">Select Item</label>
+                                </div>
+                            </div>
+                            <div class="col" id="WomenFrequentItems">
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-md-3">
+                                <div class="form-floating">
+                                    <select class="form-select" id="WashSelectId"
+                                        aria-label="Floating label select example">
+                                        <option>Open this select menu</option>
+                                        <option value="1" selected>DryWash</option>
+                                        <option value="2">PetrolWash</option>
+                                    </select>
+                                    <label for="WashSelectId">Select Wash</label>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="PcsId" value="1">
+                                    <label for="PcsId">Pcs</label>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control RateClass" id="RateId">
+                                    <label for="RateId">Rate</label>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-success" id="AddItemButtonId">Add
+                                    Item</button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                        </div>
+                        <div class="row">
+
+                        </div>
+                    </div>
+
                         <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
                             tabindex="0">
                             ...</div>
@@ -145,8 +197,8 @@
                     </button>
                 </div>
                 <div class="col">
-                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#AddOnCollapseId" role="button"
-                        aria-expanded="false" aria-controls="AddOnCollapseId">
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#ItemsShowCollapseId" role="button"
+                        aria-expanded="false" aria-controls="ItemsShowCollapseId">
                         Show Items
                     </a>
                 </div>
@@ -225,6 +277,57 @@
                     </div>
                 </div>
             </div>
+
+            <div class="collapse" id="ItemsShowCollapseId">
+
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table" id="ItemsTableId">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th scope="col" style="width: 5%;">#</th>
+                                    <th scope="col" style="width: 15%;">Category</th>
+                                    <th scope="col" style="width: 20%;">Item Name</th>
+                                    <th scope="col" style="width: 10%;">Wash</th>
+                                    <th scope="col" style="width: 5%;" class="text-end">Pcs</th>
+                                    <th scope="col" style="width: 10%;" class="text-end">Rate</th>
+                                    <th scope="col" style="width: 10%;" class="text-end">Add-On</th>
+                                    <th scope="col" style="width: 10%;" class="text-end">Total</th>
+                                    <th scope="col" style="width: 15%;">Options</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ItemsTableBodyId">
+                                <tr>
+                                    <td>1</td>
+                                    <td>Men</td>
+                                    <td>Shirt</td>
+                                    <td>Dry Clean</td>
+                                    <td class="text-end">1</td>
+                                    <td class="text-end">60</td>
+                                    <td class="text-end"><a href="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z" />
+                                            </svg> 30
+                                        </a>
+                                    </td>
+                                    <td class="text-end"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                                            <path
+                                                d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z" />
+                                        </svg> 90</td>
+                                    <td><a href="#" class="ShowItemsTableDeleteButtonClass"> <i
+                                                class="bi bi-trash"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
 
         </div>
     </main>
