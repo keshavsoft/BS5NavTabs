@@ -50,7 +50,7 @@
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="MenItemsTabId" role="tabpanel"
-                            aria-labelledby="home-tab" tabindex="0">
+                            aria-labelledby="home-tab" tabindex="0" data-category="Men">
                             <div class="row mt-3">
                                 <div class="col-md-3">
                                     <div class="form-floating">
@@ -88,7 +88,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2">
-                                    <button type="button" class="btn btn-success AddItemButtonClass" id="AddItemButtonId">Add
+                                    <button type="button" class="btn btn-success AddItemButtonClass"
+                                        id="AddItemButtonId">Add
                                         Item</button>
                                 </div>
                             </div>
@@ -101,67 +102,67 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade show" id="WomenItemsTabId" role="tabpanel"
-                        aria-labelledby="home-tab" tabindex="0">
-                        <div class="row mt-3">
-                            <div class="col-md-3">
-                                <div class="form-floating">
-                                    <select class="form-select ItemSelect" id="ItemSelectId"
-                                        aria-label="Floating label select example">
-                                        <option selected>Open this select menu</option>
-                                        <option value="1">Shirt</option>
-                                        <option value="2">Pant</option>
-                                        <option value="3">Jeans</option>
-                                        <option value="4">Trouser</option>
-                                        <option value="5">Kurta</option>
-                                        <option value="6">Lungi</option>
-                                        <option value="7">Inners</option>
-                                        <option value="8">Shorts</option>
-                                        <option value="9">Longs</option>
-                                    </select>
-                                    <label for="ItemSelectId">Select Item</label>
+                        <div class="tab-pane fade show" id="WomenItemsTabId" role="tabpanel" aria-labelledby="home-tab"
+                            tabindex="0">
+                            <div class="row mt-3">
+                                <div class="col-md-3">
+                                    <div class="form-floating">
+                                        <select class="form-select ItemSelect" id="ItemSelectId"
+                                            aria-label="Floating label select example">
+                                            <option selected>Open this select menu</option>
+                                            <option value="1">Shirt</option>
+                                            <option value="2">Pant</option>
+                                            <option value="3">Jeans</option>
+                                            <option value="4">Trouser</option>
+                                            <option value="5">Kurta</option>
+                                            <option value="6">Lungi</option>
+                                            <option value="7">Inners</option>
+                                            <option value="8">Shorts</option>
+                                            <option value="9">Longs</option>
+                                        </select>
+                                        <label for="ItemSelectId">Select Item</label>
+                                    </div>
+                                </div>
+                                <div class="col" id="WomenFrequentItems">
                                 </div>
                             </div>
-                            <div class="col" id="WomenFrequentItems">
-                            </div>
-                        </div>
-                        <div class="row mt-1">
-                            <div class="col-md-3">
-                                <div class="form-floating">
-                                    <select class="form-select" id="WashSelectId"
-                                        aria-label="Floating label select example">
-                                        <option>Open this select menu</option>
-                                        <option value="1" selected>DryWash</option>
-                                        <option value="2">PetrolWash</option>
-                                    </select>
-                                    <label for="WashSelectId">Select Wash</label>
+                            <div class="row mt-1">
+                                <div class="col-md-3">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="WashSelectId"
+                                            aria-label="Floating label select example">
+                                            <option>Open this select menu</option>
+                                            <option value="1" selected>DryWash</option>
+                                            <option value="2">PetrolWash</option>
+                                        </select>
+                                        <label for="WashSelectId">Select Wash</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="PcsId" value="1">
+                                        <label for="PcsId">Pcs</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control RateClass" id="RateId">
+                                        <label for="RateId">Rate</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-success" id="AddItemButtonId">Add
+                                        Item</button>
                                 </div>
                             </div>
-                            <div class="col-md-2">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control" id="PcsId" value="1">
-                                    <label for="PcsId">Pcs</label>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control RateClass" id="RateId">
-                                    <label for="RateId">Rate</label>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-success" id="AddItemButtonId">Add
-                                    Item</button>
-                            </div>
-                        </div>
 
-                        <div class="row">
+                            <div class="row">
 
-                        </div>
-                        <div class="row">
+                            </div>
+                            <div class="row">
 
+                            </div>
                         </div>
-                    </div>
 
                         <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
                             tabindex="0">

@@ -32,26 +32,14 @@ let localAddItemButtonFunc = (event) => {
         StartFuncToDom();
 
         let jVarLocalItemsShowCollapseId = document.getElementById("ItemsShowCollapseId");
-        //   let jVarLocalBSItemsShowCollapseId = bootstrap.Collapse.getInstance(jVarLocalItemsShowCollapseId);
 
         let jVarLocalBSItemsShowCollapseId = bootstrap.Collapse.getOrCreateInstance(jVarLocalItemsShowCollapseId);
-        // bootstrap.Collapse.getOrCreateInstance(element)
 
-        console.log("jVarLocalBSItemsShowCollapseId : ", jVarLocalBSItemsShowCollapseId, jVarLocalItemsShowCollapseId);
         jVarLocalBSItemsShowCollapseId.show();
-        // let jVLocalFromLocalStorate = localStorage.getItem("ItemsInOrder");
-        // let jVarLocalItemsArray = JSON.parse(jVLocalFromLocalStorate);
-        // jVarLocalItemsArray.push(jVarObjectToInsert);
-
-        // localStorage.setItem("ItemsInOrder", JSON.stringify(jVarLocalItemsArray));
-
-        // StartFuncToDom();
-
     } catch (error) {
         console.log("error : ", error);
     };
 };
-
 
 let jFLocalToLocalStorage = ({ inObjectToInsert }) => {
     try {
@@ -78,18 +66,22 @@ let jFLocalPrepareObject = ({ inCurrentTarget }) => {
         let jVarLocalWashType = jVarClosestTabPane.querySelector(".WashTypeClass");
         let jVarLocalPcs = jVarClosestTabPane.querySelector(".PcsClass");
         let jVarLocalRate = jVarClosestTabPane.querySelector(".RateClass");
-
+        console.log("jVarClosestTabPane ", jVarClosestTabPane.dataset);
         //let jVarLocalAddItemButtonId = document.getElementById("AddItemButtonId");
+        let jVarLocalCategory = jVarClosestTabPane.dataset.category;
         let localItemSelect = jFLocalFromSelectFunc({ inHtmlSelect: jVarLocalItemSelect });
         let localWashSelect = jFLocalFromSelectFunc({ inHtmlSelect: jVarLocalWashType });
         let localPcs = jFLocalFromDomAsInt({ inHtmlId: jVarLocalPcs });
         let localRate = jFLocalFromDomAsInt({ inHtmlId: jVarLocalRate });
 
         let localReturnObject = {
+            Category: jVarLocalCategory,
             ...localItemSelect,
             ...localWashSelect,
             ...localPcs,
-            ...localRate
+            ...localRate,
+            AddOn: 0,
+            Total: 0
         };
 
         return localReturnObject;
@@ -111,18 +103,6 @@ let jFLocalFromSelectFunc = ({ inHtmlSelect }) => {
 
     return jVarLocalReturnObject;
 };
-
-let jFLocalFromDom = ({ inHtmlId }) => {
-    let jVarLocalReturnObject = {};
-    let jVarLocalPcsId = inHtmlId;
-
-    let jVarLocalPcsIdValue = jVarLocalPcsId.value;
-    let jVarLocalPcsIdName = jVarLocalPcsId.name;
-
-    jVarLocalReturnObject[jVarLocalPcsIdName] = jVarLocalPcsIdValue;
-    return jVarLocalReturnObject;
-};
-
 
 let jFLocalFromDomAsInt = ({ inHtmlId }) => {
     let jVarLocalReturnObject = {};
@@ -215,8 +195,6 @@ let jFLocalKidItemSelectFunc = () => {
 
     return jVarLocalReturnObject;
 };
-
-
 
 let jFLocalKidWashSelectFunc = () => {
     let jVarLocalReturnObject = {};

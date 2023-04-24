@@ -55,32 +55,6 @@ const jFMenTab = ({ inLocalStorateKey, inHtmlId }) => {
     // root.render(jVarLocalRow);
 };
 
-const StartFunc1 = () => {
-    let jVarLocalMenItems = localStorage.getItem("MenItems");
-    let jVarLocalMenItemsJson = JSON.parse(jVarLocalMenItems);
-
-    let jVarLocalSorted = jVarLocalMenItemsJson.sort((a, b) => { return b.Pcs - a.Pcs });
-
-    const jVarLocalRow = React.createElement("div", {
-        className: "row"
-    }, jFLocalCreateButton({
-        inItemName: jVarLocalSorted[0].ItemName,
-        inItemRate: jVarLocalSorted[0].DryWashRate
-    }),
-        jFLocalCreateButton({
-            inItemName: jVarLocalSorted[1].ItemName,
-            inItemRate: jVarLocalSorted[1].DryWashRate
-        }),
-        jFLocalCreateButton({
-            inItemName: jVarLocalSorted[2].ItemName,
-            inItemRate: jVarLocalSorted[2].DryWashRate
-        }));
-
-    const container = document.getElementById('MenFrequentItems');
-    const root = ReactDOM.createRoot(container); // createRoot(container!) if you use TypeScript
-    root.render(jVarLocalRow);
-};
-
 
 const jFLocalItemClick = (event) => {
     let jVarLocalCurrentTarget = event.currentTarget;
@@ -89,12 +63,10 @@ const jFLocalItemClick = (event) => {
     let jVarLocalRate = jVarLocalCurrentTarget.dataset.rate;
     let jVarClosestTabPane = jVarLocalCurrentTarget.closest(".tab-pane");
     let jVarHtmlRate = jVarClosestTabPane.querySelector(".RateClass");
+    let jVarLocalAddButton = jVarClosestTabPane.querySelector(".AddItemButtonClass");
 
     let jVarLocalClosestTabPane = jVarLocalCurrentTarget.closest(".tab-pane");
-    // let jVarLocalinHtmlId = document.getElementById(inHtmlId);
     let jVarLocalItemSelectId = jVarLocalClosestTabPane.querySelector("select.ItemSelect");
-
-    // let jVarLocalItemSelectId = document.getElementById("ItemSelectId");
 
     selectItemByValue({
         inHtmlSelect: jVarLocalItemSelectId,
@@ -102,6 +74,7 @@ const jFLocalItemClick = (event) => {
     });
 
     jVarHtmlRate.value = jVarLocalRate;
+    jVarLocalAddButton.click();
 };
 
 const jFLocalCreateButtonInReact = ({ inItemName, inItemRate }) => {
@@ -148,7 +121,6 @@ const jFLocalCreateButton = ({ inItemName, inItemRate }) => {
 
     return jVarLocalCol;
 };
-
 
 function selectItemByValue({ inHtmlSelect, inItemName }) {
     for (var i = 0; i < inHtmlSelect.options.length; i++) {
