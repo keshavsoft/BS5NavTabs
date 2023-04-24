@@ -55,17 +55,8 @@
                                 <div class="col-md-3">
                                     <div class="form-floating">
                                         <select class="form-select ItemSelect" id="ItemSelectId"
-                                            aria-label="Floating label select example">
+                                            aria-label="Floating label select example" name="ItemName">
                                             <option selected>Open this select menu</option>
-                                            <option value="1">Shirt</option>
-                                            <option value="2">Pant</option>
-                                            <option value="3">Jeans</option>
-                                            <option value="4">Trouser</option>
-                                            <option value="5">Kurta</option>
-                                            <option value="6">Lungi</option>
-                                            <option value="7">Inners</option>
-                                            <option value="8">Shorts</option>
-                                            <option value="9">Longs</option>
                                         </select>
                                         <label for="ItemSelectId">Select Item</label>
                                     </div>
@@ -76,29 +67,28 @@
                             <div class="row mt-1">
                                 <div class="col-md-3">
                                     <div class="form-floating">
-                                        <select class="form-select" id="WashSelectId"
-                                            aria-label="Floating label select example">
+                                        <select class="form-select WashTypeClass" id="WashSelectId"
+                                            aria-label="Floating label select example" name="WashType">
                                             <option>Open this select menu</option>
                                             <option value="1" selected>DryWash</option>
-                                            <option value="2">PetrolWash</option>
                                         </select>
                                         <label for="WashSelectId">Select Wash</label>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-floating">
-                                        <input type="number" class="form-control" id="PcsId" value="1">
+                                        <input type="number" class="form-control PcsClass" value="1" name="Pcs">
                                         <label for="PcsId">Pcs</label>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-floating">
-                                        <input type="number" class="form-control RateClass" id="RateId">
+                                        <input type="number" class="form-control RateClass" name="Rate">
                                         <label for="RateId">Rate</label>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
-                                    <button type="button" class="btn btn-success" id="AddItemButtonId">Add
+                                    <button type="button" class="btn btn-success AddItemButtonClass" id="AddItemButtonId">Add
                                         Item</button>
                                 </div>
                             </div>
@@ -297,30 +287,6 @@
                                 </tr>
                             </thead>
                             <tbody id="ItemsTableBodyId">
-                                <tr>
-                                    <td>1</td>
-                                    <td>Men</td>
-                                    <td>Shirt</td>
-                                    <td>Dry Clean</td>
-                                    <td class="text-end">1</td>
-                                    <td class="text-end">60</td>
-                                    <td class="text-end"><a href="">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z" />
-                                            </svg> 30
-                                        </a>
-                                    </td>
-                                    <td class="text-end"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                            <path
-                                                d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z" />
-                                        </svg> 90</td>
-                                    <td><a href="#" class="ShowItemsTableDeleteButtonClass"> <i
-                                                class="bi bi-trash"></i></a>
-                                    </td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
