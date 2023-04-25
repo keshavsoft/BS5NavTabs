@@ -40,10 +40,17 @@ let jFLocalItemsInsertRow = ({ inTableBodyId, inCategory, inItemName, inWashType
     cell7.className = "text-end";
     cell8.className = "text-end";
 
+    let jVarLocalSerialButton = document.createElement("input");
+    jVarLocalSerialButton.type = "button";
+    jVarLocalSerialButton.value = jVarLocalTableRowLength + 1;
+
     // class="text-end"
 
     // Add some text to the new cells:
-    cell1.innerHTML = jVarLocalTableRowLength + 1;
+    //cell1.innerHTML = jVarLocalTableRowLength + 1;
+
+    cell1.appendChild(jVarLocalSerialButton);
+
     cell2.innerHTML = inCategory;
     cell3.innerHTML = inItemName;
     cell4.innerHTML = inWashType;

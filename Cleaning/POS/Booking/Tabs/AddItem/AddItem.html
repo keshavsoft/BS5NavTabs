@@ -22,279 +22,289 @@
     </header>
     <main>
         <div class="container">
-
-            <div class="card border-primary">
-                <div class="card-body">
-
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                data-bs-target="#MenItemsTabId" type="button" role="tab" aria-controls="MenItemsTabId"
-                                aria-selected="true">Men</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                                data-bs-target="#WomenItemsTabId" type="button" role="tab"
-                                aria-controls="WomenItemsTabId" aria-selected="false">Women</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
-                                data-bs-target="#contact-tab-pane" type="button" role="tab"
-                                aria-controls="contact-tab-pane" aria-selected="false">Kids</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab"
-                                data-bs-target="#disabled-tab-pane" type="button" role="tab"
-                                aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="MenItemsTabId" role="tabpanel"
-                            aria-labelledby="home-tab" tabindex="0" data-category="Men">
-                            <div class="row mt-3">
-                                <div class="col-md-3">
-                                    <div class="form-floating">
-                                        <select class="form-select ItemSelect" id="ItemSelectId"
-                                            aria-label="Floating label select example" name="ItemName">
-                                            <option selected>Open this select menu</option>
-                                        </select>
-                                        <label for="ItemSelectId">Select Item</label>
-                                    </div>
-                                </div>
-                                <div class="col" id="MenFrequentItems">
-                                </div>
-                            </div>
-                            <div class="row mt-1">
-                                <div class="col-md-3">
-                                    <div class="form-floating">
-                                        <select class="form-select WashTypeClass" id="WashSelectId"
-                                            aria-label="Floating label select example" name="WashType">
-                                            <option>Open this select menu</option>
-                                            <option value="1" selected>DryWash</option>
-                                        </select>
-                                        <label for="WashSelectId">Select Wash</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-floating">
-                                        <input type="number" class="form-control PcsClass" value="1" name="Pcs">
-                                        <label for="PcsId">Pcs</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-floating">
-                                        <input type="number" class="form-control RateClass" name="Rate">
-                                        <label for="RateId">Rate</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <button type="button" class="btn btn-success AddItemButtonClass"
-                                        id="AddItemButtonId">Add
-                                        Item</button>
-                                </div>
-                            </div>
-
-                            <div class="row">
-
-                            </div>
-                            <div class="row">
-
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade show" id="WomenItemsTabId" role="tabpanel" aria-labelledby="home-tab"
-                            tabindex="0">
-                            <div class="row mt-3">
-                                <div class="col-md-3">
-                                    <div class="form-floating">
-                                        <select class="form-select ItemSelect" id="ItemSelectId"
-                                            aria-label="Floating label select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">Shirt</option>
-                                            <option value="2">Pant</option>
-                                            <option value="3">Jeans</option>
-                                            <option value="4">Trouser</option>
-                                            <option value="5">Kurta</option>
-                                            <option value="6">Lungi</option>
-                                            <option value="7">Inners</option>
-                                            <option value="8">Shorts</option>
-                                            <option value="9">Longs</option>
-                                        </select>
-                                        <label for="ItemSelectId">Select Item</label>
-                                    </div>
-                                </div>
-                                <div class="col" id="WomenFrequentItems">
-                                </div>
-                            </div>
-                            <div class="row mt-1">
-                                <div class="col-md-3">
-                                    <div class="form-floating">
-                                        <select class="form-select" id="WashSelectId"
-                                            aria-label="Floating label select example">
-                                            <option>Open this select menu</option>
-                                            <option value="1" selected>DryWash</option>
-                                            <option value="2">PetrolWash</option>
-                                        </select>
-                                        <label for="WashSelectId">Select Wash</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-floating">
-                                        <input type="number" class="form-control" id="PcsId" value="1">
-                                        <label for="PcsId">Pcs</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-floating">
-                                        <input type="number" class="form-control RateClass" id="RateId">
-                                        <label for="RateId">Rate</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <button type="button" class="btn btn-success" id="AddItemButtonId">Add
-                                        Item</button>
-                                </div>
-                            </div>
-
-                            <div class="row">
-
-                            </div>
-                            <div class="row">
-
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
-                            tabindex="0">
-                            ...</div>
-                        <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
-                            tabindex="0">...</div>
-                    </div>
-                </div>
-            </div>
-
             <div class="row">
-                <div class="col">
-                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#AddOnCollapseId" role="button"
-                        aria-expanded="false" aria-controls="AddOnCollapseId">
-                        Show Add-Ons
-                    </a>
-                </div>
-                <div class="col">
+                <div class="col-3"></div>
+                <div class="col-9">
 
-                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#ImageCollapseId" aria-expanded="false" aria-controls="ImageCollapseId">
-                        Image
-                    </button>
-                </div>
-                <div class="col">
-                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#ItemsShowCollapseId" role="button"
-                        aria-expanded="false" aria-controls="ItemsShowCollapseId">
-                        Show Items
-                    </a>
-                </div>
-            </div>
-            <div class="row mt-2">
-                <div class="col-8">
 
-                    <div class="collapse" id="AddOnCollapseId">
-                        <div class="card border-success" id="AddOnCardId">
-                            <div class="card-header">
+                    <div class="card border-primary">
+                        <div class="card-body">
 
-                                <div class="row mt-3">
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <select class="form-select text-success" id="AddOnServiceId"
-                                                aria-label="Floating label select example">
-                                                <option selected>Open this select menu</option>
-                                                <option value="1">Stains</option>
-                                                <option value="2">Heavy Stains</option>
-                                                <option value="3">Starch</option>
-                                                <option value="4">Pack</option>
-                                                <option value="5">Rolling</option>
-                                                <option value="6">Polishing</option>
-                                                <option value="7">Pressing</option>
-                                            </select>
-                                            <label for="AddOnServiceId">Add-On Service</label>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                        data-bs-target="#MenItemsTabId" type="button" role="tab"
+                                        aria-controls="MenItemsTabId" aria-selected="true">Men</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                        data-bs-target="#WomenItemsTabId" type="button" role="tab"
+                                        aria-controls="WomenItemsTabId" aria-selected="false">Women</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                                        data-bs-target="#contact-tab-pane" type="button" role="tab"
+                                        aria-controls="contact-tab-pane" aria-selected="false">Kids</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="disabled-tab" data-bs-toggle="tab"
+                                        data-bs-target="#disabled-tab-pane" type="button" role="tab"
+                                        aria-controls="disabled-tab-pane" aria-selected="false"
+                                        disabled>Disabled</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="MenItemsTabId" role="tabpanel"
+                                    aria-labelledby="home-tab" tabindex="0" data-category="Men">
+                                    <div class="row mt-3">
+                                        <div class="col-md-3">
+                                            <div class="form-floating">
+                                                <select class="form-select ItemSelect" id="ItemSelectId"
+                                                    aria-label="Floating label select example" name="ItemName">
+                                                    <option selected>Open this select menu</option>
+                                                </select>
+                                                <label for="ItemSelectId">Select Item</label>
+                                            </div>
+                                        </div>
+                                        <div class="col" id="MenFrequentItems">
                                         </div>
                                     </div>
-                                    <div class="col-md-2">
-                                        <div class="form-floating mb-3">
-                                            <input type="number" class="form-control" id="AddOnRateId"
-                                                placeholder="Enter Rate">
-                                            <label for="floatingInput">Rate</label>
+                                    <div class="row mt-1">
+                                        <div class="col-md-3">
+                                            <div class="form-floating">
+                                                <select class="form-select WashTypeClass" id="WashSelectId"
+                                                    aria-label="Floating label select example" name="WashType">
+                                                    <option>Open this select menu</option>
+                                                    <option value="1" selected>DryWash</option>
+                                                </select>
+                                                <label for="WashSelectId">Select Wash</label>
+                                            </div>
                                         </div>
+                                        <div class="col-md-2">
+                                            <div class="form-floating">
+                                                <input type="number" class="form-control PcsClass" value="1" name="Pcs">
+                                                <label for="PcsId">Pcs</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-floating">
+                                                <input type="number" class="form-control RateClass" name="Rate">
+                                                <label for="RateId">Rate</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button type="button" class="btn btn-success AddItemButtonClass"
+                                                id="AddItemButtonId">Add
+                                                Item</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
 
                                     </div>
-                                    <div class="col-md-2">
-                                        <div class="form-floating mb-3">
-                                            <input type="number" class="form-control" id="AddOnRateId"
-                                                placeholder="Enter Rate">
-                                            <label for="floatingInput">ImageRef</label>
-                                        </div>
+                                    <div class="row">
 
-                                    </div>
-                                    <div class="col-md-2">
-                                        <button type="button" class="btn btn-success"
-                                            id="AddOnInsertButtonId">Insert</button>
                                     </div>
                                 </div>
 
+                                <div class="tab-pane fade show" id="WomenItemsTabId" role="tabpanel"
+                                    aria-labelledby="home-tab" tabindex="0">
+                                    <div class="row mt-3">
+                                        <div class="col-md-3">
+                                            <div class="form-floating">
+                                                <select class="form-select ItemSelect" id="ItemSelectId"
+                                                    aria-label="Floating label select example">
+                                                    <option selected>Open this select menu</option>
+                                                    <option value="1">Shirt</option>
+                                                    <option value="2">Pant</option>
+                                                    <option value="3">Jeans</option>
+                                                    <option value="4">Trouser</option>
+                                                    <option value="5">Kurta</option>
+                                                    <option value="6">Lungi</option>
+                                                    <option value="7">Inners</option>
+                                                    <option value="8">Shorts</option>
+                                                    <option value="9">Longs</option>
+                                                </select>
+                                                <label for="ItemSelectId">Select Item</label>
+                                            </div>
+                                        </div>
+                                        <div class="col" id="WomenFrequentItems">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1">
+                                        <div class="col-md-3">
+                                            <div class="form-floating">
+                                                <select class="form-select" id="WashSelectId"
+                                                    aria-label="Floating label select example">
+                                                    <option>Open this select menu</option>
+                                                    <option value="1" selected>DryWash</option>
+                                                    <option value="2">PetrolWash</option>
+                                                </select>
+                                                <label for="WashSelectId">Select Wash</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-floating">
+                                                <input type="number" class="form-control" id="PcsId" value="1">
+                                                <label for="PcsId">Pcs</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-floating">
+                                                <input type="number" class="form-control RateClass" id="RateId">
+                                                <label for="RateId">Rate</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button type="button" class="btn btn-success" id="AddItemButtonId">Add
+                                                Item</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+
+                                    </div>
+                                    <div class="row">
+
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel"
+                                    aria-labelledby="contact-tab" tabindex="0">
+                                    ...</div>
+                                <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel"
+                                    aria-labelledby="disabled-tab" tabindex="0">...</div>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#AddOnCollapseId" role="button"
+                                aria-expanded="false" aria-controls="AddOnCollapseId">
+                                Show Add-Ons
+                            </a>
+                        </div>
+                        <div class="col">
+
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#ImageCollapseId" aria-expanded="false" aria-controls="ImageCollapseId">
+                                Image
+                            </button>
+                        </div>
+                        <div class="col">
+                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#ItemsShowCollapseId"
+                                role="button" aria-expanded="false" aria-controls="ItemsShowCollapseId">
+                                Show Items
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-8">
+
+                            <div class="collapse" id="AddOnCollapseId">
+                                <div class="card border-success" id="AddOnCardId">
+                                    <div class="card-header">
+
+                                        <div class="row mt-3">
+
+                                            <div class="col-md-2">
+                                                <label for="inputEmail4" class="form-label">Item#</label>
+                                                <input type="number" class="form-control" id="AddOnItemId">
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-floating">
+                                                    <select class="form-select text-success" id="AddOnServiceId"
+                                                        aria-label="Floating label select example">
+                                                        <option selected>Open this select menu</option>
+                                                        <option value="1">Stains</option>
+                                                        <option value="2">Heavy Stains</option>
+                                                        <option value="3">Starch</option>
+                                                        <option value="4">Pack</option>
+                                                        <option value="5">Rolling</option>
+                                                        <option value="6">Polishing</option>
+                                                        <option value="7">Pressing</option>
+                                                    </select>
+                                                    <label for="AddOnServiceId">Add-On Service</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label for="inputEmail4" class="form-label">Rate</label>
+                                                <input type="number" class="form-control" id="AddOnRateId">
+
+
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label for="inputEmail4" class="form-label">Image#</label>
+                                                <input type="number" class="form-control" id="AddOnImageId">
+
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button type="button" class="btn btn-success"
+                                                    id="AddOnInsertButtonId">Insert</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table" id="AddOnTableId">
+                                            <thead class="table-dark">
+                                                <tr>
+                                                    <th scope="col" style="width: 10%;">Item#</th>
+                                                    <th scope="col" style="width: 10%;">#</th>
+                                                    <th scope="col" style="width: 40%;">Add-On Service</th>
+                                                    <th scope="col" style="width: 20%;">Rate</th>
+                                                    <th scope="col" style="width: 10%;">Image#</th>
+                                                    <th scope="col" style="width: 10%;">Options</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="AddOnTableBodyId">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-4">
+                            <div class="collapse" id="ImageCollapseId">
+                                <img id="ImageId" src="./Img1.jpg" alt="" height="100px" width="100px">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="collapse" id="ItemsShowCollapseId">
+
+                        <div class="card">
                             <div class="card-body">
-                                <table class="table" id="AddOnTableId">
-                                    <thead class="table-dark">
+                                <table class="table" id="ItemsTableId">
+                                    <thead class="table-primary">
                                         <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Add-On Service</th>
-                                            <th scope="col">Rate</th>
-                                            <th scope="col">Options</th>
+                                            <th scope="col" style="width: 5%;">#</th>
+                                            <th scope="col" style="width: 15%;">Category</th>
+                                            <th scope="col" style="width: 20%;">Item Name</th>
+                                            <th scope="col" style="width: 10%;">Wash</th>
+                                            <th scope="col" style="width: 5%;" class="text-end">Pcs</th>
+                                            <th scope="col" style="width: 10%;" class="text-end">Rate</th>
+                                            <th scope="col" style="width: 10%;" class="text-end">Add-On</th>
+                                            <th scope="col" style="width: 10%;" class="text-end">Total</th>
+                                            <th scope="col" style="width: 15%;">Options</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="AddOnTableBodyId">
+                                    <tbody id="ItemsTableBodyId">
                                     </tbody>
                                 </table>
                             </div>
+
                         </div>
-
-
-                    </div>
-
-                </div>
-
-                <div class="col-4">
-                    <div class="collapse" id="ImageCollapseId">
-                        <img id="ImageId" src="./Img1.jpg" alt="" height="100px" width="100px">
-                    </div>
-                </div>
-            </div>
-
-            <div class="collapse" id="ItemsShowCollapseId">
-
-                <div class="card">
-                    <div class="card-body">
-                        <table class="table" id="ItemsTableId">
-                            <thead class="table-primary">
-                                <tr>
-                                    <th scope="col" style="width: 5%;">#</th>
-                                    <th scope="col" style="width: 15%;">Category</th>
-                                    <th scope="col" style="width: 20%;">Item Name</th>
-                                    <th scope="col" style="width: 10%;">Wash</th>
-                                    <th scope="col" style="width: 5%;" class="text-end">Pcs</th>
-                                    <th scope="col" style="width: 10%;" class="text-end">Rate</th>
-                                    <th scope="col" style="width: 10%;" class="text-end">Add-On</th>
-                                    <th scope="col" style="width: 10%;" class="text-end">Total</th>
-                                    <th scope="col" style="width: 15%;">Options</th>
-                                </tr>
-                            </thead>
-                            <tbody id="ItemsTableBodyId">
-                            </tbody>
-                        </table>
                     </div>
 
                 </div>
             </div>
-
 
         </div>
     </main>
