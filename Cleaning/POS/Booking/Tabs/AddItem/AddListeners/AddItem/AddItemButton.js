@@ -60,18 +60,26 @@ let jFLocalPrepareObject = ({ inCurrentTarget }) => {
         let jVarLocalWashType = jVarClosestTabPane.querySelector(".WashTypeClass");
         let jVarLocalPcs = jVarClosestTabPane.querySelector(".PcsClass");
         let jVarLocalRate = jVarClosestTabPane.querySelector(".RateClass");
-        console.log("jVarClosestTabPane ", jVarClosestTabPane.dataset);
-        //let jVarLocalAddItemButtonId = document.getElementById("AddItemButtonId");
+
         let jVarLocalCategory = jVarClosestTabPane.dataset.category;
-        let localItemSelect = jFLocalFromSelectFunc({ inHtmlSelect: jVarLocalItemSelect });
-        let localWashSelect = jFLocalFromSelectFunc({ inHtmlSelect: jVarLocalWashType });
+
+        let localItemSelectPk = jVarLocalItemSelect.value;
+        let localItemSelect = selectItemByValue({ inHtmlSelect: jVarLocalItemSelect });
+
+        let localWashSelectPk = jVarLocalItemSelect.value;
+        let localWashSelect = selectItemByValue({ inHtmlSelect: jVarLocalWashType });
+
+        // let localWashSelect = jFLocalFromSelectFunc({ inHtmlSelect: jVarLocalWashType });
+
         let localPcs = jFLocalFromDomAsInt({ inHtmlId: jVarLocalPcs });
         let localRate = jFLocalFromDomAsInt({ inHtmlId: jVarLocalRate });
 
         let localReturnObject = {
             Category: jVarLocalCategory,
-            ...localItemSelect,
-            ...localWashSelect,
+            ItemName: localItemSelect,
+            ItemNamePk: localItemSelectPk,
+            WashType: localWashSelect,
+            WashTypePk: localWashSelectPk,
             ...localPcs,
             ...localRate,
             AddOn: 0,
@@ -84,6 +92,7 @@ let jFLocalPrepareObject = ({ inCurrentTarget }) => {
     };
 
 };
+
 
 let jFLocalFromSelectFunc = ({ inHtmlSelect }) => {
     let jVarLocalReturnObject = {};
@@ -108,6 +117,16 @@ let jFLocalFromDomAsInt = ({ inHtmlId }) => {
     jVarLocalReturnObject[jVarLocalPcsIdName] = parseInt(jVarLocalPcsIdValue);
     return jVarLocalReturnObject;
 };
+
+
+function selectItemByValue({ inHtmlSelect }) {
+    for (var i = 0; i < inHtmlSelect.options.length; i++) {
+        if (inHtmlSelect.options[i].value === inHtmlSelect.value) {
+            return inHtmlSelect.options[i].text;
+        }
+    }
+};
+
 
 //Kid's tab funcs end
 export { StartFuncs };
