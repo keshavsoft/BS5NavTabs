@@ -1,3 +1,6 @@
+// import { StartFunc as StartFuncAddListeners } from "../AddListeners/FrequentItems/ButtonClickFuncs.js";
+import { StartFunc as StartFuncAddListeners } from "../../AddListeners/FrequentItems/ButtonClickFuncs.js";
+
 const StartFunc = () => {
     jFMenTab({
         inLocalStorateKey: "MenItems",
@@ -45,16 +48,7 @@ const jFMenTab = ({ inLocalStorateKey, inHtmlId }) => {
     };
 
     container.appendChild(jVarLocalRow);
-
-    console.log("container : ", container);
-    // const root = ReactDOM.createRoot(container); // createRoot(container!) if you use TypeScript
-    // root.render(jVarLocalRow);
-
-    // const container = document.getElementById(jVarLocalinHtmlId);
-    // const root = ReactDOM.createRoot(container); // createRoot(container!) if you use TypeScript
-    // root.render(jVarLocalRow);
 };
-
 
 const jFLocalItemClick = (event) => {
     let jVarLocalCurrentTarget = event.currentTarget;
@@ -103,7 +97,10 @@ const jFLocalCreateButton = ({ inItemName, inItemRate }) => {
     jVarLocalButton.value = jVarLocalItemName;
     jVarLocalButton.className = "btn btn-primary";
     jVarLocalButton.dataset.rate = inItemRate;
-    jVarLocalButton.addEventListener("click", jFLocalItemClick);
+    //jVarLocalButton.addEventListener("click", jFLocalItemClick);
+    jVarLocalButton.addEventListener("click", StartFuncAddListeners);
+
+
 
     jVarLocalCol.appendChild(jVarLocalButton);
 
