@@ -18,20 +18,33 @@ let localAddItemButtonFunc = (event) => {
     try {
         let jVarLocalEvent = event;
         let jVarLocalCurrentTarget = jVarLocalEvent.currentTarget;
+        let jVarClosestTabPane = jVarLocalCurrentTarget.closest(".tab-pane");
 
-        let jVarObjectToInsert = jFLocalPrepareObject({ inCurrentTarget: jVarLocalCurrentTarget });
+        let jVarObjectToInsert = jFLocalPrepareObject({ inTabPane: jVarClosestTabPane });
 
         jFLocalToLocalStorage({ inObjectToInsert: jVarObjectToInsert });
 
         StartFuncToDom();
+        jFLocalPostItemInsertFunc({ inTabPane: jVarClosestTabPane });
 
-        let jVarLocalItemsShowCollapseId = document.getElementById("ItemsShowCollapseId");
-
-        let jVarLocalBSItemsShowCollapseId = bootstrap.Collapse.getOrCreateInstance(jVarLocalItemsShowCollapseId);
-
-        jVarLocalBSItemsShowCollapseId.show();
     } catch (error) {
         console.log("error : ", error);
+    };
+};
+
+const jFLocalPostItemInsertFunc = ({ inTabPane }) => {
+    let jVarLocalItemSerialClass = inTabPane.querySelector(".ItemSerialClass");
+    let jVarLocalItemsTableBodyId = document.getElementById("ItemsTableBodyId");
+    let jVarLocalItemsShowCollapseId = document.getElementById("ItemsShowCollapseId");
+    let jVarLocalAddOnItemId = document.getElementById("AddOnItemId");
+
+    let jVarLocalBSItemsShowCollapseId = bootstrap.Collapse.getOrCreateInstance(jVarLocalItemsShowCollapseId);
+
+    jVarLocalBSItemsShowCollapseId.show();
+
+    if (jVarLocalItemSerialClass.value === "") {
+        jVarLocalItemsTableBodyId.rows[0].classList.add("table-success");
+        jVarLocalAddOnItemId.value = jVarLocalItemsTableBodyId.rows.length;
     };
 };
 
@@ -51,11 +64,9 @@ let jFLocalToLocalStorage = ({ inObjectToInsert }) => {
     };
 };
 
-let jFLocalPrepareObject = ({ inCurrentTarget }) => {
+let jFLocalPrepareObject = ({ inTabPane }) => {
     try {
-        let jVarLocalCurrentTarget = inCurrentTarget;
-
-        let jVarClosestTabPane = jVarLocalCurrentTarget.closest(".tab-pane");
+        let jVarClosestTabPane = inTabPane;
         let jVarLocalItemSelect = jVarClosestTabPane.querySelector(".ItemSelect");
         let jVarLocalWashType = jVarClosestTabPane.querySelector(".WashTypeClass");
         let jVarLocalPcs = jVarClosestTabPane.querySelector(".PcsClass");
@@ -83,7 +94,7 @@ let jFLocalPrepareObject = ({ inCurrentTarget }) => {
             ...localPcs,
             ...localRate,
             AddOn: 0,
-            Total: 0
+            Total: Object.values(localPcs)[0] * Object.values(localRate)[0]
         };
 
         return localReturnObject;

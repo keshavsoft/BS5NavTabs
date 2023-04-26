@@ -1,6 +1,8 @@
 let StartFunc = () => {
     let jVarLocalItemsTableBodyId = "ItemsTableBodyId";
     var jVarLocalHtmlTableBody = document.getElementById(jVarLocalItemsTableBodyId);
+
+
     jVarLocalHtmlTableBody.innerHTML = "";
 
     let jVarLocalItemsInOrder = localStorage.getItem("ItemsInOrder");
@@ -18,6 +20,17 @@ let StartFunc = () => {
             inTotal: element.Total
         });
     });
+
+    jFLocalShowTotals({ inJsonData: jVarLocaljVarLocalItemsInOrderJson });
+};
+
+let jFLocalShowTotals = ({ inJsonData }) => {
+    let jVarLocalItemsTableFootPcs = document.getElementById("ItemsTableFootPcs");
+
+    let jVarLocalPcsArray = inJsonData.map(element => element.Pcs);
+    let sum = jVarLocalPcsArray.reduce((a, b) => a + b, 0);
+
+    jVarLocalItemsTableFootPcs.innerHTML = sum;
 };
 
 let jFLocalItemsInsertRow = ({ inTableBodyId, inCategory, inItemName, inWashType, inPcs, inItemRate, inAddOn, inTotal }) => {
