@@ -22,15 +22,26 @@ let StartFunc = () => {
     });
 
     jFLocalShowTotals({ inJsonData: jVarLocaljVarLocalItemsInOrderJson });
+    
 };
 
 let jFLocalShowTotals = ({ inJsonData }) => {
     let jVarLocalItemsTableFootPcs = document.getElementById("ItemsTableFootPcs");
-
+    let jVarLocalItemsTableFootAddOn = document.getElementById("ItemsTableFootAddOn");
+    let jVarLocalItemsTableFootTotal = document.getElementById("ItemsTableFootTotal");
+    
     let jVarLocalPcsArray = inJsonData.map(element => element.Pcs);
     let sum = jVarLocalPcsArray.reduce((a, b) => a + b, 0);
 
+    let jVarLocalAddOnArray = inJsonData.map(element => element.AddOn);
+    let sumAddOn = jVarLocalAddOnArray.reduce((a, b) => a + b, 0);
+
+    let jVarLocalTotalArray = inJsonData.map(element => element.Total);
+    let sumTotal = jVarLocalTotalArray.reduce((a, b) => a + b, 0);
+
     jVarLocalItemsTableFootPcs.innerHTML = sum;
+    jVarLocalItemsTableFootAddOn .innerHTML=sumAddOn;
+    jVarLocalItemsTableFootTotal.innerHTML=sumTotal;
 };
 
 let jFLocalItemsInsertRow = ({ inTableBodyId, inCategory, inItemName, inWashType, inPcs, inItemRate, inAddOn, inTotal }) => {
