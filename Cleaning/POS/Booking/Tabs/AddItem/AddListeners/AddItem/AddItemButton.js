@@ -53,6 +53,30 @@ let jFLocalToLocalStorage = ({ inObjectToInsert }) => {
         let jVarObjectToInsert = inObjectToInsert;
 
         let jVLocalFromLocalStorate = localStorage.getItem("ItemsInOrder");
+        let jVarLocalOrderItems = JSON.parse(jVLocalFromLocalStorate);
+        let jVarLocalKeys = Object.keys(jVarLocalOrderItems);
+        let jVarLocalNewKey = 1;
+
+        if (jVarLocalKeys.length > 0) {
+            const max = Math.max(...jVarLocalKeys);
+
+            jVarLocalNewKey = max + 1;
+        }
+
+        jVarLocalOrderItems[jVarLocalNewKey] = jVarObjectToInsert;
+        //  jVarLocalItemsArray.push(jVarObjectToInsert);
+
+        localStorage.setItem("ItemsInOrder", JSON.stringify(jVarLocalOrderItems));
+    } catch (error) {
+        console.log("error : ", error);
+    };
+};
+
+let jFLocalToLocalStorageAsArray = ({ inObjectToInsert }) => {
+    try {
+        let jVarObjectToInsert = inObjectToInsert;
+
+        let jVLocalFromLocalStorate = localStorage.getItem("ItemsInOrder");
         let jVarLocalItemsArray = JSON.parse(jVLocalFromLocalStorate);
         jVarLocalItemsArray.push(jVarObjectToInsert);
 

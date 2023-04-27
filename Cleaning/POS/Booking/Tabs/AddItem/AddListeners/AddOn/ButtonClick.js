@@ -1,11 +1,14 @@
+import { StartFunc as StartFuncToAddOns } from "../../ToDom/ToTable/ToAddOns.js";
+
 let StartFunc = () => {
     let jVarLocalAddOnInsertButtonId = document.getElementById("AddOnInsertButtonId");
 
     jVarLocalAddOnInsertButtonId.addEventListener("click", jFLocalButtonClick);
 };
 let jFLocalButtonClick = () => {
-    jFLocalPrepareData();
-    console.log("ssssssssssssss");
+    let jVarLocalItemSerial = jFLocalPrepareData();
+    StartFuncToAddOns({ inItemSerial: jVarLocalItemSerial });
+    console.log("ssssssssssssss", jVarLocalItemSerial);
 };
 
 let jFLocalPrepareData = () => {
@@ -20,33 +23,42 @@ let jFLocalPrepareData = () => {
 
     var jVarLocalAddOnServiceIdtext = jVarLocalAddOnServiceId.options[jVarLocalAddOnServiceId.selectedIndex].text;
 
-    jFLocalInsertRow({
-        inAddOnService: jVarLocalAddOnServiceIdtext,
-        inAddOnRate: jVarLocalAddOnRateIdValue,
-        inAddOnItemSerial: jVarLocaljVarLocalAddOnItemIdValue,
-        inAddOnImageSerial: jVarLocaljVarLocalAddOnImageIdValue
-    });
+    let jVarObjectToInsert = {
+        AddOnService: jVarLocalAddOnServiceIdtext,
+        AddOnRate: jVarLocalAddOnRateIdValue,
+        AddOnItemSerial: jVarLocaljVarLocalAddOnItemIdValue,
+        AddOnImageSerial: jVarLocaljVarLocalAddOnImageIdValue
+    };
+
+    jFLocalToLocalStorage({ inObjectToInsert: jVarObjectToInsert });
+
+    return jVarLocaljVarLocalAddOnItemIdValue;
 };
 
-let jFLocalInsertRow = ({ inAddOnService, inAddOnRate, inAddOnItemSerial, inAddOnImageSerial }) => {
-    var table = document.getElementById("AddOnTableBodyId");
-    let jVarLocalTableRowLength = table.rows.length
+let jFLocalToLocalStorage = ({ inObjectToInsert }) => {
+    try {
+        let jVarLocalStorageKey = "AddOnData";
 
-    // Create an empty <tr> element and add it to the 1st position of the table:
-    var row = table.insertRow(0);
+        let jVarObjectToInsert = inObjectToInsert;
 
-    // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    var cell4 = row.insertCell(3);
-    var cell5 = row.insertCell(4);
+        let jVLocalFromLocalStorate = localStorage.getItem(jVarLocalStorageKey);
+        let jVarLocalOrderItems = JSON.parse(jVLocalFromLocalStorate);
+        let jVarLocalKeys = Object.keys(jVarLocalOrderItems);
+        let jVarLocalNewKey = 1;
 
-    cell1.innerHTML = inAddOnItemSerial;
-    cell2.innerHTML = jVarLocalTableRowLength + 1;
-    cell3.innerHTML = inAddOnService;
-    cell4.innerHTML = inAddOnRate;
-    cell5.innerHTML = inAddOnImageSerial;
+        if (jVarLocalKeys.length > 0) {
+            const max = Math.max(...jVarLocalKeys);
+
+            jVarLocalNewKey = max + 1;
+        }
+
+        jVarLocalOrderItems[jVarLocalNewKey] = jVarObjectToInsert;
+        //  jVarLocalItemsArray.push(jVarObjectToInsert);
+
+        localStorage.setItem(jVarLocalStorageKey, JSON.stringify(jVarLocalOrderItems));
+    } catch (error) {
+        console.log("error : ", error);
+    };
 };
 
 export { StartFunc };

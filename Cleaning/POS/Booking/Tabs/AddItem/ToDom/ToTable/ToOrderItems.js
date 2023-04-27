@@ -1,35 +1,104 @@
+import { StartFunc as StartFuncToAddOns } from "../ToTable/ToAddOns.js";
+
 let StartFunc = () => {
     let jVarLocalItemsTableBodyId = "ItemsTableBodyId";
     var jVarLocalHtmlTableBody = document.getElementById(jVarLocalItemsTableBodyId);
 
+    jVarLocalHtmlTableBody.innerHTML = "";
+
+    PullFromLocalStorage({ inTableBodyId: jVarLocalHtmlTableBody });
+};
+
+let StartFunc_Keshav_27Apr2023 = () => {
+    let jVarLocalItemsTableBodyId = "ItemsTableBodyId";
+    var jVarLocalHtmlTableBody = document.getElementById(jVarLocalItemsTableBodyId);
 
     jVarLocalHtmlTableBody.innerHTML = "";
 
     let jVarLocalItemsInOrder = localStorage.getItem("ItemsInOrder");
     let jVarLocaljVarLocalItemsInOrderJson = JSON.parse(jVarLocalItemsInOrder);
 
-    jVarLocaljVarLocalItemsInOrderJson.forEach(element => {
-        jFLocalItemsInsertRow({
-            inTableBodyId: jVarLocalHtmlTableBody,
-            inCategory: element.Category,
-            inItemName: element.ItemName,
-            inWashType: element.WashType,
-            inPcs: element.Pcs,
-            inItemRate: element.Rate,
-            inAddOn: element.AddOn,
-            inTotal: element.Total
+    if (Array.isArray(jVarLocaljVarLocalItemsInOrderJson)) {
+        jVarLocaljVarLocalItemsInOrderJson.forEach(element => {
+            jFLocalItemsInsertRow({
+                inTableBodyId: jVarLocalHtmlTableBody,
+                inCategory: element.Category,
+                inItemName: element.ItemName,
+                inWashType: element.WashType,
+                inPcs: element.Pcs,
+                inItemRate: element.Rate,
+                inAddOn: element.AddOn,
+                inTotal: element.Total
+            });
         });
-    });
 
-    jFLocalShowTotals({ inJsonData: jVarLocaljVarLocalItemsInOrderJson });
-    
+        jFLocalShowTotals({ inJsonData: jVarLocaljVarLocalItemsInOrderJson });
+    } else {
+        Object.entries(jVarLocaljVarLocalItemsInOrderJson).forEach(
+            ([key, element]) => {
+                jFLocalItemsInsertRow({
+                    inRowPk: key,
+                    inTableBodyId: jVarLocalHtmlTableBody,
+                    inCategory: element.Category,
+                    inItemName: element.ItemName,
+                    inWashType: element.WashType,
+                    inPcs: element.Pcs,
+                    inItemRate: element.Rate,
+                    inAddOn: element.AddOn,
+                    inTotal: element.Total
+                });
+            }
+        );
+
+        jFLocalShowTotals({ inJsonData: Object.values(jVarLocaljVarLocalItemsInOrderJson) });
+    };
+};
+
+let PullFromLocalStorage = ({ inTableBodyId }) => {
+    let jVarLocalItemsInOrder = localStorage.getItem("ItemsInOrder");
+    let jVarLocaljVarLocalItemsInOrderJson = JSON.parse(jVarLocalItemsInOrder);
+
+    if (Array.isArray(jVarLocaljVarLocalItemsInOrderJson)) {
+        jVarLocaljVarLocalItemsInOrderJson.forEach(element => {
+            jFLocalItemsInsertRow({
+                inTableBodyId,
+                inCategory: element.Category,
+                inItemName: element.ItemName,
+                inWashType: element.WashType,
+                inPcs: element.Pcs,
+                inItemRate: element.Rate,
+                inAddOn: element.AddOn,
+                inTotal: element.Total
+            });
+        });
+
+        jFLocalShowTotals({ inJsonData: jVarLocaljVarLocalItemsInOrderJson });
+    } else {
+        Object.entries(jVarLocaljVarLocalItemsInOrderJson).forEach(
+            ([key, element]) => {
+                jFLocalItemsInsertRow({
+                    inRowPk: key,
+                    inTableBodyId,
+                    inCategory: element.Category,
+                    inItemName: element.ItemName,
+                    inWashType: element.WashType,
+                    inPcs: element.Pcs,
+                    inItemRate: element.Rate,
+                    inAddOn: element.AddOn,
+                    inTotal: element.Total
+                });
+            }
+        );
+
+        jFLocalShowTotals({ inJsonData: Object.values(jVarLocaljVarLocalItemsInOrderJson) });
+    };
 };
 
 let jFLocalShowTotals = ({ inJsonData }) => {
     let jVarLocalItemsTableFootPcs = document.getElementById("ItemsTableFootPcs");
     let jVarLocalItemsTableFootAddOn = document.getElementById("ItemsTableFootAddOn");
     let jVarLocalItemsTableFootTotal = document.getElementById("ItemsTableFootTotal");
-    
+
     let jVarLocalPcsArray = inJsonData.map(element => element.Pcs);
     let sum = jVarLocalPcsArray.reduce((a, b) => a + b, 0);
 
@@ -40,11 +109,11 @@ let jFLocalShowTotals = ({ inJsonData }) => {
     let sumTotal = jVarLocalTotalArray.reduce((a, b) => a + b, 0);
 
     jVarLocalItemsTableFootPcs.innerHTML = sum;
-    jVarLocalItemsTableFootAddOn .innerHTML=sumAddOn;
-    jVarLocalItemsTableFootTotal.innerHTML=sumTotal;
+    jVarLocalItemsTableFootAddOn.innerHTML = sumAddOn;
+    jVarLocalItemsTableFootTotal.innerHTML = sumTotal;
 };
 
-let jFLocalItemsInsertRow = ({ inTableBodyId, inCategory, inItemName, inWashType, inPcs, inItemRate, inAddOn, inTotal }) => {
+let jFLocalItemsInsertRow = ({ inRowPk, inTableBodyId, inCategory, inItemName, inWashType, inPcs, inItemRate, inAddOn, inTotal }) => {
     // var table = document.getElementById(inTableBodyId);
 
     var table = inTableBodyId;
@@ -70,7 +139,10 @@ let jFLocalItemsInsertRow = ({ inTableBodyId, inCategory, inItemName, inWashType
 
     let jVarLocalSerialButton = document.createElement("input");
     jVarLocalSerialButton.type = "button";
-    jVarLocalSerialButton.value = jVarLocalTableRowLength + 1;
+    jVarLocalSerialButton.addEventListener("click", jFLocalItemSerialButtonClickFunc);
+
+    // jVarLocalSerialButton.value = jVarLocalTableRowLength + 1;
+    jVarLocalSerialButton.value = inRowPk;
 
     cell1.appendChild(jVarLocalSerialButton);
 
@@ -83,6 +155,13 @@ let jFLocalItemsInsertRow = ({ inTableBodyId, inCategory, inItemName, inWashType
     cell7.innerHTML = `₹ ${inAddOn}`;
     cell8.innerHTML = `₹ ${inTotal}`;
 };
+
+const jFLocalItemSerialButtonClickFunc = (event) => {
+    let jVarLocalEvent = event;
+    let jVarLocalCurrentTarget = jVarLocalEvent.currentTarget;
+    console.log("jVarLocalCurrentTarget : ", jVarLocalCurrentTarget.value);
+    StartFuncToAddOns({ inItemSerial: jVarLocalCurrentTarget.value });
+}
 
 
 export { StartFunc };
