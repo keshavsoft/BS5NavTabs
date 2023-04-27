@@ -108,9 +108,12 @@ let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, i
     const clone = jVarLocalTemplateForOrderItemsTableRow.content.cloneNode(true);
     let jVarLocalOrderItemsCategoryClass = clone.querySelector(".OrderItemsCategoryClass");
     jVarLocalOrderItemsCategoryClass.innerHTML = inCategory;
-    let jVarLocalOrderItemsCategoryClass = clone.querySelector(".OrderItemsCategoryClass");
-    jVarLocalOrderItemsCategoryClass.innerHTML = inCategory;
+   
+    let jVarLocalOrderItemsOrderItemsItemNameClass = clone.querySelector(".OrderItemsItemNameClass");
+    jVarLocalOrderItemsOrderItemsItemNameClass.innerHTML =  inItemName;
 
+    let jVarLocalOrderItemsOrderItemsRateClass = clone.querySelector(".OrderItemsRateClass");
+    jVarLocalOrderItemsOrderItemsRateClass.innerHTML = inItemRate;
     table.appendChild(clone);
 };
 const jFLocalItemSerialButtonClickFunc = (event) => {
