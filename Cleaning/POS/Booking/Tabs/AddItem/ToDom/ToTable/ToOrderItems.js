@@ -128,9 +128,19 @@ let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, i
     jVarLocalOrderItemsOrderItemsTotalClass.innerHTML =  inTotal;
 
 
-
+    let jVarLocalOrderItemsOrderItemsDeleteButtonClass=clone.querySelector(".OrderItemsDeleteButtonClass");
+    jVarLocalOrderItemsOrderItemsDeleteButtonClass.addEventListener("click",jFLocalItemDeleteButtonClickFunc)
+    
     table.appendChild(clone);
 };
+const jFLocalItemDeleteButtonClickFunc = (event) => {
+    let jVarLocalEvent = event;
+    let jVarLocalCurrentTarget = jVarLocalEvent.currentTarget;
+    console.log("hd",jVarLocalCurrentTarget);
+
+}
+
+
 const jFLocalItemSerialButtonClickFunc = (event) => {
     let jVarLocalEvent = event;
     let jVarLocalCurrentTarget = jVarLocalEvent.currentTarget;
