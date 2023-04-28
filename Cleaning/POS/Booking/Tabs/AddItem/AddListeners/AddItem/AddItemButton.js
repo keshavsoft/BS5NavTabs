@@ -72,22 +72,6 @@ let jFLocalToLocalStorage = ({ inObjectToInsert }) => {
     };
 };
 
-let jFLocalToLocalStorageAsArray = ({ inObjectToInsert }) => {
-    try {
-        let jVarObjectToInsert = inObjectToInsert;
-
-        let jVLocalFromLocalStorate = localStorage.getItem("ItemsInOrder");
-        let jVarLocalItemsArray = JSON.parse(jVLocalFromLocalStorate);
-        jVarLocalItemsArray.push(jVarObjectToInsert);
-
-        localStorage.setItem("ItemsInOrder", JSON.stringify(jVarLocalItemsArray));
-
-
-    } catch (error) {
-        console.log("error : ", error);
-    };
-};
-
 let jFLocalPrepareObject = ({ inTabPane }) => {
     try {
         let jVarClosestTabPane = inTabPane;
@@ -127,7 +111,6 @@ let jFLocalPrepareObject = ({ inTabPane }) => {
     };
 
 };
-
 
 let jFLocalFromSelectFunc = ({ inHtmlSelect }) => {
     let jVarLocalReturnObject = {};

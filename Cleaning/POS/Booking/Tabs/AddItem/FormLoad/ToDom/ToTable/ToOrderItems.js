@@ -60,5 +60,4 @@ let jFLocalItemsInsertRow = ({ inTableBodyId, inCategory, inItemName, inWashType
     cell8.innerHTML = `₹ ${inTotal}`;
 };
 
-
 export { StartFunc };

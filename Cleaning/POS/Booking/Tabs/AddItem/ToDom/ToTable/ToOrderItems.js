@@ -108,9 +108,9 @@ let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, i
     const clone = jVarLocalTemplateForOrderItemsTableRow.content.cloneNode(true);
     let jVarLocalOrderItemsCategoryClass = clone.querySelector(".OrderItemsCategoryClass");
     jVarLocalOrderItemsCategoryClass.innerHTML = inCategory;
-   
+
     let jVarLocalOrderItemsOrderItemsItemNameClass = clone.querySelector(".OrderItemsItemNameClass");
-    jVarLocalOrderItemsOrderItemsItemNameClass.innerHTML =  inItemName;
+    jVarLocalOrderItemsOrderItemsItemNameClass.innerHTML = inItemName;
 
     let jVarLocalOrderItemsOrderItemsRateClass = clone.querySelector(".OrderItemsRateClass");
     jVarLocalOrderItemsOrderItemsRateClass.innerHTML = inItemRate;
@@ -119,27 +119,27 @@ let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, i
     jVarLocalOrderItemsOrderItemsItemWashClass.innerHTML = inWashType;
 
     let jVarLocalOrderItemsOrderItemsAddOnClass = clone.querySelector(".OrderItemsAddOnClass");
-    jVarLocalOrderItemsOrderItemsAddOnClass.innerHTML =  inAddOn;
+    jVarLocalOrderItemsOrderItemsAddOnClass.innerHTML = inAddOn;
 
     let jVarLocalOrderItemsOrderItemsItemPcsClass = clone.querySelector(".OrderItemsItemPcsClass");
-    jVarLocalOrderItemsOrderItemsItemPcsClass.innerHTML =  inPcs;
+    jVarLocalOrderItemsOrderItemsItemPcsClass.innerHTML = inPcs;
 
     let jVarLocalOrderItemsOrderItemsTotalClass = clone.querySelector(".OrderItemsTotalClass");
-    jVarLocalOrderItemsOrderItemsTotalClass.innerHTML =  inTotal;
+    jVarLocalOrderItemsOrderItemsTotalClass.innerHTML = inTotal;
 
 
-    let jVarLocalOrderItemsOrderItemsDeleteButtonClass=clone.querySelector(".OrderItemsDeleteButtonClass");
-    jVarLocalOrderItemsOrderItemsDeleteButtonClass.addEventListener("click",jFLocalItemDeleteButtonClickFunc)
-    
+    let jVarLocalOrderItemsOrderItemsDeleteButtonClass = clone.querySelector(".OrderItemsDeleteButtonClass");
+    jVarLocalOrderItemsOrderItemsDeleteButtonClass.addEventListener("click", jFLocalItemDeleteButtonClickFunc)
+
     table.appendChild(clone);
 };
+
 const jFLocalItemDeleteButtonClickFunc = (event) => {
     let jVarLocalEvent = event;
     let jVarLocalCurrentTarget = jVarLocalEvent.currentTarget;
-    console.log("hd",jVarLocalCurrentTarget);
+    console.log("hd", jVarLocalCurrentTarget);
 
-}
-
+};
 
 const jFLocalItemSerialButtonClickFunc = (event) => {
     let jVarLocalEvent = event;
@@ -154,7 +154,6 @@ const jFLocalItemSerialButtonClickFunc = (event) => {
     jVarLocalMenuTabAddOnId.classList.remove("d-none");
 
     StartFuncToAddOns({ inItemSerial: jVarLocalCurrentTarget.value });
-}
-
+};
 
 export { StartFunc };
