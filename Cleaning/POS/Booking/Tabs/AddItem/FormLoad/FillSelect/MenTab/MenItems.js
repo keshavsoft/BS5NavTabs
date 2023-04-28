@@ -13,32 +13,22 @@ let StartFunc = () => {
 let jFCommonSelectFill = ({ inLocalStorageKey, inHtmlId }) => {
     let jVarLocalFromLocalStorage = localStorage.getItem(inLocalStorageKey);
     let jVarLocalinHtmlId = document.getElementById(inHtmlId);
-    let jVarLocalWomanWashSelectId = jVarLocalinHtmlId.querySelector("select.ItemSelect");
 
-    let jVarLocalMenItems = JSON.parse(jVarLocalFromLocalStorage).map(element => {
-        return {
-            ItemName: element.ItemName,
-            pk: element.pk
-        }
-    });
+    if (jVarLocalinHtmlId === null === false) {
+        let jVarLocalWomanWashSelectId = jVarLocalinHtmlId.querySelector("select.ItemSelect");
 
-    jFLocalAddToSelect({
-        inData: jVarLocalMenItems,
-        inHtmlSelect: jVarLocalWomanWashSelectId
-    });
-};
-let StartFunc_Keshav_23Apr2023 = () => {
-    let jVarLocalFromLocalStorage = localStorage.getItem("MenItems");
-    let jVarLocalMenItems = JSON.parse(jVarLocalFromLocalStorage).map(element => {
-        return {
-            ItemName: element.ItemName,
-            pk: element.pk
-        }
-    });
+        let jVarLocalMenItems = JSON.parse(jVarLocalFromLocalStorage).map(element => {
+            return {
+                ItemName: element.ItemName,
+                pk: element.pk
+            }
+        });
 
-    jFLocalMenSelectFill({
-        inWashTypeData: jVarLocalMenItems
-    });
+        jFLocalAddToSelect({
+            inData: jVarLocalMenItems,
+            inHtmlSelect: jVarLocalWomanWashSelectId
+        });
+    };
 };
 
 let jFLocalMenSelectFill = ({ inWashTypeData, inHtmlId }) => {

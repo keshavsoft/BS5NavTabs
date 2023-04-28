@@ -13,15 +13,17 @@ const StartFunc = (params) => {
         }
     });
 
-    jVarLocalAddOnMenuId.addEventListener("change", (event) => {
-        if (event.currentTarget.checked) {
-            jVarLocalMenuTabAddOnId.classList.add("col");
-            jVarLocalMenuTabAddOnId.classList.remove("d-none");
-        } else {
-            jVarLocalMenuTabAddOnId.classList.remove("col");
-            jVarLocalMenuTabAddOnId.classList.add("d-none");
-        }
-    });
+    if (jVarLocalAddOnMenuId === null === false) {
+        jVarLocalAddOnMenuId.addEventListener("change", (event) => {
+            if (event.currentTarget.checked) {
+                jVarLocalMenuTabAddOnId.classList.add("col");
+                jVarLocalMenuTabAddOnId.classList.remove("d-none");
+            } else {
+                jVarLocalMenuTabAddOnId.classList.remove("col");
+                jVarLocalMenuTabAddOnId.classList.add("d-none");
+            }
+        });
+    };
 };
 
 export { StartFunc };

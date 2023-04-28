@@ -23,31 +23,34 @@ const jFMenTab = ({ inLocalStorateKey, inHtmlId }) => {
     let jVarLocalSorted = jVarLocalMenItemsJson.sort((a, b) => { return b.Pcs - a.Pcs });
 
     const container = document.getElementById(jVarLocalinHtmlId);
-    let jVarLocalRow = document.createElement("div");
-    jVarLocalRow.className = "row";
+    
+    if (container === null === false) {
+        let jVarLocalRow = document.createElement("div");
+        jVarLocalRow.className = "row";
 
-    if (jVarLocalSorted.length > 0) {
-        jVarLocalRow.appendChild(jFLocalCreateButton({
-            inItemName: jVarLocalSorted[0].ItemName,
-            inItemRate: jVarLocalSorted[0].DryWashRate
-        }));
+        if (jVarLocalSorted.length > 0) {
+            jVarLocalRow.appendChild(jFLocalCreateButton({
+                inItemName: jVarLocalSorted[0].ItemName,
+                inItemRate: jVarLocalSorted[0].DryWashRate
+            }));
+        };
+
+        if (jVarLocalSorted.length > 1) {
+            jVarLocalRow.appendChild(jFLocalCreateButton({
+                inItemName: jVarLocalSorted[1].ItemName,
+                inItemRate: jVarLocalSorted[1].DryWashRate
+            }));
+        };
+
+        if (jVarLocalSorted.length > 2) {
+            jVarLocalRow.appendChild(jFLocalCreateButton({
+                inItemName: jVarLocalSorted[2].ItemName,
+                inItemRate: jVarLocalSorted[2].DryWashRate
+            }));
+        };
+
+        container.appendChild(jVarLocalRow);
     };
-
-    if (jVarLocalSorted.length > 1) {
-        jVarLocalRow.appendChild(jFLocalCreateButton({
-            inItemName: jVarLocalSorted[1].ItemName,
-            inItemRate: jVarLocalSorted[1].DryWashRate
-        }));
-    };
-
-    if (jVarLocalSorted.length > 2) {
-        jVarLocalRow.appendChild(jFLocalCreateButton({
-            inItemName: jVarLocalSorted[2].ItemName,
-            inItemRate: jVarLocalSorted[2].DryWashRate
-        }));
-    };
-
-    container.appendChild(jVarLocalRow);
 };
 
 const jFLocalItemClick = (event) => {
@@ -71,22 +74,6 @@ const jFLocalItemClick = (event) => {
     jVarLocalAddButton.click();
 };
 
-const jFLocalCreateButtonInReact = ({ inItemName, inItemRate }) => {
-    let jVarLocalItemName = inItemName;
-
-    const k1 = React.createElement("input", {
-        className: "btn btn-primary",
-        type: "button",
-        value: jVarLocalItemName,
-        "data-rate": inItemRate,
-        onClick: jFLocalItemClick
-    }, null);
-
-    return React.createElement("div", {
-        className: "col"
-    }, k1);
-};
-
 const jFLocalCreateButton = ({ inItemName, inItemRate }) => {
     let jVarLocalItemName = inItemName;
     let jVarLocalCol = document.createElement("div");
@@ -97,24 +84,10 @@ const jFLocalCreateButton = ({ inItemName, inItemRate }) => {
     jVarLocalButton.value = jVarLocalItemName;
     jVarLocalButton.className = "btn btn-primary";
     jVarLocalButton.dataset.rate = inItemRate;
-    //jVarLocalButton.addEventListener("click", jFLocalItemClick);
+
     jVarLocalButton.addEventListener("click", StartFuncAddListeners);
 
-
-
     jVarLocalCol.appendChild(jVarLocalButton);
-
-    // const k1 = React.createElement("input", {
-    //     className: "btn btn-primary",
-    //     type: "button",
-    //     value: jVarLocalItemName,
-    //     "data-rate": inItemRate,
-    //     onClick: jFLocalItemClick
-    // }, null);
-
-    // return React.createElement("div", {
-    //     className: "col"
-    // }, k1);
 
     return jVarLocalCol;
 };
