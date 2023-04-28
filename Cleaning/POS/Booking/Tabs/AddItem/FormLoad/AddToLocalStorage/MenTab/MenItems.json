@@ -6,6 +6,18 @@
         "Pcs": 200
     },
     {
+        "pk": 2,
+        "ItemName": "Men Shirt",
+        "DryWashRate": 60,
+        "Pcs": 200
+    },
+    {
+        "pk": 3,
+        "ItemName": "Women Shirt",
+        "DryWashRate": 70,
+        "Pcs": 200
+    },
+    {
         "pk": 16,
         "ItemName": "Pant",
         "DryWashRate": 70,
