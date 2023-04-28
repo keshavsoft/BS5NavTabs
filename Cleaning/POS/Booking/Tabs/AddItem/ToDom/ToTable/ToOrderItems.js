@@ -131,13 +131,23 @@ let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, i
     let jVarLocalOrderItemsOrderItemsDeleteButtonClass = clone.querySelector(".OrderItemsDeleteButtonClass");
     jVarLocalOrderItemsOrderItemsDeleteButtonClass.addEventListener("click", jFLocalItemDeleteButtonClickFunc)
 
+    let jVarLocalOrderItemsOrderItemsEditButtonClass = clone.querySelector(".OrderItemsEditButtonClass");
+    jVarLocalOrderItemsOrderItemsEditButtonClass.addEventListener("click", jFLocalItemEditButtonClickFunc)
+
     table.appendChild(clone);
 };
 
 const jFLocalItemDeleteButtonClickFunc = (event) => {
     let jVarLocalEvent = event;
     let jVarLocalCurrentTarget = jVarLocalEvent.currentTarget;
-    console.log("hd", jVarLocalCurrentTarget);
+    console.log("Delete", jVarLocalCurrentTarget);
+
+};
+
+const jFLocalItemEditButtonClickFunc = (event) => {
+    let jVarLocalEvent = event;
+    let jVarLocalCurrentTarget = jVarLocalEvent.currentTarget;
+    console.log("Edit", jVarLocalCurrentTarget);
 
 };
 
