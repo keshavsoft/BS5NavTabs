@@ -1,3 +1,5 @@
+import { StartFunc as StartFuncToAddOns } from "./ToAddOns.js";
+
 let StartFunc = () => {
     let jVarLocalItemsTableBodyId = "ItemsTableBodyId";
     var jVarLocalHtmlTableBody = document.getElementById(jVarLocalItemsTableBodyId);
@@ -49,6 +51,13 @@ let jFLocalShowTotals = ({ inJsonData }) => {
     jVarLocalItemsTableFootTotal.innerHTML = sumTotal;
 };
 
+let jFLocalItemSerialButtonClickFunc = (event) => {
+    let jVarLocalEvent = event;
+    let jVarLocalCurrentTarget = jVarLocalEvent.currentTarget;
+    
+    StartFuncToAddOns({ inItemSerial: jVarLocalCurrentTarget.value });
+};
+
 let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, inItemName, inWashType, inPcs, inItemRate, inAddOn, inTotal }) => {
     var table = inTableBodyId;
     let jVarLocalTemplateForOrderItemsTableRow = document.getElementById("TemplateForOrderItemsTableRow");
@@ -57,6 +66,7 @@ let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, i
 
     let jVarLocalOrderItemsSerialButtonClass = clone.querySelector(".OrderItemsSerialButtonClass");
     jVarLocalOrderItemsSerialButtonClass.value = inRowPk;
+    jVarLocalOrderItemsSerialButtonClass.addEventListener("click", jFLocalItemSerialButtonClickFunc);
 
     let jVarLocalOrderItemsCategoryClass = clone.querySelector(".OrderItemsCategoryClass");
     jVarLocalOrderItemsCategoryClass.innerHTML = inCategory;
@@ -78,7 +88,6 @@ let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, i
 
     let jVarLocalOrderItemsOrderItemsTotalClass = clone.querySelector(".OrderItemsTotalClass");
     jVarLocalOrderItemsOrderItemsTotalClass.innerHTML = inTotal;
-
 
     let jVarLocalOrderItemsOrderItemsDeleteButtonClass = clone.querySelector(".OrderItemsDeleteButtonClass");
     jVarLocalOrderItemsOrderItemsDeleteButtonClass.addEventListener("click", jFLocalItemDeleteButtonClickFunc)

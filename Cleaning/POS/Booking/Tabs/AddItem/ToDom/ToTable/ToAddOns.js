@@ -1,4 +1,8 @@
 let StartFunc = ({ inItemSerial }) => {
+    let jVarLocalHtmlIdAddOnCardId = document.getElementById("AddOnCardId");
+    let jVarLocalAddOnItemToAddOnClass = jVarLocalHtmlIdAddOnCardId.querySelector(".AddOnItemToAddOnClass");
+    jVarLocalAddOnItemToAddOnClass.value = inItemSerial;
+
     let jVarLocalItemsTableBodyId = "AddOnTableBodyId";
     var jVarLocalHtmlTableBody = document.getElementById(jVarLocalItemsTableBodyId);
 

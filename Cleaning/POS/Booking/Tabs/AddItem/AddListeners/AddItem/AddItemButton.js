@@ -41,11 +41,16 @@ const jFLocalPostItemInsertFunc = ({ inTabPane }) => {
     let jVarLocalBSItemsShowCollapseId = bootstrap.Collapse.getOrCreateInstance(jVarLocalItemsShowCollapseId);
 
     jVarLocalBSItemsShowCollapseId.show();
+    let jVarLocalOrderItemsTableRowCount = jVarLocalItemsTableBodyId.rows;
+    jVarLocalItemSerialClass.value = jVarLocalOrderItemsTableRowCount.length + 1;
 
-    if (jVarLocalItemSerialClass.value === "") {
-        jVarLocalItemsTableBodyId.rows[0].classList.add("table-success");
-        jVarLocalAddOnItemId.value = jVarLocalItemsTableBodyId.rows.length;
-    };
+    jVarLocalItemsTableBodyId.rows[jVarLocalOrderItemsTableRowCount.length - 1].classList.add("table-success");
+    jVarLocalAddOnItemId.value = jVarLocalItemsTableBodyId.rows.length;
+
+    // if (jVarLocalItemSerialClass.value === "") {
+    //     jVarLocalItemsTableBodyId.rows[0].classList.add("table-success");
+    //     jVarLocalAddOnItemId.value = jVarLocalItemsTableBodyId.rows.length;
+    // };
 };
 
 let jFLocalToLocalStorage = ({ inObjectToInsert }) => {
@@ -112,19 +117,6 @@ let jFLocalPrepareObject = ({ inTabPane }) => {
 
 };
 
-let jFLocalFromSelectFunc = ({ inHtmlSelect }) => {
-    let jVarLocalReturnObject = {};
-    // let jVarLocalItemSelectId = document.getElementById("ItemSelectId");
-    let jVarLocalItemSelectId = inHtmlSelect;
-
-    let jVarLocalItemSelectIdValue = jVarLocalItemSelectId.value;
-    let jVarLocalItemSelectIdName = jVarLocalItemSelectId.name;
-
-    jVarLocalReturnObject[jVarLocalItemSelectIdName] = jVarLocalItemSelectIdValue;
-
-    return jVarLocalReturnObject;
-};
-
 let jFLocalFromDomAsInt = ({ inHtmlId }) => {
     let jVarLocalReturnObject = {};
     let jVarLocalPcsId = inHtmlId;
@@ -136,7 +128,6 @@ let jFLocalFromDomAsInt = ({ inHtmlId }) => {
     return jVarLocalReturnObject;
 };
 
-
 function selectItemByValue({ inHtmlSelect }) {
     for (var i = 0; i < inHtmlSelect.options.length; i++) {
         if (inHtmlSelect.options[i].value === inHtmlSelect.value) {
@@ -144,7 +135,6 @@ function selectItemByValue({ inHtmlSelect }) {
         }
     }
 };
-
 
 //Kid's tab funcs end
 export { StartFuncs };
