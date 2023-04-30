@@ -1,7 +1,7 @@
 [
     {
         "pk": 1,
-        "ItemName": "Shirt",
+        "ItemName": "Women Saree",
         "DryWashRate": 60,
         "Pcs": 200
     },
@@ -19,13 +19,19 @@
     },
     {
         "pk": 16,
-        "ItemName": "Pant",
+        "ItemName": "Men Pant",
         "DryWashRate": 70,
         "Pcs": 300
     },
     {
         "pk": 18,
-        "ItemName": "Jeans",
+        "ItemName": "Men Jeans",
+        "DryWashRate": 100,
+        "Pcs": 250
+    },
+    {
+        "pk": 20,
+        "ItemName": "Men Jacket",
         "DryWashRate": 100,
         "Pcs": 250
     }

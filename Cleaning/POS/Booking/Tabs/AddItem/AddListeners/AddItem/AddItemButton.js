@@ -47,10 +47,19 @@ const jFLocalPostItemInsertFunc = ({ inTabPane }) => {
     jVarLocalItemsTableBodyId.rows[jVarLocalOrderItemsTableRowCount.length - 1].classList.add("table-success");
     jVarLocalAddOnItemId.value = jVarLocalItemsTableBodyId.rows.length;
 
-    // if (jVarLocalItemSerialClass.value === "") {
-    //     jVarLocalItemsTableBodyId.rows[0].classList.add("table-success");
-    //     jVarLocalAddOnItemId.value = jVarLocalItemsTableBodyId.rows.length;
-    // };
+    jFLocalClearEntryHtmls({ inTabPane });
+};
+
+const jFLocalClearEntryHtmls = ({ inTabPane }) => {
+    let jVarLocalItemSelect = inTabPane.querySelector(".ItemSelect");
+    let jVarLocalWashType = inTabPane.querySelector(".WashTypeClass");
+    let jVarLocalPcs = inTabPane.querySelector(".PcsClass");
+    let jVarLocalRate = inTabPane.querySelector(".RateClass");
+
+    jVarLocalItemSelect.value = "";
+    jVarLocalWashType.value = "";
+    jVarLocalPcs.value = "";
+    jVarLocalRate.value = "";
 };
 
 let jFLocalToLocalStorage = ({ inObjectToInsert }) => {

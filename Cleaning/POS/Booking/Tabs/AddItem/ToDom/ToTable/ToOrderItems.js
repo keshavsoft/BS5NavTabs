@@ -1,4 +1,6 @@
 import { StartFunc as StartFuncToAddOns } from "./ToAddOns.js";
+import { StartFunc as StartFuncFromAddOns } from "../../FromLocalStorage/FromAddOns.js";
+import { StartFunc as StartFuncToRow } from "./ToRow/ToOrderItems.js";
 
 let StartFunc = () => {
     let jVarLocalItemsTableBodyId = "ItemsTableBodyId";
@@ -54,13 +56,16 @@ let jFLocalShowTotals = ({ inJsonData }) => {
 let jFLocalItemSerialButtonClickFunc = (event) => {
     let jVarLocalEvent = event;
     let jVarLocalCurrentTarget = jVarLocalEvent.currentTarget;
-    
+
     StartFuncToAddOns({ inItemSerial: jVarLocalCurrentTarget.value });
 };
 
 let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, inItemName, inWashType, inPcs, inItemRate, inAddOn, inTotal }) => {
     var table = inTableBodyId;
     let jVarLocalTemplateForOrderItemsTableRow = document.getElementById("TemplateForOrderItemsTableRow");
+
+    // let jVarLocalAddOnDataJson = StartFuncFromAddOns({ inItemSerial: inRowPk });
+    // console.log("jVarLocalAddOnDataJson : ", jVarLocalAddOnDataJson);
 
     const clone = jVarLocalTemplateForOrderItemsTableRow.content.cloneNode(true);
 
@@ -94,6 +99,8 @@ let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, i
 
     let jVarLocalOrderItemsOrderItemsEditButtonClass = clone.querySelector(".OrderItemsEditButtonClass");
     jVarLocalOrderItemsOrderItemsEditButtonClass.addEventListener("click", jFLocalItemEditButtonClickFunc)
+
+    StartFuncToRow({ inItemSerial: inRowPk });
 
     table.appendChild(clone);
 };
