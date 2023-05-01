@@ -57,8 +57,8 @@ const jFLocalClearEntryHtmls = ({ inTabPane }) => {
     let jVarLocalRate = inTabPane.querySelector(".RateClass");
 
     jVarLocalItemSelect.value = "";
-    jVarLocalWashType.value = "";
-    jVarLocalPcs.value = "";
+    //jVarLocalWashType.value = "";
+   // jVarLocalPcs.value = "";
     jVarLocalRate.value = "";
 };
 
