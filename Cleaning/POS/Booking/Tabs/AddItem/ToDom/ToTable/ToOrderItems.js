@@ -1,6 +1,7 @@
 import { StartFunc as StartFuncToAddOns } from "./ToAddOns.js";
 import { StartFunc as StartFuncFromAddOns } from "../../FromLocalStorage/FromAddOns.js";
 import { StartFunc as StartFuncToRow } from "./ToRow/ToOrderItems.js";
+import { StartFunc as StartFuncToItemSerialButton } from "./AddListenersRunTime/ToItemSerialButton.js";
 
 let StartFunc = () => {
     let jVarLocalItemsTableBodyId = "ItemsTableBodyId";
@@ -64,15 +65,14 @@ let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, i
     var table = inTableBodyId;
     let jVarLocalTemplateForOrderItemsTableRow = document.getElementById("TemplateForOrderItemsTableRow");
 
-    // let jVarLocalAddOnDataJson = StartFuncFromAddOns({ inItemSerial: inRowPk });
-    // console.log("jVarLocalAddOnDataJson : ", jVarLocalAddOnDataJson);
-
     const clone = jVarLocalTemplateForOrderItemsTableRow.content.cloneNode(true);
 
     let jVarLocalOrderItemsSerialButtonClass = clone.querySelector(".OrderItemsSerialButtonClass");
     jVarLocalOrderItemsSerialButtonClass.value = inRowPk;
-    jVarLocalOrderItemsSerialButtonClass.addEventListener("click", jFLocalItemSerialButtonClickFunc);
-
+    // jVarLocalOrderItemsSerialButtonClass.addEventListener("click", jFLocalItemSerialButtonClickFunc);
+    
+    jVarLocalOrderItemsSerialButtonClass.addEventListener("click", StartFuncToItemSerialButton);
+    
     let jVarLocalOrderItemsCategoryClass = clone.querySelector(".OrderItemsCategoryClass");
     jVarLocalOrderItemsCategoryClass.innerHTML = inCategory;
 
