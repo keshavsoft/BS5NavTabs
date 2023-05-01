@@ -49,6 +49,9 @@ let jFLocalShowOnAbove = ({ inDataToShow, inRowSelected }) => {
         let jVarLocalItemSelect = jVarLocalMenItemsTabId.querySelector(".ItemSelect");
         jVarLocalItemSelect.value = "2";
 
+        let jVarLocalItemRateClass = jVarLocalMenItemsTabId.querySelector(".RateClass");
+        jVarLocalItemRateClass .value = inRowSelected;
+
         console.log("jVarLocalItemSelect : ", inDataToShow, jVarLocalItemSelect);
 
 
@@ -88,6 +91,7 @@ let jFLocalFromRowTable = ({ inJVarClosestTr }) => {
     jVarLocalReturnObject.AddOn = jVarLocalOrderItemsRateClass.innerHTML;
 
     jVarLocalReturnObject.Total = jVarLocalOrderItemsTotalClass.innerHTML;
+    
     return jVarLocalReturnObject;
     // let jVarLocalOrderItemsOrderItemsItemNameClass = clone.querySelector(".OrderItemsItemNameClass");
     // jVarLocalOrderItemsOrderItemsItemNameClass.innerHTML = inItemName;
