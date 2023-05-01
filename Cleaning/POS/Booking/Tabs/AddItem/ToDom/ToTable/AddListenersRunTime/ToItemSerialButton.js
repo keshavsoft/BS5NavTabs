@@ -4,14 +4,17 @@ let StartFunc = (event) => {
     jFLocalItemSerialButtonClickFunc(event);
 };
 
+// MenItemsTabId
+
 let jFLocalItemSerialButtonClickFunc = (event) => {
     let jVarLocalEvent = event;
     let jVarLocalCurrentTarget = jVarLocalEvent.currentTarget;
     let jVarLocalClosestTr = jVarLocalCurrentTarget.closest("tr");
+    let jVarLocalRowSelected = jVarLocalCurrentTarget.value;
 
     let jVarLocalDataFromrow = jFLocalFromRowTable({ inJVarClosestTr: jVarLocalClosestTr });
 
-    console.log("jVarLocalDataFromrow : ", jVarLocalDataFromrow);
+    jFLocalShowOnAbove({ inDataToShow: jVarLocalDataFromrow, inRowSelected: jVarLocalRowSelected });
     // let jVarLocalOrderItemsCategoryClass = jVarLocalClosestTr.querySelector(".OrderItemsCategoryClass");
     // jVarLocalOrderItemsCategoryClass.innerHTML = inCategory;
 
@@ -33,31 +36,43 @@ let jFLocalItemSerialButtonClickFunc = (event) => {
     StartFuncToAddOns({ inItemSerial: jVarLocalCurrentTarget.value });
 };
 
+let jFLocalShowOnAbove = ({ inDataToShow, inRowSelected }) => {
+    let jVarLocalMenItemsTabId = document.getElementById("MenItemsTabId");
+
+    if (jVarLocalMenItemsTabId === null === false) {
+        let jVarLocalPcsClass = jVarLocalMenItemsTabId.querySelector(".PcsClass");
+        jVarLocalPcsClass.value = inDataToShow.Pcs;
+
+        let jVarLocalItemSerialClass = jVarLocalMenItemsTabId.querySelector(".ItemSerialClass");
+        jVarLocalItemSerialClass.value = inRowSelected;
+
+        let jVarLocalItemSelect = jVarLocalMenItemsTabId.querySelector(".ItemSelect");
+        jVarLocalItemSelect.value = "2";
+
+        console.log("jVarLocalItemSelect : ", inDataToShow, jVarLocalItemSelect);
+
+
+
+
+    };
+};
 
 let jFLocalFromRowTable = ({ inJVarClosestTr }) => {
     let jVarLocalReturnObject = {};
 
     let jVarLocalOrderItemsCategoryClass = inJVarClosestTr.querySelector(".OrderItemsCategoryClass");
-    console.log("ItemCategory : ", jVarLocalOrderItemsCategoryClass);
 
     let jVarLocalOrderItemsItemNameClass = inJVarClosestTr.querySelector(".OrderItemsItemNameClass");
-    console.log("ItemName : ",jVarLocalOrderItemsItemNameClass);
 
     let jVarLocalOrderItemsItemWashClass = inJVarClosestTr.querySelector(".OrderItemsItemWashClass");
-    console.log("WashType : ",jVarLocalOrderItemsItemWashClass);
-
 
     let jVarLocalOrderItemsItemPcsClass = inJVarClosestTr.querySelector(".OrderItemsItemPcsClass");
-    console.log("Pcs : ",jVarLocalOrderItemsItemPcsClass);
 
     let jVarLocalOrderItemsRateClass = inJVarClosestTr.querySelector(".OrderItemsRateClass");
-    console.log("Rate: ",jVarLocalOrderItemsRateClass);
 
     let jVarLocalOrderItemsAddOnClass = inJVarClosestTr.querySelector(".OrderItemsAddOnClass");
-    console.log("AddOn: ",jVarLocalOrderItemsAddOnClass);
 
     let jVarLocalOrderItemsTotalClass = inJVarClosestTr.querySelector(".OrderItemsTotalClass");
-    console.log("Total: ",jVarLocalOrderItemsTotalClass);
 
     // jVarLocalOrderItemsCategoryClass.innerHTML = inCategory;
     jVarLocalReturnObject.Category = jVarLocalOrderItemsCategoryClass.innerHTML;
