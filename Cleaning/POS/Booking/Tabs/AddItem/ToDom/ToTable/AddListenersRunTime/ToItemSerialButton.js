@@ -38,12 +38,41 @@ let jFLocalFromRowTable = ({ inJVarClosestTr }) => {
     let jVarLocalReturnObject = {};
 
     let jVarLocalOrderItemsCategoryClass = inJVarClosestTr.querySelector(".OrderItemsCategoryClass");
+    console.log("ItemCategory : ", jVarLocalOrderItemsCategoryClass);
 
-    console.log("aaaaa : ", jVarLocalOrderItemsCategoryClass);
+    let jVarLocalOrderItemsItemNameClass = inJVarClosestTr.querySelector(".OrderItemsItemNameClass");
+    console.log("ItemName : ",jVarLocalOrderItemsItemNameClass);
+
+    let jVarLocalOrderItemsItemWashClass = inJVarClosestTr.querySelector(".OrderItemsItemWashClass");
+    console.log("WashType : ",jVarLocalOrderItemsItemWashClass);
+
+
+    let jVarLocalOrderItemsItemPcsClass = inJVarClosestTr.querySelector(".OrderItemsItemPcsClass");
+    console.log("Pcs : ",jVarLocalOrderItemsItemPcsClass);
+
+    let jVarLocalOrderItemsRateClass = inJVarClosestTr.querySelector(".OrderItemsRateClass");
+    console.log("Rate: ",jVarLocalOrderItemsRateClass);
+
+    let jVarLocalOrderItemsAddOnClass = inJVarClosestTr.querySelector(".OrderItemsAddOnClass");
+    console.log("AddOn: ",jVarLocalOrderItemsAddOnClass);
+
+    let jVarLocalOrderItemsTotalClass = inJVarClosestTr.querySelector(".OrderItemsTotalClass");
+    console.log("Total: ",jVarLocalOrderItemsTotalClass);
 
     // jVarLocalOrderItemsCategoryClass.innerHTML = inCategory;
     jVarLocalReturnObject.Category = jVarLocalOrderItemsCategoryClass.innerHTML;
 
+    jVarLocalReturnObject.ItemName = jVarLocalOrderItemsItemNameClass.innerHTML;
+
+    jVarLocalReturnObject.WashType = jVarLocalOrderItemsItemWashClass.innerHTML;
+
+    jVarLocalReturnObject.Pcs = jVarLocalOrderItemsItemPcsClass.innerHTML;
+
+    jVarLocalReturnObject.Rate = jVarLocalOrderItemsRateClass.innerHTML;
+
+    jVarLocalReturnObject.AddOn = jVarLocalOrderItemsRateClass.innerHTML;
+
+    jVarLocalReturnObject.Total = jVarLocalOrderItemsTotalClass.innerHTML;
     return jVarLocalReturnObject;
     // let jVarLocalOrderItemsOrderItemsItemNameClass = clone.querySelector(".OrderItemsItemNameClass");
     // jVarLocalOrderItemsOrderItemsItemNameClass.innerHTML = inItemName;
