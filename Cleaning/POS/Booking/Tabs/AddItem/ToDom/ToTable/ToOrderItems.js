@@ -18,11 +18,13 @@ let PullFromLocalStorage = ({ inTableBodyId }) => {
 
     Object.entries(jVarLocaljVarLocalItemsInOrderJson).forEach(
         ([key, element]) => {
+            console.log("element ", element);
             jFLocalItemsInsertRowFromTemplate({
                 inRowPk: key,
                 inTableBodyId,
                 inCategory: element.Category,
                 inItemName: element.ItemName,
+                inItemNamePk: element.ItemNamePk,
                 inWashType: element.WashType,
                 inPcs: element.Pcs,
                 inItemRate: element.Rate,
@@ -61,7 +63,7 @@ let jFLocalItemSerialButtonClickFunc = (event) => {
     StartFuncToAddOns({ inItemSerial: jVarLocalCurrentTarget.value });
 };
 
-let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, inItemName, inWashType, inPcs, inItemRate, inAddOn, inTotal }) => {
+let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, inItemName, inItemNamePk, inWashType, inWashTypePk, inPcs, inItemRate, inAddOn, inTotal }) => {
     var table = inTableBodyId;
     let jVarLocalTemplateForOrderItemsTableRow = document.getElementById("TemplateForOrderItemsTableRow");
 
@@ -70,19 +72,21 @@ let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, i
     let jVarLocalOrderItemsSerialButtonClass = clone.querySelector(".OrderItemsSerialButtonClass");
     jVarLocalOrderItemsSerialButtonClass.value = inRowPk;
     // jVarLocalOrderItemsSerialButtonClass.addEventListener("click", jFLocalItemSerialButtonClickFunc);
-    
+
     jVarLocalOrderItemsSerialButtonClass.addEventListener("click", StartFuncToItemSerialButton);
-    
+
     let jVarLocalOrderItemsCategoryClass = clone.querySelector(".OrderItemsCategoryClass");
     jVarLocalOrderItemsCategoryClass.innerHTML = inCategory;
 
     let jVarLocalOrderItemsOrderItemsItemNameClass = clone.querySelector(".OrderItemsItemNameClass");
+    jVarLocalOrderItemsOrderItemsItemNameClass.dataset.pk = inItemNamePk;
     jVarLocalOrderItemsOrderItemsItemNameClass.innerHTML = inItemName;
 
     let jVarLocalOrderItemsOrderItemsRateClass = clone.querySelector(".OrderItemsRateClass");
     jVarLocalOrderItemsOrderItemsRateClass.innerHTML = inItemRate;
 
     let jVarLocalOrderItemsOrderItemsItemWashClass = clone.querySelector(".OrderItemsItemWashClass");
+    jVarLocalOrderItemsOrderItemsItemWashClass.dataset.pk = inWashTypePk;
     jVarLocalOrderItemsOrderItemsItemWashClass.innerHTML = inWashType;
 
     let jVarLocalOrderItemsOrderItemsAddOnClass = clone.querySelector(".OrderItemsAddOnClass");

@@ -15,23 +15,6 @@ let jFLocalItemSerialButtonClickFunc = (event) => {
     let jVarLocalDataFromrow = jFLocalFromRowTable({ inJVarClosestTr: jVarLocalClosestTr });
 
     jFLocalShowOnAbove({ inDataToShow: jVarLocalDataFromrow, inRowSelected: jVarLocalRowSelected });
-    // let jVarLocalOrderItemsCategoryClass = jVarLocalClosestTr.querySelector(".OrderItemsCategoryClass");
-    // jVarLocalOrderItemsCategoryClass.innerHTML = inCategory;
-
-    // let jVarLocalOrderItemsOrderItemsItemNameClass = clone.querySelector(".OrderItemsItemNameClass");
-    // jVarLocalOrderItemsOrderItemsItemNameClass.innerHTML = inItemName;
-
-    // let jVarLocalOrderItemsOrderItemsRateClass = clone.querySelector(".OrderItemsRateClass");
-    // jVarLocalOrderItemsOrderItemsRateClass.innerHTML = inItemRate;
-
-    // let jVarLocalOrderItemsOrderItemsItemWashClass = clone.querySelector(".OrderItemsItemWashClass");
-    // jVarLocalOrderItemsOrderItemsItemWashClass.innerHTML = inWashType;
-
-    // let jVarLocalOrderItemsOrderItemsAddOnClass = clone.querySelector(".OrderItemsAddOnClass");
-    // jVarLocalOrderItemsOrderItemsAddOnClass.innerHTML = inAddOn;
-
-    // let jVarLocalOrderItemsOrderItemsItemPcsClass = clone.querySelector(".OrderItemsItemPcsClass");
-    // jVarLocalOrderItemsOrderItemsItemPcsClass.innerHTML = inPcs;
 
     StartFuncToAddOns({ inItemSerial: jVarLocalCurrentTarget.value });
 };
@@ -47,16 +30,13 @@ let jFLocalShowOnAbove = ({ inDataToShow, inRowSelected }) => {
         jVarLocalItemSerialClass.value = inRowSelected;
 
         let jVarLocalItemSelect = jVarLocalMenItemsTabId.querySelector(".ItemSelect");
-        jVarLocalItemSelect.value = "2";
+        jVarLocalItemSelect.value = inDataToShow.ItemNamePk;
 
         let jVarLocalItemRateClass = jVarLocalMenItemsTabId.querySelector(".RateClass");
-        jVarLocalItemRateClass .value = inRowSelected;
+        jVarLocalItemRateClass.value = inDataToShow.Rate;
 
-        console.log("jVarLocalItemSelect : ", inDataToShow, jVarLocalItemSelect);
-
-
-
-
+        let jVarLocalWashTypeClass = jVarLocalMenItemsTabId.querySelector(".WashTypeClass");
+        jVarLocalWashTypeClass.value = inDataToShow.WashTypePk;
     };
 };
 
@@ -81,8 +61,10 @@ let jFLocalFromRowTable = ({ inJVarClosestTr }) => {
     jVarLocalReturnObject.Category = jVarLocalOrderItemsCategoryClass.innerHTML;
 
     jVarLocalReturnObject.ItemName = jVarLocalOrderItemsItemNameClass.innerHTML;
+    jVarLocalReturnObject.ItemNamePk = jVarLocalOrderItemsItemNameClass.dataset.pk;
 
     jVarLocalReturnObject.WashType = jVarLocalOrderItemsItemWashClass.innerHTML;
+    jVarLocalReturnObject.WashTypePk = jVarLocalOrderItemsItemWashClass.dataset.pk;
 
     jVarLocalReturnObject.Pcs = jVarLocalOrderItemsItemPcsClass.innerHTML;
 
@@ -91,7 +73,7 @@ let jFLocalFromRowTable = ({ inJVarClosestTr }) => {
     jVarLocalReturnObject.AddOn = jVarLocalOrderItemsRateClass.innerHTML;
 
     jVarLocalReturnObject.Total = jVarLocalOrderItemsTotalClass.innerHTML;
-    
+
     return jVarLocalReturnObject;
     // let jVarLocalOrderItemsOrderItemsItemNameClass = clone.querySelector(".OrderItemsItemNameClass");
     // jVarLocalOrderItemsOrderItemsItemNameClass.innerHTML = inItemName;
