@@ -1,24 +1,35 @@
 import { StartFunc as StartFuncToAddOns } from "./ToAddOns.js";
-import { StartFunc as StartFuncFromAddOns } from "../../FromLocalStorage/FromAddOns.js";
 import { StartFunc as StartFuncToRow } from "./ToRow/ToOrderItems.js";
 import { StartFunc as StartFuncToItemSerialButton } from "./AddListenersRunTime/ToItemSerialButton.js";
+import { StartFunc as StartFuncFromLocalStorage } from "../../FromLocalStorage/ItemsInOrder.js";
+import { StartFunc as StartFuncFromAddOnsAll } from "../../FromLocalStorage/FromAddOnsAll.js";
+import { StartFunc as StartFuncShowTotals } from "./ToFooter/ShowTotals.js";
+
+let jVarCommonTableBodyId = "ItemsTableBodyId";
 
 let StartFunc = () => {
+    jFClearDom();
+
+    let jVarLocalJsonData = StartFuncFromLocalStorage();
+
+    ShowOnDom({ inJsonData: jVarLocalJsonData });
+};
+
+let jFClearDom = () => {
     let jVarLocalItemsTableBodyId = "ItemsTableBodyId";
     var jVarLocalHtmlTableBody = document.getElementById(jVarLocalItemsTableBodyId);
 
     jVarLocalHtmlTableBody.innerHTML = "";
-
-    PullFromLocalStorage({ inTableBodyId: jVarLocalHtmlTableBody });
 };
 
 let PullFromLocalStorage = ({ inTableBodyId }) => {
-    let jVarLocalItemsInOrder = localStorage.getItem("ItemsInOrder");
-    let jVarLocaljVarLocalItemsInOrderJson = JSON.parse(jVarLocalItemsInOrder);
+    // let jVarLocalItemsInOrder = localStorage.getItem("ItemsInOrder");
+    // let jVarLocaljVarLocalItemsInOrderJson = JSON.parse(jVarLocalItemsInOrder);
+
+    let jVarLocaljVarLocalItemsInOrderJson = StartFuncFromLocalStorage();
 
     Object.entries(jVarLocaljVarLocalItemsInOrderJson).forEach(
         ([key, element]) => {
-            console.log("element ", element);
             jFLocalItemsInsertRowFromTemplate({
                 inRowPk: key,
                 inTableBodyId,
@@ -37,6 +48,35 @@ let PullFromLocalStorage = ({ inTableBodyId }) => {
     jFLocalShowTotals({ inJsonData: Object.values(jVarLocaljVarLocalItemsInOrderJson) });
 };
 
+let ShowOnDom = ({ inJsonData }) => {
+    // let jVarLocalItemsInOrder = localStorage.getItem("ItemsInOrder");
+    // let jVarLocaljVarLocalItemsInOrderJson = JSON.parse(jVarLocalItemsInOrder);
+    let jVarLocalItemsTableBodyId = jVarCommonTableBodyId;
+    var jVarLocalHtmlTableBody = document.getElementById(jVarLocalItemsTableBodyId);
+
+    let jVarLocaljVarLocalItemsInOrderJson = inJsonData;
+
+    Object.entries(jVarLocaljVarLocalItemsInOrderJson).forEach(
+        ([key, element]) => {
+            jFLocalItemsInsertRowFromTemplate({
+                inRowPk: key,
+                inTableBodyId: jVarLocalHtmlTableBody,
+                inCategory: element.Category,
+                inItemName: element.ItemName,
+                inItemNamePk: element.ItemNamePk,
+                inWashType: element.WashType,
+                inPcs: element.Pcs,
+                inItemRate: element.Rate,
+                inAddOn: element.AddOn,
+                inTotal: element.Total
+            });
+        }
+    );
+
+    //jFLocalShowTotals({ inJsonData: Object.values(jVarLocaljVarLocalItemsInOrderJson) });
+    StartFuncShowTotals({ inJsonData: Object.values(jVarLocaljVarLocalItemsInOrderJson) });
+};
+
 let jFLocalShowTotals = ({ inJsonData }) => {
     let jVarLocalItemsTableFootPcs = document.getElementById("ItemsTableFootPcs");
     let jVarLocalItemsTableFootAddOn = document.getElementById("ItemsTableFootAddOn");
@@ -45,15 +85,30 @@ let jFLocalShowTotals = ({ inJsonData }) => {
     let jVarLocalPcsArray = inJsonData.map(element => element.Pcs);
     let sum = jVarLocalPcsArray.reduce((a, b) => a + b, 0);
 
-    let jVarLocalAddOnArray = inJsonData.map(element => element.AddOn);
-    let sumAddOn = jVarLocalAddOnArray.reduce((a, b) => a + b, 0);
+    // let jVarLocalAddOnArray = inJsonData.map(element => parseInt(element.AddOn.split("-")[0]));
+    // let sumAddOn = jVarLocalAddOnArray.reduce((a, b) => a + b, 0);
+
+    // console.log("sumAddOn ", jVarLocalAddOnArray, sumAddOn);
+
+    // let jVarLocalAddOnArrayAmont = inJsonData.map(element => parseInt(element.AddOn.split("-")[1]));
+    // // let jVarLocalAddOnArrayAmont = inJsonData.map(element => element.AddOn);
+    // let sumAddOnAmount = jVarLocalAddOnArrayAmont.reduce((a, b) => a + b, 0);
+    // console.log("sumAddOnAmount ", sumAddOnAmount, jVarLocalAddOnArrayAmont);
 
     let jVarLocalTotalArray = inJsonData.map(element => element.Total);
     let sumTotal = jVarLocalTotalArray.reduce((a, b) => a + b, 0);
 
     jVarLocalItemsTableFootPcs.innerHTML = sum;
-    jVarLocalItemsTableFootAddOn.innerHTML = sumAddOn;
+    // jVarLocalItemsTableFootAddOn.innerHTML = sumAddOn;
     jVarLocalItemsTableFootTotal.innerHTML = sumTotal;
+
+    let jVarLocalAddOnData = StartFuncFromAddOnsAll();
+
+    let jVarLocalAddOnRateArray = Object.values(jVarLocalAddOnData).map(element => element.AddOnRate);
+    let jVarLocalAddOnDataTotal = jVarLocalAddOnRateArray.reduce((a, b) => a + b, 0);
+    jVarLocalItemsTableFootAddOn.innerHTML = `${jVarLocalAddOnRateArray.length}-${jVarLocalAddOnDataTotal}`;
+    // jVarLocalOrderItemsOrderItemsAddOnClass.innerHTML = `${jVarLocalAddOnRateArray.length}-${sum}`;
+
 };
 
 let jFLocalItemSerialButtonClickFunc = (event) => {
@@ -66,7 +121,8 @@ let jFLocalItemSerialButtonClickFunc = (event) => {
 let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, inItemName, inItemNamePk, inWashType, inWashTypePk, inPcs, inItemRate, inAddOn, inTotal }) => {
     var table = inTableBodyId;
     let jVarLocalTemplateForOrderItemsTableRow = document.getElementById("TemplateForOrderItemsTableRow");
-
+    // let jVarLocalAddOnData = StartFuncFromAddOns({ inItemSerial: inRowPk });
+    // console.log("jVarLocalAddOnData : ", jVarLocalAddOnData);
     const clone = jVarLocalTemplateForOrderItemsTableRow.content.cloneNode(true);
 
     let jVarLocalOrderItemsSerialButtonClass = clone.querySelector(".OrderItemsSerialButtonClass");
@@ -93,8 +149,8 @@ let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, i
     jVarLocalOrderItemsOrderItemsItemWashClass.dataset.pk = inWashTypePk;
     jVarLocalOrderItemsOrderItemsItemWashClass.innerHTML = inWashType;
 
-    let jVarLocalOrderItemsOrderItemsAddOnClass = clone.querySelector(".OrderItemsAddOnClass");
-    jVarLocalOrderItemsOrderItemsAddOnClass.innerHTML = inAddOn;
+    // let jVarLocalOrderItemsOrderItemsAddOnClass = clone.querySelector(".OrderItemsAddOnClass");
+    // jVarLocalOrderItemsOrderItemsAddOnClass.innerHTML = inAddOn;
 
     let jVarLocalOrderItemsOrderItemsItemPcsClass = clone.querySelector(".OrderItemsItemPcsClass");
     jVarLocalOrderItemsOrderItemsItemPcsClass.innerHTML = inPcs;

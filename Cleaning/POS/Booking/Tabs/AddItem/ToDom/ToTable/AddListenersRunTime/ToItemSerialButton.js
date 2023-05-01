@@ -16,7 +16,7 @@ let jFLocalItemSerialButtonClickFunc = (event) => {
 
     jFLocalShowOnAbove({ inDataToShow: jVarLocalDataFromrow, inRowSelected: jVarLocalRowSelected });
 
-    StartFuncToAddOns({ inItemSerial: jVarLocalCurrentTarget.value });
+    StartFuncToAddOns({ inItemSerial: jVarLocalRowSelected });
 };
 
 let jFLocalShowOnAbove = ({ inDataToShow, inRowSelected }) => {

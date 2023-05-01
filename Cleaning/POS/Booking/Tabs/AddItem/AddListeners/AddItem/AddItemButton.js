@@ -21,7 +21,7 @@ let localAddItemButtonFunc = (event) => {
         let jVarClosestTabPane = jVarLocalCurrentTarget.closest(".tab-pane");
 
         let jVarObjectToInsert = jFLocalPrepareObject({ inTabPane: jVarClosestTabPane });
-       // console.log("aaaaaaa : ", jVarObjectToInsert);
+
         jFLocalToLocalStorage({ inObjectToInsert: jVarObjectToInsert });
 
         StartFuncToDom();
@@ -115,7 +115,7 @@ let jFLocalPrepareObject = ({ inTabPane }) => {
             WashTypePk: localWashSelectPk,
             ...localPcs,
             ...localRate,
-            AddOn: 0,
+            AddOn: "0-0",
             Total: Object.values(localPcs)[0] * Object.values(localRate)[0]
         };
 

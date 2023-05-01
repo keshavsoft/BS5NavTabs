@@ -1,3 +1,5 @@
+import { StartFunc as StartFuncFromAddOns } from "../../FromLocalStorage/FromAddOns.js";
+
 let StartFunc = ({ inItemSerial }) => {
     let jVarLocalHtmlIdAddOnCardId = document.getElementById("AddOnCardId");
     let jVarLocalAddOnItemToAddOnClass = jVarLocalHtmlIdAddOnCardId.querySelector(".AddOnItemToAddOnClass");
@@ -8,8 +10,39 @@ let StartFunc = ({ inItemSerial }) => {
 
     jVarLocalHtmlTableBody.innerHTML = "";
 
-    let jVarLocalItemsInOrder = localStorage.getItem("AddOnData");
-    let jVarLocaljVarLocalItemsInOrderJson = JSON.parse(jVarLocalItemsInOrder);
+    // let jVarLocalItemsInOrder = localStorage.getItem("AddOnData");
+    // let jVarLocaljVarLocalItemsInOrderJson = JSON.parse(jVarLocalItemsInOrder);
+    let jVarLocaljVarLocalItemsInOrderJson = StartFuncFromAddOns({ inItemSerial });
+    let jVarLocalFilered = jFLocalFilterData({ inData: jVarLocaljVarLocalItemsInOrderJson, inItemSerial });
+
+    jVarLocalFilered.forEach(
+        LoopItem => {
+            jFLocalInsertRow({
+                inTableBodyId: jVarLocalHtmlTableBody,
+                inAddOnService: LoopItem.AddOnService,
+                inAddOnRate: LoopItem.AddOnRate,
+                inAddOnItemSerial: LoopItem.AddOnItemSerial,
+                inAddOnImageSerial: LoopItem.AddOnImageSerial
+            });
+        }
+    );
+
+    // jFLocalShowTotals({ inJsonData: Object.values(jVarLocaljVarLocalItemsInOrderJson) });
+};
+
+let StartFunc_Keshav_1May2023 = ({ inItemSerial }) => {
+    let jVarLocalHtmlIdAddOnCardId = document.getElementById("AddOnCardId");
+    let jVarLocalAddOnItemToAddOnClass = jVarLocalHtmlIdAddOnCardId.querySelector(".AddOnItemToAddOnClass");
+    jVarLocalAddOnItemToAddOnClass.value = inItemSerial;
+
+    let jVarLocalItemsTableBodyId = "AddOnTableBodyId";
+    var jVarLocalHtmlTableBody = document.getElementById(jVarLocalItemsTableBodyId);
+
+    jVarLocalHtmlTableBody.innerHTML = "";
+
+    // let jVarLocalItemsInOrder = localStorage.getItem("AddOnData");
+    // let jVarLocaljVarLocalItemsInOrderJson = JSON.parse(jVarLocalItemsInOrder);
+    let jVarLocaljVarLocalItemsInOrderJson = StartFuncFromAddOns({ inItemSerial });
 
     let jVarLocalAddOnArray = Object.keys(jVarLocaljVarLocalItemsInOrderJson).map(
         key => {
@@ -37,6 +70,25 @@ let StartFunc = ({ inItemSerial }) => {
     );
 
     // jFLocalShowTotals({ inJsonData: Object.values(jVarLocaljVarLocalItemsInOrderJson) });
+};
+
+let jFLocalFilterData = ({ inData, inItemSerial }) => {
+    let jVarLocaljVarLocalItemsInOrderJson = inData;
+
+    let jVarLocalAddOnArray = Object.keys(jVarLocaljVarLocalItemsInOrderJson).map(
+        key => {
+            return {
+                RowPk: key,
+                ...jVarLocaljVarLocalItemsInOrderJson[key]
+            };
+        }
+    );
+
+    let jVarLocalFilered = jVarLocalAddOnArray.filter(element => {
+        return element.AddOnItemSerial === inItemSerial;
+    });
+
+    return jVarLocalFilered;
 };
 
 let jFLocalShowTotals = ({ inJsonData }) => {

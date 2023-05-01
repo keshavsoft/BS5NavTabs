@@ -1,3 +1,5 @@
+import { StartFunc as StartFuncFromAddOnsAll } from "./FromAddOnsAll.js";
+
 let StartFunc = ({ inItemSerial }) => {
     let jVarLocalHtmlIdAddOnCardId = document.getElementById("AddOnCardId");
     let jVarLocalAddOnItemToAddOnClass = jVarLocalHtmlIdAddOnCardId.querySelector(".AddOnItemToAddOnClass");
@@ -8,8 +10,7 @@ let StartFunc = ({ inItemSerial }) => {
 
     jVarLocalHtmlTableBody.innerHTML = "";
 
-    let jVarLocalItemsInOrder = localStorage.getItem("AddOnData");
-    let jVarLocaljVarLocalItemsInOrderJson = JSON.parse(jVarLocalItemsInOrder);
+    let jVarLocaljVarLocalItemsInOrderJson = StartFuncFromAddOnsAll();
 
     let jVarLocalAddOnArray = Object.keys(jVarLocaljVarLocalItemsInOrderJson).map(
         key => {
