@@ -1,4 +1,5 @@
 import { StartFunc as StartFuncToAddOns } from "../../ToDom/ToTable/ToAddOns.js";
+import { StartFunc as StartFuncToLocalStorage } from "../../ToLocalStorage/ToAddOnData.js";
 
 let StartFunc = () => {
     let jVarLocalAddOnInsertButtonId = document.getElementById("AddOnInsertButtonId");
@@ -8,7 +9,6 @@ let StartFunc = () => {
 let jFLocalButtonClick = () => {
     let jVarLocalItemSerial = jFLocalPrepareData();
     StartFuncToAddOns({ inItemSerial: jVarLocalItemSerial });
-    console.log("ssssssssssssss", jVarLocalItemSerial);
 };
 
 let jFLocalPrepareData = () => {
@@ -23,14 +23,20 @@ let jFLocalPrepareData = () => {
 
     var jVarLocalAddOnServiceIdtext = jVarLocalAddOnServiceId.options[jVarLocalAddOnServiceId.selectedIndex].text;
 
-    let jVarObjectToInsert = {
-        AddOnService: jVarLocalAddOnServiceIdtext,
-        AddOnRate: jVarLocalAddOnRateIdValue,
-        AddOnItemSerial: jVarLocaljVarLocalAddOnItemIdValue,
-        AddOnImageSerial: jVarLocaljVarLocalAddOnImageIdValue
-    };
+    // let jVarObjectToInsert = {
+    //     AddOnService: jVarLocalAddOnServiceIdtext,
+    //     AddOnRate: parseInt(jVarLocalAddOnRateIdValue),
+    //     AddOnItemSerial: jVarLocaljVarLocalAddOnItemIdValue,
+    //     AddOnImageSerial: jVarLocaljVarLocalAddOnImageIdValue
+    // };
 
-    jFLocalToLocalStorage({ inObjectToInsert: jVarObjectToInsert });
+    // jFLocalToLocalStorage({ inObjectToInsert: jVarObjectToInsert });
+    StartFuncToLocalStorage({
+        inAddOnService: jVarLocalAddOnServiceIdtext,
+        inAddOnRate: parseInt(jVarLocalAddOnRateIdValue),
+        inAddOnItemSerial: jVarLocaljVarLocalAddOnItemIdValue,
+        inAddOnImageSerial: jVarLocaljVarLocalAddOnImageIdValue
+    });
 
     return jVarLocaljVarLocalAddOnItemIdValue;
 };

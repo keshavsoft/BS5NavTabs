@@ -100,7 +100,7 @@ let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, i
     let jVarLocalOrderItemsOrderItemsEditButtonClass = clone.querySelector(".OrderItemsEditButtonClass");
     jVarLocalOrderItemsOrderItemsEditButtonClass.addEventListener("click", jFLocalItemEditButtonClickFunc)
 
-    StartFuncToRow({ inItemSerial: inRowPk });
+    StartFuncToRow({ inItemSerial: inRowPk, inClonedTemplateRow: clone });
 
     table.appendChild(clone);
 };
