@@ -18,7 +18,6 @@ let LocalFillDataList = ({ inData }) => {
 const StartFunc = (params) => {
     StartFuncPullCustomers();
     let jVarLocalFromLocalStorage = StartFuncFromLocalStorage();
-    console.log("jVarLocalFromLocalStorage : ", jVarLocalFromLocalStorage);
 
     let jVarLocalCustomersArray = Object.values(jVarLocalFromLocalStorage.CustomerNames).map(
         LoopItem => {
