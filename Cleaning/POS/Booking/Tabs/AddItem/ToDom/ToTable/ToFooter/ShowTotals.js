@@ -5,8 +5,31 @@ let StartFunc = ({ inJsonData }) => {
 };
 
 let jFLocalShowTotals = ({ inJsonData }) => {
+    jFLocalShowTotalTotals({ inJsonData });
+    jFLocalShowTotalPcs({ inJsonData });
+    jFLocalAddOnTotal();
+};
+
+let jFLocalShowTotalTotals = ({ inJsonData }) => {
+    let jVarLocalItemsTableFootTotal = document.getElementById("ItemsTableFootTotal");
+
+    let jVarLocalTotalArray = inJsonData.map(element => element.Total);
+    let sumTotal = jVarLocalTotalArray.reduce((a, b) => a + b, 0);
+
+    jVarLocalItemsTableFootTotal.innerHTML = sumTotal;
+};
+
+let jFLocalShowTotalPcs = ({ inJsonData }) => {
     let jVarLocalItemsTableFootPcs = document.getElementById("ItemsTableFootPcs");
-    let jVarLocalItemsTableFootAddOn = document.getElementById("ItemsTableFootAddOn");
+
+    let jVarLocalPcsArray = inJsonData.map(element => element.Pcs);
+    let sum = jVarLocalPcsArray.reduce((a, b) => a + b, 0);
+
+    jVarLocalItemsTableFootPcs.innerHTML = sum;
+};
+
+let jFLocalShowTotals_Keshav_2May2023 = ({ inJsonData }) => {
+    let jVarLocalItemsTableFootPcs = document.getElementById("ItemsTableFootPcs");
     let jVarLocalItemsTableFootTotal = document.getElementById("ItemsTableFootTotal");
 
     let jVarLocalPcsArray = inJsonData.map(element => element.Pcs);
@@ -29,17 +52,10 @@ let jFLocalShowTotals = ({ inJsonData }) => {
     // jVarLocalItemsTableFootAddOn.innerHTML = sumAddOn;
     jVarLocalItemsTableFootTotal.innerHTML = sumTotal;
 
-    // let jVarLocalAddOnData = StartFuncFromAddOnsAll();
-
-    // let jVarLocalAddOnRateArray = Object.values(jVarLocalAddOnData).map(element => element.AddOnRate);
-    // let jVarLocalAddOnDataTotal = jVarLocalAddOnRateArray.reduce((a, b) => a + b, 0);
-    // jVarLocalItemsTableFootAddOn.innerHTML = `${jVarLocalAddOnRateArray.length}-${jVarLocalAddOnDataTotal}`;
-    
-    // jVarLocalOrderItemsOrderItemsAddOnClass.innerHTML = `${jVarLocalAddOnRateArray.length}-${sum}`;
-    jFLocalAddOnTotal({ inJsonData });
+    jFLocalAddOnTotal();
 };
 
-let jFLocalAddOnTotal = ({ inJsonData }) => {
+let jFLocalAddOnTotal = () => {
     let jVarLocalItemsTableFootAddOn = document.getElementById("ItemsTableFootAddOn");
 
     let jVarLocalAddOnData = StartFuncFromAddOnsAll();
