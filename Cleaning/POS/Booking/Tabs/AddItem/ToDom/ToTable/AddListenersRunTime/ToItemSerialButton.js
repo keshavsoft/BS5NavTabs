@@ -39,8 +39,32 @@ let jFLocalShowOnAbove = ({ inDataToShow, inRowSelected }) => {
         let jVarLocalWashTypeClass = jVarLocalMenItemsTabId.querySelector(".WashTypeClass");
         jVarLocalWashTypeClass.value = inDataToShow.WashTypePk;
         //change toggle state
-        let jVarLocalFromSimulation = simulateClick();
-        console.log("jVarLocalFromSimulation ", jVarLocalFromSimulation);
+        jFLocalAboutAddOnToggle();
+
+        // let jVarLocalAddOnMenuClass = jVarLocalMenItemsTabId.querySelector(".AddOnMenuClass");
+        // if (event.currentTarget.checked) {
+        //     jVarLocalMenuTabAddOnId.classList.add("col");
+        //     jVarLocalMenuTabAddOnId.classList.remove("d-none");
+        // } else {
+        //     jVarLocalMenuTabAddOnId.classList.remove("col");
+        //     jVarLocalMenuTabAddOnId.classList.add("d-none");
+        // }
+
+        // let jVarLocalFromSimulation = simulateClick();
+        // console.log("jVarLocalFromSimulation ", jVarLocalFromSimulation);
+    };
+};
+
+let jFLocalAboutAddOnToggle = () => {
+    let jVarLocalMenItemsTabId = document.getElementById("MenItemsTabId");
+
+    if (jVarLocalMenItemsTabId === null === false) {
+        let jVarLocalAddOnMenuClass = jVarLocalMenItemsTabId.querySelector(".AddOnMenuClass");
+
+        if (jVarLocalAddOnMenuClass.checked) {
+        } else {
+            simulateClick();
+        };
     };
 };
 
