@@ -37,6 +37,7 @@ const jFLocalPostItemInsertFunc = ({ inTabPane }) => {
     let jVarLocalItemsTableBodyId = document.getElementById("ItemsTableBodyId");
     let jVarLocalItemsShowCollapseId = document.getElementById("ItemsShowCollapseId");
     let jVarLocalAddOnItemId = document.getElementById("AddOnItemId");
+    // AddOnMenuId
 
     let jVarLocalBSItemsShowCollapseId = bootstrap.Collapse.getOrCreateInstance(jVarLocalItemsShowCollapseId);
 

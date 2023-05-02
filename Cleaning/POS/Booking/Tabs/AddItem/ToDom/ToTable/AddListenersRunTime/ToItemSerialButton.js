@@ -17,6 +17,7 @@ let jFLocalItemSerialButtonClickFunc = (event) => {
     jFLocalShowOnAbove({ inDataToShow: jVarLocalDataFromrow, inRowSelected: jVarLocalRowSelected });
 
     StartFuncToAddOns({ inItemSerial: jVarLocalRowSelected });
+
 };
 
 let jFLocalShowOnAbove = ({ inDataToShow, inRowSelected }) => {
@@ -37,8 +38,29 @@ let jFLocalShowOnAbove = ({ inDataToShow, inRowSelected }) => {
 
         let jVarLocalWashTypeClass = jVarLocalMenItemsTabId.querySelector(".WashTypeClass");
         jVarLocalWashTypeClass.value = inDataToShow.WashTypePk;
+        //change toggle state
+        let jVarLocalFromSimulation = simulateClick();
+        console.log("jVarLocalFromSimulation ", jVarLocalFromSimulation);
     };
 };
+
+function simulateClick() {
+    const event = new MouseEvent("click", {
+        view: window,
+        bubbles: true,
+        cancelable: true,
+    });
+    const cb = document.getElementById("AddOnMenuId");
+    const cancelled = !cb.dispatchEvent(event);
+    return cancelled;
+    if (cancelled) {
+        // A handler called preventDefault.
+        alert("cancelled");
+    } else {
+        // None of the handlers called preventDefault.
+        alert("not cancelled");
+    }
+}
 
 let jFLocalFromRowTable = ({ inJVarClosestTr }) => {
     let jVarLocalReturnObject = {};
