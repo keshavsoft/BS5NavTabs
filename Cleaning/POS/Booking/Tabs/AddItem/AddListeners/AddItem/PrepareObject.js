@@ -6,30 +6,34 @@ let StartFunc = ({ inTabPane }) => {
 let jFLocalPrepareObject = ({ inTabPane }) => {
     try {
         let jVarClosestTabPane = inTabPane;
-        let jVarLocalItemSelect = jVarClosestTabPane.querySelector(".ItemSelect");
+
+        // let jVarLocalItemSelect = jVarClosestTabPane.querySelector(".ItemSelect");
         let jVarLocalWashType = jVarClosestTabPane.querySelector(".WashTypeClass");
         let jVarLocalPcs = jVarClosestTabPane.querySelector(".PcsClass");
         let jVarLocalRate = jVarClosestTabPane.querySelector(".RateClass");
 
         let jVarLocalCategory = jVarClosestTabPane.dataset.category;
+        let jVarLocalItemSelect = jFLocalItemSelect({ inTabPane });
 
-        let localItemSelectPk = jVarLocalItemSelect.value;
-        let localItemSelect = selectItemByValue({ inHtmlSelect: jVarLocalItemSelect });
 
-        let localWashSelectPk = jVarLocalItemSelect.value;
+        let localItemSelect = selectItemByValue({ inHtmlSelect: jVarLocalItemSelect.ItemSerialID });
         let localWashSelect = selectItemByValue({ inHtmlSelect: jVarLocalWashType });
-
         let localPcs = jFLocalFromDomAsInt({ inHtmlId: jVarLocalPcs });
         let localRate = jFLocalFromDomAsInt({ inHtmlId: jVarLocalRate });
         let jVarlocalItemSerial = jFLocalItemSerialClass({ inTabPane });
+
+        // let localItemSelectPk = jVarLocalItemSelectObj.ItemSerial;
+        // let localWashSelectPk = jVarLocalItemSelectObj.ItemSerial;
+
+
 
         let localReturnObject = {
             ItemSerial: jVarlocalItemSerial.ItemSerial,
             Category: jVarLocalCategory,
             ItemName: localItemSelect,
-            ItemNamePk: localItemSelectPk,
+            ItemNamePk: jVarLocalItemSelect.ItemSerial,
             WashType: localWashSelect,
-            WashTypePk: localWashSelectPk,
+            WashTypePk: jVarLocalItemSelect.ItemSerial,
             ...localPcs,
             ...localRate,
             AddOn: "0-0",
@@ -49,6 +53,21 @@ let jFLocalItemSerialClass = ({ inTabPane }) => {
 
         let localReturnObject = {
             ItemSerial: jVarLocalItemSerialClass.value
+        };
+
+        return localReturnObject;
+    } catch (error) {
+        console.log("error : ", error);
+    };
+};
+let jFLocalItemSelect = ({ inTabPane }) => {
+    try {
+        let jVarClosestTabPane = inTabPane;
+        let jVarLocalItemSerialClass = jVarClosestTabPane.querySelector(".ItemSelect");
+
+        let localReturnObject = {
+            ItemSerial: jVarLocalItemSerialClass.value,
+            ItemSerialID: jVarLocalItemSerialClass
         };
 
         return localReturnObject;
